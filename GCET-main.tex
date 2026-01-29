@@ -1,0 +1,29 @@
+\documentclass[12pt,16k]{GCET-book}
+
+% 结构性宏包
+\usepackage{subfiles} % 可以单独编译子文件
+
+% 图片路径
+\graphicspath{
+    {images/},
+    {images/chapter1/},
+    {images/chapter2/},
+    {images/chapter3/},
+    {images/chapter4/},
+    {images/chapter5/},
+    {images/chapter6/},
+    {images/chapter7/},
+    {images/chapter8/},
+}
+
+\begin{document}
+
+\tableofcontents % 生成目录
+\newpage
+
+\setcounter{page}{1}
+
+\subfile{chapters/chapter1/1气体、液体和固体.tex} % 用subfiles包引入子文件中内容
+\subfile{chapters/chapter2/2化学热力学基础.tex}
+
+\end{document}

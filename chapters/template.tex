@@ -1,0 +1,124 @@
+% 模板文件template.tex
+% 所有文件编译的时候都有可能默认编译了GCET-main.tex，这时候请点击VSCode右上角的绿色三角形，手动选择第二项Subfiles进行编译，之后每次保存编译的就是子文件了
+
+\documentclass[../GCET-main.tex]{subfiles}
+% 这里是subfiles包调用原始文件GCET-main.tex的语句，使得这个文件可以直接使用原始文件中所有宏包。
+% ../代表上层文件夹，在章文件中应为../../GCET-main.tex，节文件中应为../../../GCET-main.tex。
+% 注意必须调用到原始文件GCET-main.tex，否则报错。
+% 注意这个调用是单向的（比如这个文件template.tex就没有写入主文件中），只是为了让你能单独编译一章或一节，防止文件过大编译速度太慢。最终放到主文件中还需要在主文件中使用\subfile{chapters/chapter1/1气体、液体和固体.tex}才能插入文件
+% subfiles调用无法保留章和节的计数器，所以单独编译时章的编号会是1，节的编号会是0.1，但整本书中编号不会出问题
+
+\begin{document} % 仍然需要本语句
+
+% chapter,section,subsection记得用\label{}做好引用，chapter用\label{1}section用\label{1.1}subsection用\label{1.1.1}
+% LaTeX自带的环境，比如经常需要用到的figure和table，需要在\caption之后加\label{figure1.1}或\label{table1.1}
+% 几个特殊环境（下面会介绍的色块）会自动编号，只需要知道编号方式是环境名称跟序号就可以，如definition1.1
+%所有引用统一用\autoref{1}，测试了好多种方法还是这个最好用
+% 记住在编第几章第几节，忘记了就用更大的文件编译，注意引用需要在同一个文件包括被引用的一方时才能被引用到
+% 引用需要编译两次才能得到
+
+\chapter{章节标题}\label{1} % 这个要在chapter级别的文件写
+章节下面可以写东西
+\section{小节标题}\label{1.1} % 在section级别的文件写下面的东西
+小节下面可以写东西
+\subsection{小小节标题}\label{1.1.1}
+小小节下面还是可以写东西
+
+\begin{figure}[htbp] % 图片环境
+    \centering % 居中，不想居中可以不要
+    \includegraphics[width=0.5\textwidth]{金盏花488.jpg} % 我在images文件夹里面放了一张金盏花488.jpg，图片还没做好的时候可以用这个先顶替一下
+    \caption{金盏花488} % 标题
+    \label{figure1.1} % \label一定要放在\caption之后
+\end{figure}
+
+\begin{table}[htbp] % 表格环境
+    \centering % 居中，不想居中可以不要
+    \begin{tabular}{|c|c|} % 正常写表格
+        \hline
+        序号 & 内容 \\
+        \hline
+        1 & 测试 \\
+        \hline
+    \end{tabular}
+    \caption{第一张示例表} % 标题
+    \label{table1.1} % \label一定要放在\caption之后
+\end{table}
+
+% GCET-book.cls中用tcolorbox宏包新定义了色块，再在这个基础上使用不同颜色定义了新的环境，可以跨多页书写
+% 新定义的环境目前有以下几种：
+\begin{definition} % 定义 蓝色 自动编号
+    理想气体：分子间没有相互作用力、分子本身没有体积的气体
+\end{definition}
+
+\begin{concept} % 概念 蓝色 自动编号
+化学键的概念：
+\end{concept}
+
+\begin{formula} % 公式 紫色 自动编号
+\[pV_m=RT\]
+\[pM=\rho RT\]
+\end{formula}
+
+\begin{reaction} % 反应方程式 黄色 自动编号
+\[\ce{2H_2 +O2 ->[\text{点燃}]2H2O}\]
+\end{reaction}
+
+\begin{exercise} % 例题 红色 自动编号
+求方程$\hat{H}\psi=E\psi$的多电子解
+\end{exercise}
+
+\begin{forexample} % 例子 青色 不编号
+常见的中心原子$\ce{sp^3}$杂化的分子：\[\ce{CH4},\ \ce{NH3},\ \ce{H2O}\]
+\end{forexample}
+
+\begin{proof} % 证明（可能不太用到） 绿色 不编号
+    ？这对吗
+\end{proof}
+
+\begin{derivation} % 推导 绿色 不编号
+由理想气体状态方程：
+\[pV=nRT\]
+移项得：
+\[p\dfrac{V}{n}=RT\]
+即：\[pV_\mathrm{m}=RT\]
+所以\[aaa\]
+这个可以跨页吗
+\end{derivation}
+
+\begin{answer} % 解答 绿色 不编号
+目前薛定谔方程已经存在了一百年，但是仍然没有人解出多电子情况下的解析解，数学工具的落后限制了化学的发展。
+\end{answer}
+
+编译两次测试一下引用效果\autoref{1}，\autoref{figure1.1}，\autoref{table1.1}，
+\autoref{concept1.1}
+
+% 此外其他一些LaTeX自带的原始内容也有修改，比如enumerate环境多层嵌套可以自动改变编号样式，第一层是1.第二层是(1)第三层是i.：
+\begin{enumerate}
+    \item 第一层是1.
+    \begin{enumerate}
+        \item 第二层是(1)
+        \begin{enumerate}
+            \item 第三层是i.
+            \item 这是ii.
+            \item 这是iii.
+            \item 这是iv.
+        \end{enumerate}
+        \item 这是(2)
+    \end{enumerate}
+    \item 这是2.
+\end{enumerate}
+
+% 所以一般情况下用到enumerate请不要调整参数
+
+% 选择题可以用tasks宏包中新环境写，比如：
+\begin{exercise}
+下列分子中存在$\pi$键的是：
+\begin{tasks}[label=\Alph*.](4) % label参数和enumerate环境类似，后面()中参数为每一行的选项数量
+    \task $\ce{C2H6}$
+    \task $\ce{CH4}$
+    \task $\ce{H2SO4}$
+    \task $\ce{PCl3}$
+\end{tasks}
+\end{exercise}
+
+\end{document}
