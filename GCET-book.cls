@@ -37,7 +37,7 @@
 }
 
 % 段落样式
-\linespread{1.3} % 行间距：设为 1.5 倍行距
+\linespread{1.3} % 行间距：设为 1.3 倍行距
 \setlength{\parindent}{2em} % 首行缩进2字符
 \setlength{\parskip}{0.5em} % 段落间距0.5字符
 
@@ -71,6 +71,7 @@
 
 % 新建环境
 \newtcolorbox{basebox}[2][white]{
+    before skip=1em,
     colback=white,          % 背景色
     colframe=#1!70!black, % 边框颜色
     leftrule=0.8pt,
@@ -83,7 +84,7 @@
     coltitle=black,         % 标题文字颜色
     colbacktitle=#1!5!white, % 标题栏背景色
     fonttitle=\bfseries,    % 标题字体加粗
-    title style={boxrule=0.8pt, colframe=#1!70!black}, % 标题栏边框
+    % title style={boxrule=0.8pt, colframe=#1!70!black}, % 标题栏边框
     sharp corners,          % 直角
     boxsep=5pt,             % 内边距
     after={}, % 末尾自动添加方块符号

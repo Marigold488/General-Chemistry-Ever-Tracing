@@ -3,11 +3,90 @@
 \begin{document}
 
 \section{相变}\label{1.2}
-气液变化\autoref{1.1}
+在介绍各种相变之前，我们需要先明确\textbf{相}和\textbf{相变}的定义：
+\begin{definition}
+    \textbf{相}：热力学系统中物理性质均匀一致且与其他部分有明确物理分界面的宏观部分\par
+    \textbf{相变}：物质在外界条件变化时，从一种相转变为另一种相的热力学过程
+\end{definition}\par
+我们在\autoref{definition1.1}中提到的物质的固态、液态、气态，实际上是固相、液相、气相的通俗叫法，两者略有区别，但是指向一致。\par
+固液气三相的相变共有6种，可由下图表示：
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.3\textwidth]{1.2固液气三相的相变.png}
+    \caption{固液气三相的相变} % 标题
+    \label{figure1.1}
+\end{figure}\par
+图中的同一种相变也可能有不同的形式，比如液相转变为气相的汽化，可以是蒸发，也可以是沸腾。
 
-\subsection{相变的类型}\label{1.2.1}
-汽化、液化、熔化、凝固、升华、凝华
+\subsection{相图}\label{1.2.1}
+固液气三相及其相变的条件既与温度有关，也与压强有关，我们可以用\textbf{相图}来表示。
+\begin{definition}
+    \textbf{相图}：用几何图形表示热力学平衡体系中稳定相的存在范围与温度、压力、组成等强度变量的关系的图表，相图由\textbf{单相区}、\textbf{两相平衡线}、\textbf{三相点}等组成\par
+    \textbf{单相区}：相图中只有一种稳定相存在的区域\par
+    \textbf{两相平衡线}：相图中两种相平衡共存的边界线\par
+    \textbf{三相点}：相图中三条两相平衡线的交点，三种相平衡共存
+\end{definition}\par
+比如，水的相图如下所示。
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{1.2.1水的相图.png}
+    \caption{水的相图} % 标题
+    \label{figure1.2}
+\end{figure}\par
+从水的相图中我们可以看到，相图的横坐标是温度$T$，纵坐标是压强$p$。温度较低时，水以冰的形式存在；温度较高，压强较大时，水以水的形式存在；温度较高，压强较小时，水以水蒸气的形式存在。\par
+图中$O$为三相点，在这里冰、水、水蒸气三相平衡共存；$\mathit{OA}$、$\mathit{OB}$、$\mathit{OC}$是三条两相平衡线，每条线上各有两种相共存。图中在固-液平衡线$\mathit{OC}$上标出了\textbf{冰点}，这是固液平衡线上的一个特殊点，坐标为$(273.15\ \mathrm{K},101325\ \mathrm{Pa})$，即一个大气压下水在$273.15\ \mathrm{K}=0\ \mathrm{℃}$结冰。\par
+图中$\mathit{OA}$、$\mathit{OB}$两条线斜率均为正，可以这么理解：温度越高，气体分子运动越剧烈，压缩成液体或固体就越困难。\textbf{其实，对于大部分纯物质，固-液平衡线$\mathit{OC}$的斜率也为正，也可以按照上面的方式理解。}水是非常特殊的物质，冰的密度小于液态水（和冰的特殊结构有关），温度一定时，压缩冰可以让冰变成水。滑冰时冰刀下的冰会融化成水，形成水膜，大大减小冰刀在水膜上滑行的阻力，也是利用了水固-液相变的特殊性。
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[height=0.2\textheight]{1.2.1大部分纯物质的相图.png}\qquad
+    \includegraphics[height=0.2\textheight]{1.2.1硫的相图.png}
+    \caption{大部分纯物质的相图和硫的相图} % 标题
+    \label{figure1.3}
+\end{figure}\par
+还有一些物质存在更多的相，比如硫单质的固相又可以细分为斜方硫和单斜硫，因此硫的相图会比较复杂。需要注意的是，\textbf{对纯物质，不可能四相及以上共存}，纯物质的相图中只有三相点，没有四相点、五相点。
 
-\subsection{水的相图}\label{1.2.2}
+\subsection{真实气体的临界状态*}\label{1.2.2}
+\autoref{figure1.2}中标出了\textbf{临界点}，这个点是纯物质气-液两相平衡线的终点，物质在该点的状态、温度、压强、摩尔体积都有特殊的名称。临界点的右上角对应\textbf{超临界状态}，这个状态下的物质被称为\textbf{超临界流体}。
+\begin{definition}
+    \textbf{临界点}：纯物质相图中气-液两相平衡线的终点\par
+    \textbf{临界状态}：纯物质在临界点对应的状态\par
+    \textbf{临界温度}：纯物质在临界状态下的温度\par
+    \textbf{临界压强}：纯物质在临界状态下的压强\par
+    \textbf{临界体积}：纯物质在临界状态下的\textbf{摩尔体积}\par
+    \textbf{超临界状态}：纯物质的温度、压力同时超过该物质的临界温度​、临界压力的状态\par
+    \textbf{超临界流体}：处于超临界状态下的纯物质，没有气相和液相的区分
+\end{definition}\par
+当体系的温度、压强超过临界值，气、液两相的界面完全消失，成为均匀的\textbf{超临界流体}，无气、液之分。因此，在临界温度以上，无论怎样增大压强，都无法使物质从气态变为液态，因为压强增大到超过临界压强时，物质会进入\textbf{超临界状态}，气态和液态没有区别。
+
+\subsection{分析相图的基本方法}\label{1.2.3}
+相图是研究物质相变的工具，我们可以利用相图将现实中的物质放在坐标系中，再利用坐标系中的点和线分析物质的相变。\par
+比如，固定温度下升高压强，相当于在相图中作一条平行于$y$轴的直线，让物质的状态作为一个点在这条线上向上移动；固定压强下升高温度，相当于在相图中作一条平行于$x$轴的直线让物质的状态作为一个点在这条线上向右移动。
+\begin{exercise}
+    对于纯水，使用水的相图解决以下问题：
+    \begin{enumerate}
+        \item 温度为$273.15\ \mathrm{K}$时，冰恒温条件下增大压强，水的状态如何变化？
+        \item 温度高于临界温度时，水蒸气先在恒温条件下增大压强直至压强超过临界压强，再在恒压条件下降低温度到$273.15\ \mathrm{K}$，水的状态如何变化？
+        \item 2中是否发生相变？如果是，请写出相变的名称；如果不是，请说明原因。
+    \end{enumerate}
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{1.2.1水的相图.png}
+    \end{center}
+\end{exercise}
+\begin{answer}
+    \begin{enumerate}
+        \item 相图如下：
+        \begin{center}
+            \includegraphics[scale=0.15]{1.2.1例题1.2解答1.png}
+        \end{center}
+        \qquad 温度为$273.15\ \mathrm{K}$，低于三相点温度，恒温条件下增大压强时，水蒸气先变成冰，再变成水。
+        \item 相图如下：
+        \begin{center}
+            \includegraphics[scale=0.15]{1.2.1例题1.2解答2.png}
+        \end{center}
+        \qquad 温度大于临界温度时，增大压强直至压强超过临界压强，此时水进入超临界状态；再降低温度至$273.15\ \mathrm{K}$，这是一个大气压下水结冰的温度，压强超过临界压强，说明压强必定大于一个大气压，又因为水的相图中固-液平衡线的斜率为负数，所以此压强下温度为$273.15\ \mathrm{K}$时水为液态。综上所述，水蒸气先进入超临界状态再变为水。
+        \item 2中水蒸气进入超临界状态和超临界状态变为水两个过程均没有发生相变。因为超临界状态下气态和液态没有区别，超临界状态和气态、液态之间的转化都不是相变。
+    \end{enumerate}
+\end{answer}\par
+上面第3小题说明物质可以经过超临界状态从液态连续地变为气态，并且不发生任何相变。这看起来有点违反常识，但实际上是被实验验证的事实，而且还被应用于\textbf{超临界萃取}中，可以让物质不经过相变在超临界流体相中被萃取。
 
 \end{document}

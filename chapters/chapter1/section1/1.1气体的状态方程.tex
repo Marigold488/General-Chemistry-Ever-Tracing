@@ -3,11 +3,118 @@
 \begin{document}
 
 \section{气体的状态方程}\label{1.1}
-气体的状态方程是
 
-\subsection{理想气体的状态方程}\label{1.1.1}
-\[pV=nRT\]
+气体的状态可以用气体的温度$T$、体积$V$和压强$p$等物理量描述，这些物理量称为\textbf{状态变量}，也称为\textbf{状态函数}。我们可以用\textbf{状态方程}描述状态函数之间的关系。
+\begin{definition}
+    \textbf{状态函数}：仅由系统的状态决定，而与系统达到该状态的变化途径无关的物理量\par
+    \textbf{状态方程}：描述处于平衡态的热力学系统中，各宏观状态函数之间定量关系的数学表达式
+\end{definition}\par
+状态函数与状态方程是热力学中的核心概念，在\autoref{2}中读者会对它有更深的理解。\par
+历史上科学家们通过大量的实验得到了气体的以下三个性质：
+\begin{formula}
+    \textbf{玻义耳定律}：一定质量的某种气体，在温度不变的情况下，压强$p$与体积$V$成反比，即：
+    \[pV=C_1\]
+    \textbf{盖-吕萨克定律}：一定质量的某种气体，在压强不变的情况下，其体积$V$与热力学温度$T$成正比，即：
+    \[\dfrac{V}{T}=C_2\]
+    \textbf{查理定律}：一定质量的某种气体，在体积不变的情况下，压强$p$与热力学温度$T$成正比，即：
+    \[\dfrac{p}{T}=C_3\]
+\end{formula}\par
+这三个定律都是在压强不太大（相对$p_0=101.325\ \mathrm{kPa}$）、温度不太低（相对室温$298\ \mathrm{K}$）的条件下总结出来的。当压强很大、温度很低时，由上述规律计算的结果与实际测量结果有很大的差别。\par
+为了简化理论分析，我们需要一个在任何条件下都能满足上述规律的理想化模型，这个理想化模型被称为\textbf{理想气体}。现实中存在的气体称为\textbf{真实气体}（实际气体），真实气体在一定条件下可以视为理想气体。
+\begin{definition}
+    \textbf{理想气体}：分子本身不占有体积，分子间无任何相互作用力的气体\par
+    \textbf{真实气体}：分子本身占有体积，分子间存在相互作用力的气体\par
+    \textbf{可以把真实气体看作理想气体的条件}：气体分子间距离远大于分子本身直径，气体分子间相互作用力可以忽略
+\end{definition}\par
+在温度不低于零下几十摄氏度、压强不超过大气压的几倍时，我们可以把真实气体看作理想气体，这样可以大大简化计算，并且误差很小。
 
-\subsection{真实气体的状态方程}\label{1.1.2}
+\subsection{理想气体的状态方程***}\label{1.1.1}
+由\autoref{formula1.1}中三个定律可以总结出一个同时包括$T$，$V$和$p$的等式：\[\dfrac{pV}{T}=C\]\par
+在以上三个定律之外，科学家们还发现了\textbf{阿伏伽德罗定律}。
+\begin{formula}
+    \textbf{阿伏伽德罗定律}：在相同的温度和压强下，相同体积的任何理想气体，都含有相同数目的分子，即含有相同的物质的量：\[\dfrac{V}{n}=C_4\]
+\end{formula}\par
+这说明上面的等式中常数$C$与气体的物质的量$n$成正比，这个比值叫做\textbf{气体常数}，用$R$表示，大小为$8.314\ \mathrm{J/(mol\cdot K)}$。于是我们可以得到最终的\textbf{理想气体状态方程}。
+\begin{formula}
+    \textbf{理想气体状态方程}：
+    \[pV=nRT\]
+\end{formula}\par
+对于一定量的气体，方程中$n$是确定的，$R$是常数，所以我们只要知道气体$T$，$V$和$p$的其中两个变量就可以通过理想气体状态方程计算出剩下一个变量，可以简单理解为“知三求二”。\par
+理想气体状态方程可以通过变形转化为其他公式，这些公式在一些情况下可以简化计算，以下是两个常用的公式。
+\begin{formula}
+    \[pV_\mathrm{m}=RT\]
+    \[pM=\rho RT\]
+    其中$V_\mathrm{m}$是\textbf{气体摩尔体积}，表示一定条件下每摩尔气体的体积，单位通常用$\mathrm{L/mol}$；\par
+    $M$是\textbf{摩尔质量}，表示每摩尔物质的质量，单位通常用$\mathrm{g/mol}$；\par
+    $\rho$是物质的密度，在这里就是气体的密度。
+\end{formula}\par
+这两个公式的推导过程如下：
+\begin{derivation}
+    先推导第一个公式$pV_\mathrm{m}=RT$：
+    由\autoref{formula1.3}理想气体状态方程：
+    \[pV=nRT\]
+    移项得：
+    \[p\dfrac{V}{n}=RT\]
+    其中$\dfrac{V}{n}=V_\mathrm{m}$，代入即可得到第一个公式：\[pV_\mathrm{m}=RT\]
+    再推导第二个公式$pM=\rho RT$：
+    由\autoref{formula1.3}理想气体状态方程：
+    \[pV=nRT\]
+    其中$n=\dfrac{m}{M}$，代入可得：
+    \[pV=\dfrac{m}{M}RT\]
+    移项得：
+    \[pM=\dfrac{m}{V}RT\]
+    其中$\dfrac{m}{V}=\rho$，代入即可得到第二个公式：
+    \[pM=\rho RT\]
+\end{derivation}\par
+这两个公式主要用于计算$V_\mathrm{m}$、$M$和$\rho$这三个没有直接在理想气体状态方程中出现的物理量。
+\begin{exercise}
+    计算\textbf{标准状况}（$T=273.15\ \mathrm{K}$，$p=101.325\ \mathrm{kPa}$）下的气体摩尔体积。
+\end{exercise}
+\begin{answer}
+    由\autoref{1.4}中的第一个公式：
+    \[pV_\mathrm{m}=RT\]
+    移项得：
+    \[V_\mathrm{m}=\dfrac{RT}{P}=\dfrac{8.314\ \mathrm{J/(mol\cdot K)}\times 273.15\ \mathrm{K}}{101.325\ \mathrm{kPa}}=0.0224\ \mathrm{m^3/mol}=22.4\ \mathrm{L/mol}\]
+\end{answer}\par
+这个数字我们应该不陌生，我们刚刚通过理想气体状态方程变形得到的其中一个公式计算出了标准状况下的气体摩尔体积$V_\mathrm{m}=22.4\ \mathrm{L/mol}$。同样，我们可以计算得到在$25\ \mathrm{℃}$，$p=101.325\ \mathrm{kPa}$下的气体摩尔体积$V_\mathrm{m}=24.5\ \mathrm{L/mol}$。\par
+化学中研究的气体通常是混合气体，为了方便研究混合气体的组分，我们定义混合气体的\textbf{分压}和\textbf{总压}。
+\begin{definition}
+    \textbf{分压}：混合气体中某一组分单独占据混合物的总体积$V$、处于混合物的温度$T$时，所产生的压强称为该组分的分压\par
+    \textbf{总压}：混合气体对容器壁产生的总压强
+\end{definition}\par
+对于理想气体，由于理想气体分子间没有相互作用，所以对于混合的理想气体，各组分各自产生压强，互不影响，所以混合的理想气体的总压$p$和分压$p_i$满足以下关系。
+\begin{formula}
+    \[p=\sum_{i}p_i\]
+\end{formula}\par
+由\autoref{formula1.3}理想气体状态方程和以上公式，我们可以推导出\textbf{道尔顿分压定律}，公式和推导过程如下。
+\begin{formula}
+    \textbf{道尔顿分压定律}：对于混合气体中的气体$i$，其分压为：
+    \[p_i=py_i\]
+    其中$y_i=\dfrac{n_i}{n}$为混合气体中气体$i$的\textbf{摩尔分数}（物质的量分数）
+\end{formula}
+\begin{derivation}
+    对气体$i$使用理想气体状态方程得：
+    \[p_iV=n_iRT\Longleftrightarrow p=\dfrac{nRT}{V}\]
+    代入$p=\sum_{i}p_i$中得：
+    \[p=\sum_{i}\dfrac{n_iRT}{V}=\dfrac{RT}{V}\sum_{i}n_i\]
+    由于总物质的量$n=\sum_{i}n_i$，所以：
+    \[p=\dfrac{nRT}{V}\]
+    所以：
+    \[\dfrac{p_i}{p}=\dfrac{n_i}{n}=y_i\]
+    即：
+    \[p_i=py_i\]
+\end{derivation}\par
+道尔顿分压定律告诉我们气体$i$的分压和它的摩尔分数成正比，这样我们就可以通过摩尔分数计算分压，在\autoref{2}中计算气相反应的平衡常数时非常有用。
+
+\subsection{真实气体的状态方程**}\label{1.1.2}
+真实气体分子本身占有体积，分子间存在相互作用力（\autoref{definition1.3}），因此不满足理想气体状态方程。由于从理论开始推导真实气体的状态方程过于困难，科学家们根据实验总结出了多种适用于真实气体的状态方程，最具有代表性的是\textbf{范德华方程}。
+\begin{formula}
+    \textbf{范德华方程}：
+    \[\left(p+\dfrac{a}{V_\mathrm{m}^2}\right)(V_\mathrm{m}-b)=RT\]
+    其中$V_\mathrm{m}$是实验测得的气体摩尔体积，$a$、$b$称为范德华常量，对于不同的气体有不同的数值。
+\end{formula}\par
+对比理想气体状态方程，我们可以发现$V_\mathrm{m}$被替换成了$(V_\mathrm{m}-b)$，这部分的意义是气体可被压缩的体积，范德华常量$b$相当于$1\ \mathrm{mol}$气体分子本身的体积；范德华常量$a$在方程中与压强相加，应该与分子间的作用力有关。\par
+范德华方程是通过实验总结出来的经验方程，不可能适合所有的真实气体。符合范德华方程的气体通常称为\textbf{范德华气体}。\par
+现在已经有完全从分子动理论、统计力学等理论出发推导出的真实气体状态方程，但这些方程也无法适合所有的真实气体。越简单的模型，适用范围越窄；越复杂的模型，适配性越强，但推导和计算也越繁琐。真实世界非常复杂，我们能做到的是追寻不息。
 
 \end{document}
