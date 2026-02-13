@@ -1,0 +1,149 @@
+\documentclass[../../../GCET-main.tex]{subfiles}
+
+\begin{document}
+
+\section{饱和蒸气压}\label{1.3}
+相图可以成为我们研究相变的一张“地图”。在\autoref{figure1.2}中，我们可以发现气-液平衡线$\mathit{OA}$似乎是指数函数的一部分（一些教材里也这么说），但事实并非如此。为了研究气-液平衡线，我们需要分析气-液平衡的条件，这就需要引入\textbf{饱和蒸气压}（蒸气压）。
+\subsection{饱和蒸气压的概念***}\label{1.3.1}
+在\textbf{封闭容器}中，液体的蒸发是有限度的。当液体蒸发速率与气体的冷凝速度相等时，气体的压强不再改变，我们称这时的气体为\textbf{饱和蒸气}，它的气压为\textbf{饱和蒸气压}。对于气-固相变中的升华与凝华，也有类似的情况，可以与气-液相变类比，也将相平衡时的气相及其压强称为\textbf{饱和蒸气}与\textbf{饱和蒸气压}，我们主要讨论气-液相变中的\textbf{饱和蒸气压}。
+\begin{definition}
+    \textbf{饱和蒸气}：\textbf{封闭容器}中与液体（固体）平衡共存的蒸气\par
+    \textbf{饱和蒸气压}（蒸气压）：饱和蒸气的压强，即纯物质在一定温度下，气-液（气-固）两相达到相平衡时，气相所具有的压强。
+\end{definition}\par
+上述定义中我们强调封闭容器，是因为在敞开的容器中气体与外界大气连通，导致气体的分压几乎为零，液体可以无限蒸发至大气。只有在封闭容器中气体的气压才能增大，气体液化的速率才会增加，最终气体的压强不再改变。\par
+需要注意的是，液体的饱和蒸气压是液体本身的基本性质，与含有多少液体无关，与是否存在蒸气也无关。\par
+饱和蒸气压可以用来衡量液体挥发的难易程度。饱和蒸气压越大，液体越容易挥发；饱和蒸气压越小，液体越不容易挥发。\par
+饱和蒸气压与分子间作用力有关。分子间作用力越小，液体就越容易挥发，饱和蒸气压越大；分子间作用力越大，液体就越不容易挥发，饱和蒸气压越小。而分子间作用力与温度有关，所以饱和蒸气压随温度的变化非常明显。
+
+\subsection{饱和蒸气压与温度的关系***}\label{1.3.2}
+根据热力学推导，饱和蒸气压与温度的关系可以用\textbf{克劳修斯-克拉贝龙方程}（克-克方程）描述。
+\begin{formula}
+    \textbf{克劳修斯-克拉贝龙方程}（克-克方程）：\par
+    \begin{enumerate}
+        \item 微分形式：
+        \[\dfrac{\diff \ln p_\mathrm{s}}{\diff T}=\dfrac{\Delta H_\mathrm{vap}}{RT^2}\]
+        \item 不定积分形式：
+        \[\ln p_\mathrm{s}=-\dfrac{\Delta H_\mathrm{vap}}{RT}+C\]
+        \item 定积分形式：
+        \[\ln \dfrac{p_\mathrm{s}(T_2)}{p_\mathrm{s}(T_1)}=-\dfrac{\Delta H_\mathrm{vap}}{R}\left(\dfrac{1}{T_2}-\dfrac{1}{T_1}\right)\]
+    \end{enumerate}
+    \qquad 其中$\Delta H_\mathrm{vap}$为蒸发焓，即恒压条件下每摩尔液体蒸发吸收的热量，有关焓与焓变的定义见\textcolor{blue}{（章节）}。\par
+    \qquad 对于固体，我们只需要将蒸发焓$\Delta H_\mathrm{vap}$改为升华焓$\Delta H_\mathrm{sub}$即可得到适用于固体的克劳修斯-克拉贝龙方程。\par
+    \qquad 注意，克劳修斯-克拉贝龙方程的不定积分形式和定积分形式能如上表示的前提是认为相变的$\Delta H_\mathrm{m}$随温度变化极小，可看作常数。
+\end{formula}\par
+我们可以用克劳修斯-克拉贝龙方程的微分形式推导出不定积分形式和定积分形式，推导过程如下。
+\begin{derivation}
+    \qquad 由克劳修斯-克拉贝龙方程的微分形式：
+    \[\dfrac{\diff \ln p_\mathrm{s}}{\diff T}=\dfrac{\Delta H_\mathrm{vap}}{RT^2}\]
+    移项得：
+    \[\diff \ln p_\mathrm{s}=\dfrac{\Delta H_\mathrm{vap}}{RT^2}\diff T\]
+    对等式两边同时进行不定积分得：
+    \[\int \diff \ln p_\mathrm{s}=\int \dfrac{\Delta H_\mathrm{vap}}{RT^2}\diff T\]
+    即：
+    \[\ln p_\mathrm{s}=-\dfrac{\Delta H_\mathrm{vap}}{RT}+C\]
+    对等式两边同时进行定积分得：
+    \[\int_{T_1}^{T_2}  \,\diff \ln p_\mathrm{s}=\int_{T_1}^{T_2}  \,\dfrac{\Delta H_\mathrm{vap}}{RT^2}\diff T\]
+    即：
+    \[\ln \dfrac{p_\mathrm{s}(T_2)}{p_\mathrm{s}(T_1)}=-\dfrac{\Delta H_\mathrm{vap}}{R}\left(\dfrac{1}{T_2}-\dfrac{1}{T_1}\right)\]
+    \qquad 定积分形式也可以由不定积分形式推出，
+    在不定积分形式中代入$T=T_1$和$T=T_2$，得到：
+    \[\ln p_\mathrm{s}(T_1)=-\dfrac{\Delta H_\mathrm{vap}}{RT_1}+C,\ \ln p_\mathrm{s}(T_2)=-\dfrac{\Delta H_\mathrm{vap}}{RT_2}+C\]
+    用第二个式子减去第一个式子，常数项抵消，即可得到：
+    \[\ln \dfrac{p_\mathrm{s}(T_2)}{p_\mathrm{s}(T_1)}=-\dfrac{\Delta H_\mathrm{vap}}{R}\left(\dfrac{1}{T_2}-\dfrac{1}{T_1}\right)\]
+\end{derivation}\par
+克劳修斯-克拉贝龙方程的常用形式是两个积分形式。\par
+不定积分形式中，$\ln p_\mathrm{s}$与$\dfrac{1}{T}$成一次函数关系，可以测定实验数据回归得到$\Delta H_\mathrm{vap}$与$C$的数值，这是实验测定蒸发焓的一种方法。\par
+定积分形式包含两个温度下的饱和蒸气压，我们可以使用两个温度下的饱和蒸气压的数值粗略计算出$\Delta H_\mathrm{vap}$的数值，也可以在知道$T_1$下的饱和蒸气压和$\Delta H_\mathrm{vap}$的情况下计算$T_2$下的饱和蒸气压，还可以在知道$T_1$、$p_\mathrm{s}(T_1)$、$p_\mathrm{s}(T_2)$和$\Delta H_\mathrm{vap}$的情况下计算$T_2$。\par
+饱和蒸气压随温度升高而增大，当饱和蒸气压接近外压时，液体内部也可以产生气泡，因为此时气泡中气体的饱和蒸气压可以承受液体的压力（相比于外压来说很小）与液体承受的外压。这时候的汽化非常剧烈，被称为\textbf{沸腾}，液体沸腾的温度被称为\textbf{沸点}。
+\begin{definition}
+    液体汽化的两种不同方式：\par
+    \textbf{蒸发}：在任何温度下，仅发生在液体表面的缓慢汽化过程。\par
+    \textbf{沸腾}：在沸点下，液体表面和内部同时发生的剧烈汽化过程。
+\end{definition}\par
+由沸腾的条件可以看出，同种液体的沸点与外压有关。不同大气压下的沸点可以通过克劳修斯-克拉贝龙方程计算，比如下面这个例题。
+\begin{exercise}
+    青藏高原地区海拔在$4000\ \mathrm{m}$以上。已知气体常数$R=8.314\ \mathrm{J/(mol\cdot K)}$，水的蒸发焓为$40.670\ \mathrm{kJ/mol}$，$101.325\ \mathrm{kPa}$下水的沸点为$373.15\ \mathrm{K}$，海拔为$4000\ \mathrm{m}$时，大气压约为$61.660\ \mathrm{kPa}$，试计算海拔为$4000\ \mathrm{m}$时水的沸点。
+\end{exercise}
+\begin{answer}
+    根据克劳修斯-克拉贝龙方程：
+    \[\ln \dfrac{p_\mathrm{s}(T_2)}{p_\mathrm{s}(T_1)}=-\dfrac{\Delta H_\mathrm{vap}}{R}\left(\dfrac{1}{T_2}-\dfrac{1}{T_1}\right)\]
+    代入$R=8.314\ \mathrm{J/(mol\cdot K)}$，$\Delta H_\mathrm{vap}=40.670\ \mathrm{J/mol}$，$p_\mathrm{s}(T_1)=101.325\ \mathrm{kPa}$，$T_1=373.15\ \mathrm{K}$，$p_\mathrm{s}(T_2)=61.660\ \mathrm{kPa}$得：
+    \[\ln \dfrac{61.660\ \mathrm{kPa}}{101.325\ \mathrm{kPa}}=-\dfrac{40.670\ \mathrm{kJ/mol}}{8.314\ \mathrm{J/(mol\cdot K)}}\left(\dfrac{1}{T_2}-\dfrac{1}{373.15\ \mathrm{K}}\right)\]
+    解得$T_2=359.53\ \mathrm{K}$，即$86.38\ \mathrm{℃}$。
+\end{answer}\par
+让我们回到\autoref{figure1.2}水的相图中气-液平衡线是否是指数函数的一部分的问题，这个问题也可以由克劳修斯-克拉贝龙方程解决。
+\begin{derivation}
+    \qquad 由\autoref{formula1.8}克劳修斯-克拉贝龙方程的不定积分形式：\[\ln p_\mathrm{s}=-\dfrac{\Delta H_\mathrm{vap}}{RT}+C\]
+    对两边取e的指数，可以得到：
+    \[p_\mathrm{s}=\mathrm{e}^{-\frac{\Delta H_\mathrm{vap}}{RT}+C}\]
+\end{derivation}\par
+推导的结果并不是$p_\mathrm{s}=\mathrm{e}^{kT+b}$，所以这条线实际上不是指数函数的一部分，只是对于函数$y=\mathrm{e}^{-\frac{1}{x}}$，在$x<0.5$时候$y''>0$，函数图像是凹的，因此长得像指数函数的一部分。气-固平衡线与气-液平衡线类似。\par
+
+\subsection{固-液平衡线——克拉贝龙方程}\label{1.3.3}
+我们还剩下固-液平衡线没有用方程表示，这需要用到克劳修斯-克拉贝龙方程的一般情况——\textbf{克拉贝龙方程}。
+\begin{formula}
+    \textbf{克拉贝龙方程}：
+    \begin{enumerate}
+        \item 微分形式：
+        \[\dfrac{\diff p}{\diff T}=\dfrac{\Delta H_\mathrm{m}}{T\Delta V_\mathrm{m}}\]
+        \item 不定积分形式：
+        \[p=\dfrac{\Delta H_\mathrm{m}}{\Delta V_\mathrm{m}}\ln T+C\]
+        \item 定积分形式：
+        \[p(T_2)-p(T_1)=\dfrac{\Delta H_\mathrm{m}}{\Delta V_\mathrm{m}}\ln \dfrac{T_2}{T_1}\]
+    \end{enumerate}
+    \qquad 其中$\Delta H_\mathrm{m}$是相变焓，即恒压条件下每摩尔相变的热量；$\Delta V_\mathrm{m}$是摩尔相变体积，即恒压条件下每摩尔相变改变的体积。\par
+    \qquad 注意，克拉贝龙方程的不定积分形式和定积分形式能如上表示的前提是认为相变的$\Delta H_\mathrm{m}$和$\Delta V_\mathrm{m}$随温度变化极小，可看作常数。固-液相变中$\Delta V_\mathrm{m}$几乎不变，而气-液相变和气-固相变中由于气体体积变化较大，$\Delta V_\mathrm{m}$变化较大，不能用克拉贝龙方程的积分形式，应该使用\autoref{formula1.8}克劳修斯-克拉贝龙方程的积分形式来描述。
+\end{formula}\par
+与克劳修斯-克拉贝龙方程相同，我们可以用微分形式推导出不定积分形式和定积分形式，推导过程略有区别。
+\begin{derivation}
+    \qquad 由克拉贝龙方程的微分形式：
+    \[\dfrac{\diff p}{\diff T}=\dfrac{\Delta H_\mathrm{m}}{T\Delta V_\mathrm{m}}\]
+    移项得：
+    \[\diff p=\dfrac{\Delta H_\mathrm{m}}{T\Delta V_\mathrm{m}}\diff T\]
+    对等式两边同时进行不定积分得：
+    \[\int \diff p=\int \dfrac{\Delta H_\mathrm{m}}{T\Delta V_\mathrm{m}}\diff T\]
+    即：
+    \[p=\dfrac{\Delta H_\mathrm{m}}{\Delta V_\mathrm{m}}\ln T+C\]
+    对等式两边同时进行定积分得：
+    \[\int_{T_1}^{T_2}  \,\diff p=\int_{T_1}^{T_2}  \,\dfrac{\Delta H_\mathrm{m}}{T\Delta V_\mathrm{m}}\diff T\]
+    即：
+    \[p(T_2)-p(T_1)=\dfrac{\Delta H_\mathrm{m}}{\Delta V_\mathrm{m}}\ln \dfrac{T_2}{T_1}\]
+    \qquad 定积分形式也可以由不定积分形式推出，在不定积分形式中代入$T=T_1$和$T=T_2$，得到：
+    \[p(T_1)=\dfrac{\Delta H_\mathrm{m}}{\Delta V_\mathrm{m}}\ln T_1+C,\ p(T_2)=\dfrac{\Delta H_\mathrm{m}}{\Delta V_\mathrm{m}}\ln T_2+C\]
+    用第二个式子减去第一个式子，常数项抵消，即可得到：
+    \[p(T_2)-p(T_1)=\dfrac{\Delta H_\mathrm{m}}{\Delta V_\mathrm{m}}\ln \dfrac{T_2}{T_1}\]
+\end{derivation}\par
+克拉贝龙方程可以解决两个问题：
+\begin{enumerate}
+    \item 克拉贝龙方程的微分形式可以用来表示固-液平衡线的斜率。根据\autoref{formula1.9}克拉贝龙方程，固-液平衡线的斜率$k=\dfrac{\diff p}{\diff T}=\dfrac{\Delta H_\mathrm{m}}{T\Delta V_\mathrm{m}}$，其中温度$T>0$，那么斜率只与$\Delta H_\mathrm{m}$与$\Delta V_\mathrm{m}$的正负号有关。固体熔化成为液体时吸热，所以$\Delta H_\mathrm{m}>0$。对于大部分纯物质，固体熔化的时候体积变大，$\Delta V_\mathrm{m}>0$，所以固-液平衡线的斜率$k>0$；对于水，冰熔化的时候体积变小，$\Delta V_\mathrm{m}<0$，所以固-液平衡线的斜率$k<0$。
+    \item 克拉贝龙方程的不定积分形式可以用来表示相图中固-液平衡线的方程。在\autoref{formula1.9}克拉贝龙方程中令$\Delta H_\mathrm{m}=\Delta H_\mathrm{fus}$，$\Delta V_\mathrm{m}=\Delta V_\mathrm{fus}$，我们可以得到描述固-液平衡线的方程：
+    \[p=\dfrac{\Delta H_\mathrm{fus}}{\Delta V_\mathrm{fus}}\ln T+C\]
+\end{enumerate}\par
+至此，我们成功用方程表示出了相图中的三条两相平衡线。但还有一个问题值得我们研究，既然克拉贝龙方程是克劳修斯-克拉贝龙方程的一般情况，那么如何从克拉贝龙方程推导得到克劳修斯-克拉贝龙方程？这里需要用到与气体相关的相变中的近似。
+\begin{derivation}
+    \qquad 根据\autoref{formula1.9}克拉贝龙方程：
+    \[\dfrac{\diff p}{\diff T}=\dfrac{\Delta H_\mathrm{m}}{T\Delta V_\mathrm{m}}\]
+    由于$V_\mathrm{m}^\mathrm{g}$远大于$V_\mathrm{m}^\mathrm{l}$和$V_\mathrm{m}^\mathrm{s}$，所以$\Delta V_\mathrm{m}=V_\mathrm{m}^\mathrm{g}-V_\mathrm{m}^\mathrm{l/s}\approx V_\mathrm{m}^\mathrm{g}$，代入得：
+    \[\dfrac{\diff p}{\diff T}=\dfrac{\Delta H_\mathrm{m}}{TV_\mathrm{m}^\mathrm{g}}\]
+    根据\autoref{formula1.4}理想气体状态方程的变式：
+    \[pV_\mathrm{m}^\mathrm{g}=RT\Longrightarrow V_\mathrm{m}^\mathrm{g}=\dfrac{RT}{p}\]
+    将上式代入近似处理过的克拉贝龙方程中得：
+    \[\dfrac{\diff p}{\diff T}=\dfrac{\Delta H_\mathrm{m}}{T\dfrac{RT}{p}}=\dfrac{p\Delta H_\mathrm{m}}{RT^2}\]
+    两边同除以$p$，得：
+    \[\dfrac{\diff p}{p\diff T}=\dfrac{\Delta H_\mathrm{m}}{RT^2}\]
+    再根据$\dfrac{\diff \ln p}{\diff p}=\dfrac{1}{p}$得到$\dfrac{\diff p}{p}=\diff \ln p$，代入得：
+    \[\dfrac{\diff \ln p}{\diff T}=\dfrac{\Delta H_\mathrm{m}}{RT^2}\]
+    令$p=p_\mathrm{s}$，$\Delta H_\mathrm{m}=\Delta H_\mathrm{vap}$即可得到\autoref{formula1.8}克劳修斯-克拉贝龙方程的微分形式：
+    \[\dfrac{\diff \ln p_\mathrm{s}}{\diff T}=\dfrac{\Delta H_\mathrm{vap}}{RT^2}\]
+\end{derivation}\par
+克拉贝龙方程及其特殊形式克劳修斯-克拉贝龙方程不可以帮助我们计算纯物质的饱和蒸气压，还顺便帮助我们描述了纯物质的三条两相平衡线。对于固-液相变，我们可以直接使用克拉贝龙方程描述；对于有气相参与的相变，我们使用克劳修斯-克拉贝龙方程描述。
+
+\subsection{饱和蒸气压与体系压力的关系*}\label{1.3.4}
+液体的饱和蒸气压$p_\mathrm{s}$还与体系压力\footnote{其实是指液体受到的压强，可能来自液柱或表面张力}$p$有关，根据热力学推导，我们有以下公式。
+\begin{formula}
+    \[\dfrac{\diff p_\mathrm{s}}{\diff p}=\dfrac{V_\mathrm{m}^\mathrm{l}}{V_\mathrm{m}^\mathrm{g}}\]
+    \qquad 其中$V_\mathrm{m}^\mathrm{l}$和$V_\mathrm{m}^\mathrm{g}$分别是液体的摩尔体积和气体的摩尔体积。
+\end{formula}\par
+由于气体的摩尔体积远大于液体的摩尔体积，$\dfrac{\diff p_\mathrm{s}}{\diff p}$接近于0，说明随体系压力的变化，液体的饱和蒸气压几乎不会变化，可以忽略不计。当然，在某些情况下，这部分饱和蒸气压的改变不能忽略，比如我们需要使用这个公式推导\autoref{formula1.14}\textbf{范特霍夫渗透压公式}和\autoref{formula1.16}\textbf{开尔文公式}。
+
+\end{document}

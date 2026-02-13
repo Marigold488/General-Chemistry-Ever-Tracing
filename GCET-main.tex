@@ -2,10 +2,20 @@
 
 % 结构性宏包
 \usepackage{subfiles} % 可以单独编译子文件
+% 不知道是否需要使用的目录
+% \usepackage{tocloft}
+
+% % 修改目录的行距（全局生效）
+% \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % 保持点线
+% \renewcommand{\cftchapfont}{\bfseries} % 保持章节字体加粗
+% \setlength{\cftbeforechapskip}{3pt} % 章与章之间的垂直距离
+% \setlength{\cftbeforesecskip}{1pt} % 节与节之间的垂直距离
+% \setlength{\cftbeforesubsecskip}{0pt} % 小节与小节之间的垂直距离
 
 % 图片路径
 \graphicspath{
     {images/},
+    {images/chapter0/},
     {images/chapter1/},
     {images/chapter2/},
     {images/chapter3/},
@@ -18,11 +28,12 @@
 
 \begin{document}
 
-\tableofcontents % 生成目录
+{\linespread{0}\tableofcontents} % 生成目录
 \newpage
 
 \setcounter{page}{1}
 
+\subfile{chapters/chapter0/0数学物理基础.tex}
 \subfile{chapters/chapter1/1气体、液体和固体.tex} % 用subfiles包引入子文件中内容
 \subfile{chapters/chapter2/2化学热力学基础.tex}
 

@@ -1,0 +1,162 @@
+\documentclass[../../../GCET-main.tex]{subfiles}
+\usepackage{wasysym}
+\begin{document}
+
+\section*{习题解答}
+\subsection*{判断题}
+\begin{enumerate}
+    \item 液体和气体都可以压缩，固体不能压缩。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{definition1.1}液体也不能压缩。}
+    \item 一个气体分子满足理想气体状态方程。\hfill （\ \ $\times$\ \ ） % False
+    \ans{理想气体状态方程建立在大量粒子和统计平均的基础上，一个气体分子没有压强、体积、温度的概念，不能用理想气体状态方程描述一个分子。}
+    \item 符合范德华方程的气体称为范德华气体。\hfill （\ \ $\checkmark$\ \ ） % True
+    \ans{\autoref{1.1.2}。}
+    \item 目前已经找到了一个真实气体状态方程可以描述所有真实气体。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{1.1.2}没有任何一个真实气体状态方程适合所有的真实气体。}
+    \item 高于临界温度的状态就是临界状态。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{1.2.2}临界状态是纯物质在临界点对应的状态，温度、压力、密度都是临界参数。}
+    \item 水可以同时沸腾和结冰。\hfill （\ \ $\checkmark$\ \ ） % True
+    \ans{\autoref{1.2.1}三相点处即可同时沸腾和结冰。}
+    \item 气体温度在临界温度以上，只要压强足够大，仍然可以液化。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{1.2.2}温度大于临界温度时，无论压强多大都无法液化。}
+    \item 对某温度下的水蒸气加压，水蒸气可以先变成冰再变成水。\hfill （\ \ $\checkmark$\ \ ） % True
+    \ans{\autoref{exercise1.2}水的温度低于三相点时可以做到。}
+    \item 气体转化为液体可以不经过相变。\hfill （\ \ $\checkmark$\ \ ） % True
+    \ans{\autoref{exercise1.2}经过超临界状态就可以不经过相变液化。}
+    \item 增大压强，液体凝固点一定升高。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{1.2.4}水是个例外。}
+    \item 装满水的水箱内部的水没有饱和蒸气压。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{1.3.1}饱和蒸气压是液体本身的基本性质，与是否存在蒸气无关。}
+    \item 液体的饱和蒸气压接近外压时汽化非常剧烈，被称为沸腾。\hfill （\ \ $\checkmark$\ \ ） % True
+    \ans{\autoref{definition1.9}。}
+    \item 任何浓度的溶液都满足拉乌尔定律。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{formula1.12}溶液浓度较大时不满足。}
+    \item 质量摩尔浓度相等的的蔗糖溶液和$\ce{NaCl}$溶液熔沸点几乎一致。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{1.4.2}蔗糖不能电离，$\ce{NaCl}$能电离，粒子数目之比为1:2，熔沸点不一致。}
+    \item 表面张力$\sigma$在国际单位制下的单位是$\mathrm{kg\cdot m/s^2}$。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{definition1.14}$\sigma$是力的线密度，单位是$\mathrm{N/m}=\mathrm{kg/s^2}$（国际单位制参考\autoref{0.7}）}
+    \item 小液滴内部的压强大于外界气体的压强。\hfill （\ \ $\checkmark$\ \ ） % True
+    \ans{\autoref{1.5.3}小液滴的附加压强向指向液滴内部，压强增大。}
+    \item 水浸润玻璃，所以水在细玻璃管内会上升一段高度。\hfill （\ \ $\checkmark$\ \ ） % True
+    \ans{\autoref{definition1.15}液体浸润固体，毛细现象表现为上升一段高度。}
+    \item 为了保存地下的水分，我们需要用磙子压紧土壤，防止水分蒸发。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{definition1.16}要保存地下的水分应该把地面的土壤锄松，破坏毛细管。用磙子压紧土壤会让毛细管变得更细，水分流失更快。}
+    \item 实验室中加热液体到沸点以上时发现忘记加沸石，应该马上补加。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{1.5.4}如果马上补加会导致液体立即暴沸，容易出现实验室安全事故。正确的做法是马上停止加热，待溶液冷却后加入沸石再重新加热。}
+    \item 晶体具有各向同性。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{definition1.18}晶体具有各向异性。}
+    \item 冰的结构和金刚石的结构类似，它们属于同一种晶体。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{figure1.9}冰是分子晶体，金刚石是共价晶体。}
+    \item 金属在常温下都是固体。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{1.6.1}汞在常温下是液体。}
+    \item 离子晶体的熔点都很高。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{1.6.1}离子晶体的熔点差别很大，与离子键的强度有关，一些离子晶体在室温下可以呈液态。}
+\end{enumerate}
+\subsection*{简答题}
+\begin{enumerate}[start=24]
+    \item 某容器中含$112\ \mathrm{g}\ \ce{N2}$和$32\ \mathrm{g}\ \ce{O2}$，$300\ \mathrm{K}$时容器体积为$0.5\ \mathrm{m^3}$，将容器内所有气体视为理想气体，气体常数$R$取$8.314\ \mathrm{J/mol\cdot K}$，计算：
+    \begin{enumerate}
+        \item 容器内气体的总压$p$和$\ce{O2}$的分压$p_{\ce{O2}}$；
+        \item 容器内气体的平均摩尔质量$\overline{M}$（用总质量除以总物质的量）。
+        \item 容器内气体的密度$\rho$。
+    \end{enumerate}
+    \ans{
+        \begin{enumerate}[label=(\arabic*)]
+            \item 容器内$\ce{N2}$和$\ce{O2}$的物质的量分别为：
+            \[n_{\ce{N2}}=\dfrac{112\ \mathrm{g}}{28\ \mathrm{g/mol}}=4\ \mathrm{mol}\]
+            \[n_{\ce{O2}}=\dfrac{32\ \mathrm{g}}{32\ \mathrm{g/mol}}=1\ \mathrm{mol}\]
+            容器内气体的总物质的量为：
+            \[n=n_{\ce{N2}}+n_{\ce{O2}}=4\ \mathrm{mol}+1\ \mathrm{mol}=5\ \mathrm{mol}\]
+            根据\autoref{formula1.3}理想气体状态方程：
+            \[pV=nRT\Longrightarrow p=\dfrac{nRT}{V}=\dfrac{5\ \mathrm{mol}\times 8.314\ \mathrm{J/(mol\cdot K)}\times 300\ \mathrm{K}}{0.5\ \mathrm{m^3}}=24.942\ \mathrm{kPa}\]
+            根据\autoref{formula1.6}道尔顿分压定律：
+            \[p_{\ce{O2}}=py_{\ce{O2}}=p\times\dfrac{n_{\ce{O2}}}{n}=24.942\ \mathrm{kPa}\times\dfrac{1\ \mathrm{mol}}{5\ \mathrm{mol}}=4.9884\ \mathrm{kPa}\]
+            \item 容器内气体的总质量为：
+            \[m=112\ \mathrm{g}+32\ \mathrm{g}=144\ \mathrm{g}\]
+            平均摩尔质量为：
+            \[\overline{M}=\dfrac{m}{n}=\dfrac{144\ \mathrm{g}}{5\ \mathrm{mol}}=28.8\ \mathrm{g/mol}\]
+            \item 气体的密度为：
+            \[\rho=\dfrac{m}{V}=\dfrac{144\ \mathrm{g}}{0.5\ \mathrm{m^3}}=288\ \mathrm{g/m^3}=0.288\ \mathrm{kg/m^3}\]
+        \end{enumerate}
+    }
+    \item 下面展示的是$\ce{He}$的相图。\\
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{1e25.png}
+    \end{center}
+    请回答下列问题（数值精确到1即可）：
+    \begin{enumerate}
+        \item 超流体$\ce{He}$-I能存在的最低温度是多少？
+        \item 固体能存在的最低压强是多少？
+        \item 气体$\ce{He}$能否凝华？
+    \end{enumerate}
+    \ans{
+        \begin{center}
+            \includegraphics[width=0.4\textwidth]{1e25d.png}
+        \end{center}
+        \begin{enumerate}[label=(\arabic*)]
+            \item $2\ \mathrm{K}$
+            \item $10\ \mathrm{atm}$
+            \item 不能，固相和气相没有边界。
+        \end{enumerate}
+    }
+    \item 一个标准大气压下$101.325\ \mathrm{kPa}$水的沸点为$100\ \mathrm{℃}=373.15\ \mathrm{K}$，$20\ \mathrm{℃}$时水的饱和蒸气压为$2.339\ \mathrm{kPa}$，假设水的摩尔蒸发焓$\Delta H_\mathrm{vap}$不随温度变化，回答下列问题：
+    \begin{enumerate}
+        \item 求水的摩尔蒸发焓$\Delta H_\mathrm{vap}$；
+        \item 在某地烧水到$90\ \mathrm{℃}$就会沸腾，求当地的大气压大小（单位$\mathrm{kPa}$）。
+    \end{enumerate}
+    \ans{
+        \begin{enumerate}[label=(\arabic*)]
+            \item 根据\autoref{formula1.8}克劳修斯-克拉贝龙方程：
+            \[\ln \dfrac{p_\mathrm{s}(T_2)}{p_\mathrm{s}(T_1)}=-\dfrac{\Delta H_\mathrm{vap}}{R}\left(\dfrac{1}{T_2}-\dfrac{1}{T_1}\right)\]
+            代入$T_1=373.15\ \mathrm{K}$、$T_2=293.15\ \mathrm{K}$、$p_\mathrm{s}(T_1)=101.325\ \mathrm{kPa}$、$p_\mathrm{s}(T_2)=2.339\ \mathrm{kPa}$、$R=8.314\ \mathrm{J/(mol\cdot K)}$，得：
+            \[\ln \dfrac{2.339\ \mathrm{kPa}}{101.325\ \mathrm{kPa}}=-\dfrac{\Delta H_\mathrm{vap}}{8.314\ \mathrm{J/(mol\cdot K)}}\left(\dfrac{1}{293.15\ \mathrm{K}}-\dfrac{1}{373.15\ \mathrm{K}}\right)\]
+            解得$\Delta H_\mathrm{vap}=42.842\ \mathrm{J/mol}$。
+            \item 根据\autoref{formula1.8}克劳修斯-克拉贝龙方程：
+            \[\ln \dfrac{p_\mathrm{s}(T_2)}{p_\mathrm{s}(T_1)}=-\dfrac{\Delta H_\mathrm{vap}}{R}\left(\dfrac{1}{T_2}-\dfrac{1}{T_1}\right)\]
+            代入$T_1=373.15\ \mathrm{K}$、$T_2=363.15\ \mathrm{K}$、$p_\mathrm{s}(T_1)=101.325\ \mathrm{kPa}$、$R=8.314\ \mathrm{J/(mol\cdot K)}$、$\Delta H_\mathrm{vap}=42.842\ \mathrm{J/mol}$，得：
+            \[\ln \dfrac{p_\mathrm{s}(363.15\ \mathrm{K})}{101.325\ \mathrm{kPa}}=-\dfrac{42.842\ \mathrm{J/mol}}{8.314\ \mathrm{J/(mol\cdot K)}}\left(\dfrac{1}{363.15\ \mathrm{K}}-\dfrac{1}{373.15\ \mathrm{K}}\right)\]
+            解得$p_\mathrm{s}(363.15\ \mathrm{K})=69.274\ \mathrm{kPa}$，所以当地的大气压大小为$69.274\ \mathrm{kPa}$。
+        \end{enumerate}
+    }
+    \item 苯和甲苯组成的溶液可以看作理想溶液。$20\ \mathrm{℃}$下将$3\ \mathrm{mol}$苯和$2\ \mathrm{mol}$甲苯混合，与溶液平衡的气体中苯和甲苯的分压之比为$p_\text{苯}:p_\text{甲苯}=5:1$，求苯和甲苯的饱和蒸气压之比$p_\text{苯}^*:p_\text{甲苯}^*$。
+    \ans{苯和甲苯的摩尔分数分别为：
+        \[x_\text{苯}=\dfrac{3\ \mathrm{mol}}{3\ \mathrm{mol}+2\ \mathrm{mol}}=\dfrac{3}{5},\ x_\text{甲苯}=\dfrac{2\ \mathrm{mol}}{3\ \mathrm{mol}+2\ \mathrm{mol}}=\dfrac{2}{5}\]
+        根据\autoref{formula1.12}拉乌尔定律：
+        \[p_\text{苯}=p_\text{苯}^*x_\text{苯}=\dfrac{3}{5}p_\text{苯}^*,\ p_\text{甲苯}=p_\text{甲苯}^*x_\text{甲苯}=\dfrac{2}{5}p_\text{甲苯}^*\]
+        由于$p_\text{苯}:p_\text{甲苯}=5:1$：
+        \[\dfrac{\dfrac{3}{5}p_\text{苯}^*}{\dfrac{2}{5}p_\text{甲苯}^*}=5\]
+        移项得：
+        \[\dfrac{p_\text{苯}^*}{p_\text{甲苯}^*}=\dfrac{10}{3}\]
+        所以$p_\text{苯}^*:p_\text{甲苯}^*=10:3$
+    }
+    \item 纯水的凝固点为$0\ \mathrm{℃}$，水的凝固点下降常数$K_\mathrm{f}=1.86\ \mathrm{K\cdot kg/mol}$，现测得含$0.02\ \mathrm{mol}$未知离子化合物的$2\ \mathrm{kg}$水溶液凝固点下降了$0.0744\ \mathrm{℃}$，请回答下列问题：
+    \begin{enumerate}
+        \item $1\ \mathrm{mol}$此离子化合物能在水中电离出多少离子？
+        \item 在$300\ \mathrm{K}$下将此离子化合物配制成$0.01\ \mathrm{mol/L}$的水溶液，此溶液的渗透压$\Pi$是多少？
+    \end{enumerate}
+    \ans{
+        \begin{enumerate}[label=(\arabic*)]
+            \item 设$1\ \mathrm{mol}$此离子化合物能在水中电离出$n\ \mathrm{mol}$离子。则质量摩尔浓度为：
+            \[m_\mathrm{B}=\dfrac{0.02n\ \mathrm{mol}}{2\ \mathrm{kg}}=0.01n\ \mathrm{mol/kg}\]
+            根据\autoref{formula1.13}凝固点降低公式：
+            \[\Delta T_\mathrm{f}=K_\mathrm{f}m_\mathrm{B}\]
+            代入$\Delta T_\mathrm{f}=0.0744\ \mathrm{℃}=0.0744\ \mathrm{K}$、$K_\mathrm{f}=1.86\ \mathrm{K\cdot kg/mol}$、$m_\mathrm{B}=0.01n\ \mathrm{mol/kg}$，得：
+            \[0.0744\ \mathrm{K}=1.86\ \mathrm{K\cdot kg/mol}\times 0.01n\ \mathrm{mol/kg}\]
+            解得$n=4$，所以$1\ \mathrm{mol}$此离子化合物能在水中电离出$4\ \mathrm{mol}$离子。
+            \item 溶液中离子的浓度为：
+            \[c=1\ \mathrm{mol/L}\times n=0.04\ \mathrm{mol/L}\]
+            根据\autoref{formula1.14}范特霍夫渗透压公式：
+            \[\Pi=cRT=0.04\ \mathrm{mol/L}\times8.314\ \mathrm{J/(mol\cdot K)}\times 300\ \mathrm{K}=99.768\ \mathrm{Pa}\]
+        \end{enumerate}
+    }
+    \item 已知地球半径为$6400\ \mathrm{km}$，$20\ \mathrm{℃}$下水的表面张力为$72.75\ \mathrm{mN/m}$。假设地球上的海洋表层平均温度为$20\ \mathrm{℃}$，如果把地球上的海洋表层看作弯曲液面，此弯曲液面的附加压强是多少？相比于大气压$p^0=101.325\ \mathrm{kPa}$，这部分压强对地球影响如何？
+    \ans{
+        根据\autoref{formula1.15}拉普拉斯方程：
+        \[\Delta p=\dfrac{2\sigma}{r}=\dfrac{2\times 72.75\times10^{-3}\ \mathrm{N/m}}{6.4\times10^6\ \mathrm{m}}=2.273\times10^{-8}\ \mathrm{Pa}\]
+        附加压强$\Delta p$与大气压$p^0$之比为：
+        \[\dfrac{\Delta p}{p^0}=\dfrac{2.273\times10^{-8}\ \mathrm{Pa}}{101325\ \mathrm{Pa}}=2.244\times10^{-13}\]
+        这部分压强对地球的影响可以忽略不计。
+    }
+\end{enumerate}
+
+\end{document}

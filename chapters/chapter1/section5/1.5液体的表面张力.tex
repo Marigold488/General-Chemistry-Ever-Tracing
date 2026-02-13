@@ -1,0 +1,188 @@
+\documentclass[../../../GCET-main.tex]{subfiles}
+
+\begin{document}
+
+\section{液体的表面张力}\label{1.5}
+生活中我们能见到很多奇怪的现象：一些昆虫可以停在水面上，露珠和雨滴呈球形，沸腾时液体中的气泡也呈球形，如\autoref{figure1.6}所示。这些现象有一个共同点——它们都发生在液体表面。
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{1.5昆虫停在水面上.png}
+    \includegraphics[width=0.4\textwidth]{1.5露珠.png}\par
+    \includegraphics[width=0.4\textwidth]{1.5雨滴.png}
+    \includegraphics[width=0.4\textwidth]{1.5沸腾.png}
+    \caption{发生在液体表面的特殊现象}
+    \label{figure1.6}
+\end{figure}\par
+液体表面的性质与液体内部不同，液体表面有一层和气体接触的薄层叫作\textbf{表面层}，表面层的分子比较稀疏，分子间距离较大，分子间作用力表现为引力。这种力在液体表面层上的各种方向都存在，力的方向总是和液面相切。这种力使液体表面绷紧，叫作液体的\textbf{表面张力}。
+
+\subsection{表面张力的概念**}\label{1.5.1}
+\begin{definition}
+    \textbf{表面张力}$\sigma$：垂直作用于单位长度的液体表面边界上使液体表面自动收缩的紧缩力
+\end{definition}\par
+从定义可以看出，表面张力其实不是一般的力，而是单位长度上的力，它的单位应该是力的单位除以长度的单位，即$N/m$。在\autoref{0.8}中我们提到过，这样的物理量可以叫做\textbf{力的线密度}，真正的力的大小是$F=\sigma l$，或者写成微分形式$\diff F=\sigma\diff l$。\par
+\begin{forexample}
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{1.5.1表面张力.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.65\textwidth}
+        \qquad 我们可以从左图的实验中感受表面张力的存在。U形铁架中有肥皂泡，肥皂泡右端有一根可以移动的铁丝，铁丝长度为$l$。用力$\vv{F}$向右匀速拉动铁丝一小段距离，撤去力$\vv{F}$后铁丝回到原来的位置。肥皂泡有\textbf{正反两面}，每一面产生的的表面张力大小均为$\sigma l$，铁丝匀速运动受力平衡，拉力的大小应为$F=2\sigma l$。
+    \end{minipage}
+\end{forexample}\par
+液体表面处处存在表面张力，我们需要在液体表面选定一条分界线，表面张力的方向始终平行于液面，垂直于这条分界线。这条分界线有时候是为了单独分析某一部分液体受力情况而人为规定的，有时候是液体与固体或气体的界面，\textbf{只有在液体与液体的其他部分交界线和液体与固体或气体的界面上的表面张力才会有实际作用，液体表面其他地方的表面张力会互相抵消}。如果液面是平面，那么表面张力就在平面内；如果液面不是平面，那么表面张力在切平面上，后续分析弯曲液面时会有提及。\par
+不同液体具有不同的表面张力，同一种液体在不同温度下的表面张力也有不同，常见液体在不同温度下的表面张力数据如\autoref{table1.4}所示。固体与气体的界面上也存在类似的表面张力，但是固体不能像液体那样自由流动，所以不会出现固体缩成球形的现象。
+\begin{table}[h]
+    \centering
+    \caption{常见液体在不同温度下的表面张力数据(单位：mN/m)}
+    \begin{tabular}{cccccccc}
+        \toprule
+        & 水 & 乙醇 & 甲醇 & 四氯化碳 & 丙酮 & 甲苯 & 苯 \\
+        \midrule
+        $20\ \mathrm{℃}$ & 72.75 & 22.27 & 22.6 & 26.8 & 23.7 & 28.43 & 28.9 \\
+        $40\ \mathrm{℃}$ & 69.56 & 20.60 & 20.9 & 24.3 & 21.2 & 26.13 & 26.3 \\
+        \bottomrule
+    \end{tabular}
+    \label{table1.4}
+\end{table}
+
+\subsection{弯曲液面的附加压强*}\label{1.5.2}
+如果液体表面是弯曲的，那么表面张力的作用不会只停留在液体表面。让我们先分析球形液滴的表面张力。\footnote{此处用到力的微分与环积分的知识，请回顾\autoref{0.8}}\\
+\begin{minipage}{0.25\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{1.5.2弯曲液面的附加压力.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.7\textwidth}
+    \qquad 要分析表面张力，我们需要将整个液滴分成两个部分分析。在球面上取一个圆，这个圆的半径为$a$，我们可以用球半径$r$和$\theta$表示出$a=r\sin\theta$。这个圆把整个球体分成了两个\textbf{球缺}\footnote{即用一个平面切割求得到的两个立体图形}，我们可以先分析含球心的球缺对另一个球缺的作用力。
+\end{minipage}
+\begin{derivation}
+    \qquad 取圆上的一小段长度$\diff l$，这段长度受含球心的球缺表面的分子的吸引，表面张力的大小$\diff F=\sigma\diff l$，方向在切平面上垂直于圆向下。\par
+    \qquad 对$\diff \vv{F}$进行正交分解，分解为在圆面内的分力$\diff\vv{F_\parallel }$和垂直于圆面的分力$\diff\vv{F_\perp }$。根据角度关系（需要一些空间想象能力），我们可以得到平行分力$\diff F_\parallel=\diff F\cos\theta$，都从圆心指向外侧，一圈相互抵消，即$\displaystyle\oint \diff \vv{F_\parallel}=0$；垂直分力$\diff F_\perp=\diff F\sin\theta$，作用方向相同，可以叠加，对$\diff \vv{F_\perp}$进行环积分有：
+    \[\oint\diff\vv{F_\perp}=\oint\diff F\sin\theta\vv{e_\perp}=\oint\sigma\sin\theta\diff l\vv{e_\perp}=2\pi a\sigma\sin\theta\vv{e_\perp}\]
+    \qquad 环积分的结果说明不含球心的球缺受到了一个额外压力，大小为$2\pi a\sigma\sin\theta$。我们关注的是这个力在上产生的压强，这个力作用在不规则物体上，面积应该按垂直于作用力的投影面面积算，就是圆的面积$\pi a^2$。所以弯曲液面的附加压强为：
+    \[\Delta p=\dfrac{2\pi a\sigma\sin\theta}{\pi a^2}=\dfrac{2\sigma\sin\theta}{a}\]
+    又因为$a=r\sin\theta$，代入可以得到：
+    \[\Delta p=\dfrac{2\sigma}{r}\]
+    \qquad 对于下面的球缺，计算过程是类似的，投影面面积仍然是$\pi a^2$，可以类比把球缺放在地面上，重力造成的压强作用在接触面上。
+\end{derivation}\par
+因此我们得到了用来计算弯曲液面附加压强的公式。另外可以推导得出水中的球形气泡周围液体受到的附加压强也满足这个公式，气泡$r<0$，力的方向指向气泡中心，附加压强为负数；平面液体的$r\rightarrow \infty$，附加压强为0。所以任何液体表面的附加压强都满足这个公式，这个公式被称为\textbf{拉普拉斯方程}。
+\begin{formula}
+    \textbf{拉普拉斯方程}：
+    \[\Delta p=\dfrac{2\sigma}{r}\]
+    \qquad 其中$\Delta p$为弯曲液面的附加压强，$r$为液面的\textbf{曲率半径}\footnote{这说明对于非球形弯曲液面也成立}，$r>0$为液滴，$r=0$为平面，$r<0$为气泡。
+\end{formula}\par
+\subsubsection{毛细现象}
+拉普拉斯方程可以解释生活中的一些现象，比如\textbf{毛细现象}，我们需要先了解\textbf{浸润}与\textbf{不浸润}。\par
+\begin{definition}
+    \textbf{浸润}：某种液体会润湿某种固体并附着在固体的表面上\par
+    \textbf{不浸润}：某种液体不会润湿某种固体，也不会附着在固体的表面上
+\end{definition}\par
+一种液体是否浸润一种固体取决于分子间作用力的大小。如果液体内部分子间作用力弱于液体分子与固体分子间作用力，那么液体倾向于和固体接触，这种液体就浸润这种固体；如果液体内部分子间作用力强于液体分子与固体分子间作用力，那么液体倾向于和固体分离，这种液体就不浸润这种固体。\par
+如果一种液体浸润一种固体，那么液体会逐渐散开并附着在固体上；如果一种液体不浸润一种固体，那么这种液体不会附着在固体上，而是形成“馒头状”并且可以在固体上滚动。例如，水浸润玻璃，不浸润蜡，因此在玻璃面和蜡面上会有不同的形态，如\autoref{figure1.7}所示。如果固体呈管状，浸润这种固体的液体和不浸润这种固体的液体在管中的形态也会有不同。例如，水和水银在玻璃管中，水的液面是凹液面，而水银的液面是凸液面。
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{1.5.2浸润与不浸润.png}
+    \caption{水在玻璃面（左）和蜡面（右）的不同形态}
+    \label{figure1.7}
+\end{figure}\par
+\begin{definition}
+    \textbf{毛细现象}：液体在细管状物体中，因表面张力与浸润或不浸润共同作用，浸润液体在细管中上升，不浸润液体在细管中下降的现象
+\end{definition}\par
+毛细现象是在液体浸润/不浸润固体管的基础上表面张力作用的结果，比较容易观察到毛细现象的方法是在液体中插入细固体管，液体在细固体管中的液面会变成凹液面或凸液面，在表面张力作用下液面也会上升或下降一段高度。\par
+实验结果表明，细固体管的内径越小，毛细现象越明显，这个现象可以用\autoref{formula1.15}拉普拉斯方程来解释。
+\begin{derivation}
+    \begin{minipage}{0.35\textwidth}
+        {\centering
+        \includegraphics[width=\linewidth]{1.5.2毛细现象.png}}
+        \qquad 如果压强比较难理解，也可以从力出发推导这个公式，结果是一样的。
+        \[\oint\diff F_\perp=2\pi r'\sigma\cos\theta\]
+        \[mg=\rho gV=\rho gh\times\pi r'^2\]
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.6\textwidth}
+        \qquad 设液体的密度为$\rho$，在细管中上升高度为$h$，细管内径为$r'$，与管壁接触的液面的曲率半径为$r$，液面切平面与管壁的夹角为$\theta$。根据\autoref{formula1.15}拉普拉斯方程，上升液柱的附加压强为：
+        \[\Delta p=\dfrac{2\sigma}{r}\]
+        这个压强与液柱产生的压强$\rho gh$大小相等，有：
+        \[\rho gh=\dfrac{2\sigma}{r}\]
+        再代入$r'=r\cos\theta$：
+        \[\rho gh=\dfrac{2\sigma\cos\theta}{r'}\]
+        移项即可得到$h$与$r'$的关系：
+        \[h=\dfrac{2\sigma\cos\theta}{\rho gr'}\]
+    \end{minipage}
+\end{derivation}\par
+根据上面的推导结果，$h\propto \dfrac{1}{r'}$，所以管内径$r'$越小，上升高度$h$越大。\par
+毛细现象在生产实践中也有应用。土壤中存在大量毛细管，为了保存地下的水分，防止作物枯萎，播种之前需要把地面的土壤锄松，破坏土壤中的毛细管；如果想把地下的水分引到地面，就需要用磙子压紧土壤，让土壤中的毛细管变得更细。
+
+\subsection{弯曲液面液体的饱和蒸气压**}\label{1.5.3}
+在\autoref{1.3.4}中我们提到过，液体的饱和蒸气压与液体受到的压强有关。表面张力会导致弯曲液面的附加压强，这部分压强会引起弯曲液面液体饱和蒸气压的变化。液滴的附加压强增大了液滴受到的压强，饱和蒸气压变大；气泡周围液体的附加压强减小了液体受到的压强，饱和蒸气压变小。\par
+具有弯曲液面液体的饱和蒸气压$p_\mathrm{s}^\text{曲}$与平液面液体的饱和蒸气压$p_\mathrm{s}^\text{平}$之间的关系可以用\textbf{开尔文公式}描述。
+\begin{formula}
+    \textbf{开尔文公式}：
+    \[\ln\dfrac{p_\mathrm{s}^\text{曲}}{p_\mathrm{s}^\text{平}}=\dfrac{2M\sigma}{RT\rho r}\]
+    \qquad 其中$r$为液面的曲率半径，凸液面为正，凹液面为负。
+\end{formula}\par
+我们可以用\autoref{formula1.15}拉普拉斯方程和\autoref{formula1.10}推导开尔文公式。
+\begin{derivation}
+    \qquad 根据\autoref{formula1.10}：
+    \[\dfrac{\diff p_\mathrm{s}}{\diff p}=\dfrac{V_\mathrm{m}^\mathrm{l}}{V_\mathrm{m}^\mathrm{g}}\]
+    根据\autoref{formula1.4}理想气体状态方程的变式，$V_\mathrm{m}^\mathrm{g}=\dfrac{RT}{p_\mathrm{s}}$；$V_\mathrm{m}^\mathrm{l}=\dfrac{V}{n}=\dfrac{m}{\rho n}=\dfrac{M}{\rho}$，代入得：
+    \[\dfrac{\diff p_\mathrm{s}}{\diff p}=\dfrac{Mp_\mathrm{s}}{RT\rho}\]
+    移项后两端定积分得：
+    \[\int_{p_\mathrm{s}^\text{平}}^{p_\mathrm{s}^\text{曲}}  \,\dfrac{\diff p_\mathrm{s}}{p_\mathrm{s}}=\int_{p_0}^{p_0+\Delta p}  \,\dfrac{M}{RT\rho}\diff p \]
+    即：
+    \[\ln\dfrac{p_\mathrm{s}^\text{曲}}{p_\mathrm{s}^\text{平}}=\dfrac{M}{RT\rho}\Delta p\]
+    根据\autoref{formula1.15}拉普拉斯方程，$\Delta p=\dfrac{2\sigma}{r}$，代入即可得到开尔文公式：
+    \[\ln\dfrac{p_\mathrm{s}^\text{曲}}{p_\mathrm{s}^\text{平}}=\dfrac{2M\sigma}{RT\rho r}\]
+\end{derivation}\par
+开尔文公式可以很方便地求出弯曲液面液体的饱和蒸气压，比如下面这道例题。
+\begin{exercise}
+    在一个大气压$p_0=101.325\ \mathrm{kPa}$下，水的沸点为$373.15\ \mathrm{K}$。已知$373.15\ \mathrm{K}$时水的密度为$0.9584\ \mathrm{g/cm^3}$，表面张力为$58.9\times10^{-3}\ \mathrm{N/m}$，试求出下列情况下水的饱和蒸气压：
+    \begin{enumerate}
+        \item $373.15\ \mathrm{K}$时半径为$10^{-7}\ \mathrm{m}$的球形水滴的饱和蒸气压
+        \item $373.15\ \mathrm{K}$时半径为$10^{-7}\ \mathrm{m}$的气泡周围的水的饱和蒸气压
+    \end{enumerate}
+\end{exercise}
+\begin{answer}
+    \begin{enumerate}[leftmargin=1em]
+        \item 根据\autoref{formula1.16}拉普拉斯方程：
+        \[\ln\dfrac{p_\mathrm{s}^\text{凸}}{101.325\ \mathrm{kPa}}=\dfrac{2\times 18\ \mathrm{g/mol}\times 58.9\times10^{-3}\ \mathrm{N/m}}{8.314\ \mathrm{J/(mol\cdot K)}\times 373.15\ \mathrm{K}\times0.9584\ \mathrm{g/cm^3}\times 10^{-7}\ \mathrm{m}}\]
+        \[=\dfrac{2\times 0.018\ \mathrm{kg/mol}\times 58.9\times10^{-3}\ \mathrm{N/m}}{8.314\ \mathrm{J/(mol\cdot K)}\times 373.15\ \mathrm{K}\times958.4\ \mathrm{kg/m^3}\times 10^{-7}\ \mathrm{m}}=7.13\times10^{-3}\]
+        解得$p_\mathrm{s}^\text{凸}=102.050\ \mathrm{kPa}$
+        \item 根据\autoref{formula1.16}拉普拉斯方程：
+        \[\ln\dfrac{p_\mathrm{s}^\text{凹}}{101.325\ \mathrm{kPa}}=\dfrac{2\times 18\ \mathrm{g/mol}\times 58.9\times10^{-3}\ \mathrm{N/m}}{8.314\ \mathrm{J/(mol\cdot K)}\times 373.15\ \mathrm{K}\times0.9584\ \mathrm{g/cm^3}\times (-10^{-7}\ \mathrm{m})}\]
+        \[=\dfrac{2\times 0.018\ \mathrm{kg/mol}\times 58.9\times10^{-3}\ \mathrm{N/m}}{8.314\ \mathrm{J/(mol\cdot K)}\times 373.15\ \mathrm{K}\times958.4\ \mathrm{kg/m^3}\times (-10^{-7}\ \mathrm{m})}=-7.13\times10^{-3}\]
+        解得$p_\mathrm{s}^\text{凹}=100.605\ \mathrm{kPa}$
+    \end{enumerate}
+\end{answer}
+
+\subsection{过饱和现象**}\label{1.5.4}
+\autoref{exercise1.5}中我们通过计算发现半径为$10^{-7}\ \mathrm{m}$的弯曲液面液体的饱和蒸气压与平液面液体的饱和蒸气压相差不少。\par
+题目中特意选取了一个大气压下温度为水的沸点时半径为$10^{-7}\ \mathrm{m}$的弯曲液面液体，事实上就是水沸腾时生成的微小气泡的半径和水蒸气液化成为小液滴的半径。这样的差别会引起一系列\textbf{过饱和现象}。
+\begin{definition}
+    \textbf{过饱和现象}：在一定温度压力下，体系超过相平衡的饱和限度却未发生相变，处于亚稳态的现象，统称为过饱和。\par
+    常见的\textbf{过饱和现象}有\textbf{过饱和蒸气}、\textbf{过饱和溶液}、\textbf{过热液体}、\textbf{过冷液体}等。\par
+    \textbf{过饱和蒸气}：一定温度下，气相的实际蒸气压大于同温度下平液面液体的饱和蒸气压，但蒸气尚未自发凝结为液滴\par
+    \textbf{过饱和溶液}：一定温度下，溶液中溶质的实际浓度大于该温度下的平衡溶解度，但尚未自发析出晶体或析出气体\par
+    \textbf{过热液体}：一定压力下，液体温度已高于其正常沸点，但尚未自发沸腾产生气泡\par
+    \textbf{过冷液体}：一定压力下，液体温度已低于其正常凝固点，但尚未自发结晶析出固体
+\end{definition}\par
+\subsubsection{过饱和蒸气}
+过饱和蒸气的成因是，饱和蒸气要凝结成液滴，一开始会生成半径很小的小液滴。小液滴的饱和蒸气压较大，气相的实际气压大于平液面液体的饱和蒸气压时，仍有可能小于小液滴的饱和蒸气压。因此对于小液滴来说，这样的蒸气并不是饱和蒸气，自然不会凝结成小液滴。\par
+如果空气中存在灰尘等颗粒物质，那么饱和蒸气就可以在这些颗粒物质的表面凝结形成较大的液滴，人工降雨的原理就是如此。
+\subsubsection{溶质为气体的过饱和溶液与过热液体}
+溶质为气体的过饱和溶液与过热液体的成因类似，两者在平面液体的情况下都达成了生成气体的条件，在液体内部生成气泡时，一开始会生成半径很小的小气泡。如果生成小气泡，小气泡周围液体的的饱和蒸气压较小，可能会小于外界压力，气泡没法抵抗外压，事实上不会存在。\par
+如果加热或扰动这样的液体，气泡周围液体的饱和蒸气压会升高，此时可以产生气泡。一旦生成较大的气泡，气泡生成将非常迅速。这就是为什么剧烈摇晃汽水后再打开汽水瓶盖会有汽水喷出、实验室里加热液体不慎会造成暴沸，如\autoref{figure1.8}所示。
+\begin{figure}[h]
+    \centering
+    \includegraphics[height=0.25\textheight]{1.5.4暴沸前.png}
+    \includegraphics[height=0.25\textheight]{1.5.4暴沸后.png}
+    \caption{暴沸前后}
+    \label{figure1.8}
+\end{figure}\par
+类似地，如果我们向液体中加入小瓷片或沸石等物质，那么蒸气就可以附着在这些物质的表面生成较大的气泡，可以有效防止暴沸。但请不要在已经加热液体至形成过饱和液体后突然想起来并加入小瓷片或沸石，这样只会让暴沸提前并且更剧烈。这时候的正确做法是立即停止加热，等待液体自然冷却至明显低于沸点之后再加入小瓷片或沸石，然后重新加热。
+\subsubsection{溶质为固体的过饱和溶液与过冷液体}
+溶质为固体的过饱和溶液与过冷液体的成因类似，虽然我们目前还没有仔细学习固-液相变，但根据气-液相变中的类似情况，我们应该能够通过类比得出大致原因。溶质析出或液体凝固成晶体时首先生成的是非常小的晶体\footnote{非晶体没有确定的熔点，在此不考虑}，非常小的晶体的溶解度大于大晶体的溶解度或熔点低于大晶体的熔点，所以无法形成晶体。\par
+普通化学的实验课中一定会有制备晶体的实验，冷却结晶时很容易得到过饱和溶液，这时候如果用玻璃棒快速摩擦玻璃容器壁，就可以让玻璃容器壁上产生碎玻璃，溶质就可以析出得到产品。所以化学实验室中有“好事多磨”的说法。
+
+\end{document}

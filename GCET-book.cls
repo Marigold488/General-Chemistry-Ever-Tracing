@@ -14,10 +14,7 @@
 \RequirePackage[many,breakable]{tcolorbox} % 颜色盒
 \RequirePackage{extarrows,blkarray,cases} % 更多箭头、矩阵排版、分段函数/条件排版
 \RequirePackage{diagbox,caption,pgfplots} % 对角线单元格、自定义图表标题样式、绘图
-
-% 屏蔽一些无关紧要的字体警告信息
-% \WarningFilter{latexfont}{Some font shapes}
-% \WarningFilter{latexfont}{Font shape}
+\RequirePackage{esvect} % 向量
 
 % 页面设置（from LALUbook.cls）
 \geometry{
@@ -44,6 +41,15 @@
 % 字体样式
 \setmathrm{Times New Roman}
 
+% 常用数学符号
+\newcommand{\diff}{\mathrm{d}}
+
+% 解答环境
+\newcommand{\ans}[1]{
+    \par
+    \textcolor{red}{\textbf{解答：}#1}
+}
+
 % 标题样式
 \ctexset{
     chapter={format={\centering\LARGE\bfseries},name={第,章},number=\arabic{chapter}},
@@ -68,6 +74,12 @@
 % 列表样式：设置二级和三级自动列表分别是 (1) 和 i.
 \setlist[enumerate,2]{label=(\arabic*)}
 \setlist[enumerate,3]{label=\roman*.}
+\setlist[enumerate]{
+    itemsep=0pt,    % 列表项间距
+    parsep=0pt,
+    topsep=0pt,
+    partopsep=0pt
+}
 
 % 新建环境
 \newtcolorbox{basebox}[2][white]{
@@ -87,7 +99,7 @@
     % title style={boxrule=0.8pt, colframe=#1!70!black}, % 标题栏边框
     sharp corners,          % 直角
     boxsep=5pt,             % 内边距
-    after={}, % 末尾自动添加方块符号
+    after={},
     breakable,
     toprule at break=0pt,
     bottomrule at break=0pt,
@@ -112,12 +124,6 @@
     \begin{basebox}[blue]{定义\refstepcounter{definition}\label{definition\thedefinition}\thedefinition}}{\end{basebox}
 }
 
-\newcounter{concept}[chapter]
-\renewcommand{\theconcept}{\thechapter.\arabic{concept}}
-\newenvironment{concept}{
-    \begin{basebox}[blue]{概念\refstepcounter{concept}\label{concept\theconcept}\theconcept}}{\end{basebox}
-}
-
 \newcounter{formula}[chapter]
 \renewcommand{\theformula}{\thechapter.\arabic{formula}}
 \newenvironment{formula}{
@@ -136,12 +142,14 @@
     \begin{basebox}[red]{例题\refstepcounter{exercise}\label{exercise\theexercise}\theexercise}}{\end{basebox}
 }
 
-\newenvironment{forexample}{
-    \begin{basebox}[cyan]{例}}{\end{basebox}
+\newcounter{application}[chapter]
+\renewcommand{\theapplication}{\thechapter.\arabic{application}}
+\newenvironment{application}{
+    \begin{basebox}[orange]{应用\refstepcounter{application}\label{application\theapplication}\theapplication}}{\end{basebox}
 }
 
-\newenvironment{proof}{
-    \begin{basebox}[green]{证明}}{\end{basebox}
+\newenvironment{forexample}{
+    \begin{basebox}[cyan]{例}}{\end{basebox}
 }
 
 \newenvironment{derivation}{
@@ -175,14 +183,3 @@
 \def\formulaautorefname~#1\null{公式#1\null}
 \def\reactionautorefname~#1\null{反应方程式#1\null}
 \def\exerciseautorefname~#1\null{例题#1\null}
-
-% \crefname{definition}{定义}{定义}
-% \Crefname{definition}{定义}{定义}
-% \crefname{concept}{概念}{概念}
-% \Crefname{concept}{概念}{概念}
-% \crefname{formula}{公式}{公式}
-% \Crefname{formula}{公式}{公式}
-% \crefname{reaction}{反应方程式}{反应方程式}
-% \Crefname{reaction}{反应方程式}{反应方程式}
-% \crefname{exercise}{例题}{例题}
-% \Crefname{exercise}{例题}{例题}

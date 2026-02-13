@@ -24,8 +24,9 @@
 \begin{definition}
     \textbf{理想气体}：分子本身不占有体积，分子间无任何相互作用力的气体\par
     \textbf{真实气体}：分子本身占有体积，分子间存在相互作用力的气体\par
-    \textbf{可以把真实气体看作理想气体的条件}：气体分子间距离远大于分子本身直径，气体分子间相互作用力可以忽略
+    \textbf{可以把真实气体看作理想气体的条件}：气体分子间距离远大于分子本身直径，气体分子间相互作用力可以忽略。从物理量的角度看，唯一实现条件是$p\rightarrow 0$。
 \end{definition}\par
+如果$p\nrightarrow 0$，则无论如何增大体积、提升温度，即使分子间距离远大于分子本身直径，分子之间仍然会有相互作用力。如果$p\rightarrow0$，那么分子之间的相互作用力就可以忽略不计，此时$V$较大，分子间距离远大于分子本身直径的条件也可以满足。\par
 在温度不低于零下几十摄氏度、压强不超过大气压的几倍时，我们可以把真实气体看作理想气体，这样可以大大简化计算，并且误差很小。
 
 \subsection{理想气体的状态方程***}\label{1.1.1}
@@ -34,7 +35,7 @@
 \begin{formula}
     \textbf{阿伏伽德罗定律}：在相同的温度和压强下，相同体积的任何理想气体，都含有相同数目的分子，即含有相同的物质的量：\[\dfrac{V}{n}=C_4\]
 \end{formula}\par
-这说明上面的等式中常数$C$与气体的物质的量$n$成正比，这个比值叫做\textbf{气体常数}，用$R$表示，大小为$8.314\ \mathrm{J/(mol\cdot K)}$。于是我们可以得到最终的\textbf{理想气体状态方程}。
+这说明上面的等式中常数$C$与气体的物质的量$n$成正比，这个比值叫作\textbf{气体常数}，用$R$表示，大小为$8.314\ \mathrm{J/(mol\cdot K)}$。于是我们可以得到最终的\textbf{理想气体状态方程}。
 \begin{formula}
     \textbf{理想气体状态方程}：
     \[pV=nRT\]
@@ -44,13 +45,11 @@
 \begin{formula}
     \[pV_\mathrm{m}=RT\]
     \[pM=\rho RT\]
-    其中$V_\mathrm{m}$是\textbf{气体摩尔体积}，表示一定条件下每摩尔气体的体积，单位通常用$\mathrm{L/mol}$；\par
-    $M$是\textbf{摩尔质量}，表示每摩尔物质的质量，单位通常用$\mathrm{g/mol}$；\par
-    $\rho$是物质的密度，在这里就是气体的密度。
+    \qquad 其中$V_\mathrm{m}$是\textbf{气体摩尔体积}，表示一定条件下每摩尔气体的体积，单位通常用$\mathrm{L/mol}$；$M$是\textbf{摩尔质量}，表示每摩尔物质的质量，单位通常用$\mathrm{g/mol}$；$\rho$是物质的密度，在这里就是气体的密度。
 \end{formula}\par
 这两个公式的推导过程如下：
 \begin{derivation}
-    先推导第一个公式$pV_\mathrm{m}=RT$：
+    \qquad 先推导第一个公式$pV_\mathrm{m}=RT$：
     由\autoref{formula1.3}理想气体状态方程：
     \[pV=nRT\]
     移项得：
@@ -71,12 +70,31 @@
     计算\textbf{标准状况}（$T=273.15\ \mathrm{K}$，$p=101.325\ \mathrm{kPa}$）下的气体摩尔体积。
 \end{exercise}
 \begin{answer}
-    由\autoref{1.4}中的第一个公式：
+    由\autoref{formula1.4}中的第一个公式：
     \[pV_\mathrm{m}=RT\]
     移项得：
-    \[V_\mathrm{m}=\dfrac{RT}{P}=\dfrac{8.314\ \mathrm{J/(mol\cdot K)}\times 273.15\ \mathrm{K}}{101.325\ \mathrm{kPa}}=0.0224\ \mathrm{m^3/mol}=22.4\ \mathrm{L/mol}\]
+    \[V_\mathrm{m}=\dfrac{RT}{p}=\dfrac{8.314\ \mathrm{J/(mol\cdot K)}\times 273.15\ \mathrm{K}}{101.325\ \mathrm{kPa}}=0.0224\ \mathrm{m^3/mol}=22.4\ \mathrm{L/mol}\]
 \end{answer}\par
 这个数字我们应该不陌生，我们刚刚通过理想气体状态方程变形得到的其中一个公式计算出了标准状况下的气体摩尔体积$V_\mathrm{m}=22.4\ \mathrm{L/mol}$。同样，我们可以计算得到在$25\ \mathrm{℃}$，$p=101.325\ \mathrm{kPa}$下的气体摩尔体积$V_\mathrm{m}=24.5\ \mathrm{L/mol}$。\par
+这两个公式还可以用来测定$R$、$M$这两个无法直接测定的数值。根据\autoref{definition1.3}，真实气体在$p\rightarrow0$时可以看作理想气体。如果我们能通过回归分析得到$p\rightarrow0$时真实气体的数据，那么我们测定的这些数值会比较准确。剩下的两个物理量$V$和$T$中，改变$V$的范围较大，所以一般是在固定$T$的情况下测量剩余的物理量得到多组数据。\par
+比如，第一个公式可以测定气体常数$R$的数值。
+\begin{application}
+    \textbf{气体常数$R$的测定}\par
+    \qquad 根据\autoref{formula1.4}中的第一个公式：
+    \[pV_\mathrm{m}=RT\]
+    移项得：
+    \[R=\dfrac{pV_\mathrm{m}}{T}\]
+    \qquad 控制$T$不变，回归分析得到$p\rightarrow 0$时$pV_\mathrm{m}$的数值，就可以计算出气体常数$R$。
+\end{application}\par
+另一个公式可以用来测定气体的相对分子质量$M$。
+\begin{application}
+    \textbf{气体相对分子质量$M$的测定}\par
+    \qquad 根据\autoref{formula1.4}中的第二个公式：
+    \[pM=\rho RT\]
+    移项得：
+    \[M=\dfrac{\rho RT}{p}\]
+    \qquad 式中$R$是常数，控制$T$不变，回归分析得到$p\rightarrow 0$时$\dfrac{\rho}{p}$的数值，就可以计算出相对分子质量$M$。
+\end{application}\par
 化学中研究的气体通常是混合气体，为了方便研究混合气体的组分，我们定义混合气体的\textbf{分压}和\textbf{总压}。
 \begin{definition}
     \textbf{分压}：混合气体中某一组分单独占据混合物的总体积$V$、处于混合物的温度$T$时，所产生的压强称为该组分的分压\par
@@ -90,10 +108,10 @@
 \begin{formula}
     \textbf{道尔顿分压定律}：对于混合气体中的气体$i$，其分压为：
     \[p_i=py_i\]
-    其中$y_i=\dfrac{n_i}{n}$为混合气体中气体$i$的\textbf{摩尔分数}（物质的量分数）
+    \qquad 其中$y_i=\dfrac{n_i}{n}$为混合气体中气体$i$的\textbf{摩尔分数}（物质的量分数）
 \end{formula}
 \begin{derivation}
-    对气体$i$使用理想气体状态方程得：
+    \qquad 对气体$i$使用理想气体状态方程得：
     \[p_iV=n_iRT\Longleftrightarrow p=\dfrac{nRT}{V}\]
     代入$p=\sum_{i}p_i$中得：
     \[p=\sum_{i}\dfrac{n_iRT}{V}=\dfrac{RT}{V}\sum_{i}n_i\]
@@ -104,17 +122,37 @@
     即：
     \[p_i=py_i\]
 \end{derivation}\par
-道尔顿分压定律告诉我们气体$i$的分压和它的摩尔分数成正比，这样我们就可以通过摩尔分数计算分压，在\autoref{2}中计算气相反应的平衡常数时非常有用。
+道尔顿分压定律告诉我们气体$i$的分压和它的摩尔分数成正比，这样我们就可以通过摩尔分数计算分压，在\textcolor{blue}{（章节）}中计算气相反应的平衡常数时非常有用。
 
 \subsection{真实气体的状态方程**}\label{1.1.2}
-真实气体分子本身占有体积，分子间存在相互作用力（\autoref{definition1.3}），因此不满足理想气体状态方程。由于从理论开始推导真实气体的状态方程过于困难，科学家们根据实验总结出了多种适用于真实气体的状态方程，最具有代表性的是\textbf{范德华方程}。
+真实气体分子本身占有体积，分子间存在相互作用力（\autoref{definition1.3}），因此不满足理想气体状态方程。科学家们通过理论修正和实验拟合得到了多种适用于真实气体的状态方程，最具有代表性的是\textbf{范德华方程}。
 \begin{formula}
     \textbf{范德华方程}：
+    \[\left[p+a\left(\dfrac{n}{V}\right)^2\right]\left(V-nb\right)=nRT\]
+    也可以写成带摩尔体积$V_\mathrm{m}$的形式：
     \[\left(p+\dfrac{a}{V_\mathrm{m}^2}\right)(V_\mathrm{m}-b)=RT\]
-    其中$V_\mathrm{m}$是实验测得的气体摩尔体积，$a$、$b$称为范德华常量，对于不同的气体有不同的数值。
+    此式还可以变形为：
+    \[p=\dfrac{RT}{V_\mathrm{m}-b}-\dfrac{a}{V_\mathrm{m}^2}\]
+    \qquad 其中$a$、$b$称为范德华常量，对于不同的气体有不同的数值。
 \end{formula}\par
-对比理想气体状态方程，我们可以发现$V_\mathrm{m}$被替换成了$(V_\mathrm{m}-b)$，这部分的意义是气体可被压缩的体积，范德华常量$b$相当于$1\ \mathrm{mol}$气体分子本身的体积；范德华常量$a$在方程中与压强相加，应该与分子间的作用力有关。\par
-范德华方程是通过实验总结出来的经验方程，不可能适合所有的真实气体。符合范德华方程的气体通常称为\textbf{范德华气体}。\par
+范德华方程分别从真实气体分子自身体积和气体压力两个方面对\autoref{formula1.3}理想气体状态方程进行修正，修正过程如下。
+\begin{derivation}
+    \qquad 真实气体分子本身占有体积，因此理想气体状态方程中的$V_\text{理}$应当修正为真实气体的体积$V_\text{真}$中除去气体分子本身体积后的理想空间体积。设每摩尔真实气体分子的体积为$b$，那么$n\ \mathrm{mol}$真实气体分子的总体积为$nb$，理想空间体积为：
+    \[V_\text{理}=V_\text{真}-nb\]
+    \qquad 真实气体的分子之间存在引力，内层分子会吸引外层分子，导致外层分子碰撞容器壁产生的压强减小，用$p_\text{内}$表示这部分减少的压强，那么$p_\text{内}$与内部气体分子的浓度成正比，也与外部气体分子的浓度成正比，因此：
+    \[p_\text{内}\propto c_\text{内}c_\text{外}\]
+    对于同一个容器中的气体，这两部分气体的浓度相等，$c_\text{内}=c_\text{外}=\dfrac{n}{V}$，所以：
+    \[p_\text{内}\propto \left(\dfrac{n}{V}\right)^2\]
+    令$a$为比例系数，则：
+    \[p_\text{内}=a\left(\dfrac{n}{V}\right)^2\]
+    理想气体状态方程中的理想压强$p_\text{理}$应当是真实气体的压强$p_\text{真}$与减小的这部分压强$p_\text{内}$，所以：
+    \[p_\text{理}=p_\text{真}+a\left(\dfrac{n}{V}\right)^2\]
+    \qquad 把我们刚刚得到的理想压强$p_\text{理}$与理想体积$V_\text{理}$代入理想气体状态方程，即可得到\autoref{formula1.7}范德华方程：
+    \[\left[p+a\left(\dfrac{n}{V}\right)^2\right]\left(V-nb\right)=nRT\]
+    压强的部分中$a\left(\dfrac{n}{V}\right)^2$可以化为$\dfrac{a}{V_\mathrm{m}^2}$，剩余部分两边同除以$n$，又可以得到$V_\mathrm{m}$，所以范德华方程也可以写成：
+    \[\left(p+\dfrac{a}{V_\mathrm{m}^2}\right)(V_\mathrm{m}-b)=RT\]
+\end{derivation}\par
+范德华方程的修正模型过于简化，不可能适合所有的真实气体。符合范德华方程的气体通常称为\textbf{范德华气体}。\par
 现在已经有完全从分子动理论、统计力学等理论出发推导出的真实气体状态方程，但这些方程也无法适合所有的真实气体。越简单的模型，适用范围越窄；越复杂的模型，适配性越强，但推导和计算也越繁琐。真实世界非常复杂，我们能做到的是追寻不息。
 
 \end{document}

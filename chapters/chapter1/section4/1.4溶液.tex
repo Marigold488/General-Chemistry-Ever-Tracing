@@ -1,0 +1,202 @@
+\documentclass[../../../GCET-main.tex]{subfiles}
+
+\begin{document}
+
+\section{溶液}\label{1.4}
+前几节中我们主要讨论了纯物质的相图与相变，和第\pageref{definition1.4}页中我们讨论的混合气体类似，我们研究的相图与相变不会停留在纯物质。本节我们研究\textbf{溶液}的相图与相变，我们首先需要明确\textbf{溶液}、\textbf{溶质}、\textbf{溶剂}的定义。
+\begin{definition}
+    \textbf{溶液}：由一种或多种物质均匀分散在另一种物质中形成的均一、稳定的混合物\par
+    \textbf{溶质}：溶液中被分散的物质\par
+    \textbf{溶剂}：溶液中分散溶质的介质
+\end{definition}\par
+溶液的定义中并没有说明混合物的状态以及溶质、溶剂的状态，所以只要是均一、稳定的混合物，无论是固态、液态还是气态，都可以称为溶液。所以，合金是固态溶液，空气是气态溶液。这些非液态溶液的性质交给其他章节来研究，本章我们主要研究液态溶液的性质，\textbf{如果没有特殊说明，本书中的溶液均为液态溶液}。
+
+\subsection{稀溶液饱和蒸气压***}\label{1.4.1}
+溶液中含有溶剂和溶质，溶剂A和溶质B都有可能挥发进入气相。如果溶质B易挥发（比如乙醇、氯化氢），那么溶液的饱和蒸气压等于溶剂A和溶质B的饱和蒸气压之和；如果溶质B不易挥发（比如蔗糖、食盐），那么溶质的饱和蒸气压可以忽略不计，溶液的饱和蒸气压等于溶剂A的饱和蒸气压。用字母表示如下：
+\begin{formula}
+    \qquad 设溶液的饱和蒸气压为$p$，溶剂A的饱和蒸气压为$p_\mathrm{A}$，溶质B的饱和蒸气压为$p_\mathrm{B}$，则三者有如下关系：\par
+    若B易挥发，则：
+    \[p=p_\mathrm{A}+p_\mathrm{B}\]
+    若B不易挥发，则：
+    \[p=p_\mathrm{A}\]
+\end{formula}\par
+实验发现，无论溶质B的挥发性如何，在溶液中溶剂A的饱和蒸气压都会减小。如果纯物质A的饱和蒸气压为$p_\mathrm{A}^*$，则$p_\mathrm{A}<p_\mathrm{A}^*$。可以这样理解：溶液是均一稳定的液体，在溶液的各处，溶质分子和溶剂分子都均匀分布。相比于纯物质，溶液中溶质分子占据了一部分位置，导致溶液中溶剂的蒸发速率降低。回顾\autoref{1.3.1}饱和蒸气压的概念，液体的蒸发速率降低，则气体的冷凝速度也要相应降低，那样饱和蒸汽的压强就要减小。\par
+经过长期定量测量，拉乌尔发现在一定浓度范围内，溶剂A的饱和蒸气压与纯物质A的饱和蒸气压存在以下关系，这被称为\textbf{拉乌尔定律}。
+\begin{formula}
+    \textbf{拉乌尔定律}：
+    \[p_\mathrm{A}=p_\mathrm{A}^*x_\mathrm{A}\]
+    \qquad 其中$x_\mathrm{A}$是溶剂A的摩尔分数。
+\end{formula}\par
+拉乌尔定律说明，溶剂A的饱和蒸气压与溶剂A的摩尔分数成正比。拉乌尔定律可以这么理解：溶剂的蒸发速率和溶剂分子占据的位置成正比，而溶液中溶剂分子的占比是$x_\mathrm{A}$，所以溶剂的蒸发速率$v_\mathrm{l}=v_\mathrm{l}^*x_\mathrm{A}$。气体的冷凝速率也和气体的压强成正比，因为$v_\mathrm{g}=v_\mathrm{l}=v_\mathrm{l}^*x_\mathrm{A}=v_\mathrm{g}^*x_\mathrm{A}$\footnote{这个式子中l表示液体(liquid)，g表示气体(gas)}，所以$p_\mathrm{A}=p_\mathrm{A}^*x_\mathrm{A}$。\footnote{这里“速率与浓度（溶剂分子占据的位置）/压强成正比”只在理想情况下成立}\par
+事实上在溶液浓度较大的时候，$p_\mathrm{A}$与$x_\mathrm{A}$不满足拉乌尔定律，原因有很多，其中一个原因是浓溶液中溶剂分子间的作用不再是溶液中分子间的主要作用，溶剂分子和溶质分子间的作用和溶质分子间的作用占比较大，影响了溶剂的挥发。为了方便热力学理论推导，化学家又建立了一个理想化模型——\textbf{理想溶液}，理想溶液的\textbf{所有组分}\footnote{不只有溶剂，溶质也是}在全部浓度范围内严格遵循拉乌尔定律。
+\begin{definition}
+    \textbf{理想溶液}：各组分分子间作用力无差异，混合时无热效应、无体积变化，且所有组分在全部浓度范围内严格遵循拉乌尔定律的溶液。
+\end{definition}\par
+性质相近的物质（比如苯和甲苯）组成的溶液分子间作用力相近，也可以近似看作理想溶液。我们可以用拉乌尔定律计算这些溶液各组分的饱和蒸气压。
+
+\subsection{稀溶液的依数性**}\label{1.4.2}
+稀溶液中溶剂的饱和蒸气压满足\autoref{formula1.12}拉乌尔定律。溶剂的饱和蒸气压发生变化，必然会导致稀溶液的一些性质与纯物质不同。但溶液中同时有溶质存在，溶质的性质也可能会影响溶液的性质。\par
+\textbf{如果溶质B既不会挥发进入气相，也不会凝固进入固相}\footnote{这种条件下的稀溶液不是理想溶液，因为溶质不满足拉乌尔定律}，那么我们可以得出一系列与溶质B本身性质无关、只与溶质B在溶液中的数目有关的性质，这些性质被称为\textbf{稀溶液的依数性}。
+\begin{definition}
+    \textbf{稀溶液的依数性}：溶质不参与相变时，稀溶液的某些物理性质仅与溶液中溶质的粒子数有关，而与溶质的本性无关的性质\par
+    稀溶液的依数性包括：1.蒸气压下降、2.沸点升高、3.凝固点降低、4.渗透压
+\end{definition}\par
+第1条性质蒸气压下降我们已经在\autoref{1.4.1}解释，第2条和第3条性质可以从第1条性质出发，通过稀溶液的相图来解释。
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{1.4.2稀溶液的依数性在相图中的体现.png}
+    \caption{稀溶液的依数性在相图中的体现} % 标题
+    \label{figure1.5}
+\end{figure}\par
+\autoref{figure1.5}\footnote{图中的压力指压强}中虚线的$\textit{AB}$、$\textit{AC}$是纯溶剂的两相平衡线，实线的$A'B'$、$A'C'$是溶液的两相平衡线。对于大部分纯溶剂，$\textit{AC}$和$A'C'$斜率为正，对应黑色的两条线；对于水，$\textit{AC}$和$A'C'$斜率为负，对应红色的两条线。\par
+根据\autoref{formula1.12}拉乌尔定律，$p_\mathrm{A}=p_\mathrm{A}^*x_\mathrm{A}$。根据\autoref{formula1.8}克劳修斯-克拉贝龙方程，这里的$p_\mathrm{A}^*=\mathrm{e}^{-\frac{\Delta H_\mathrm{vap}}{RT}+C}$，可以表示纯溶剂的气-液平衡线$\textit{AB}$，那么$p_\mathrm{A}$同样可以表示溶液的气-液平衡线$A'B'$，并且由于$p_\mathrm{A}<p_\mathrm{A}^*$，$A'B'$整体应当在$\textit{AB}$下方。因此，在相图中平行于$x$轴的直线与$A'B'$的交点横坐标大于直线与$\textit{AB}$的交点横坐标。交点横坐标的物理意义是某压力下的沸点，这意味着在相同的压强下溶液的沸点大于纯溶剂的沸点，所以在稀溶液中\textbf{沸点升高}。\par
+气-液平衡线位置的改变还影响了三相点的位置。三相点是三条两相平衡线的交点，在稀溶液的相图中气-固平衡线的位置基本不变，气-液平衡线$A'B'$的位置在纯溶剂的下方，所以三相点$A'$会向左下方移动。由于三相点的位置改变，我们可以知道固-液平衡线的位置也发生改变，至少需要经过新的三相点。根据热力学推导，固-液平衡线的斜率与横坐标温度有关，所以纯溶剂的固-液平衡线$\textit{AC}$向下平移得到了稀溶液的固-液平衡线$A'C'$。因此，在相图中平行于$x$轴的直线与$A'C'$的交点横坐标小于直线与$\textit{AC}$的交点横坐标，所以在稀溶液中\textbf{凝固点降低}。
+\subsubsection{沸点升高与凝固点降低}
+科学家们发现，在一定范围内沸点升高与凝固点降低与质量摩尔浓度（$1\ \mathrm{kg}$溶剂中溶质的物质的量）成正比。需要注意，稀溶液的依数性相关的计算中，如果溶质可以电离，那么任何与溶质相关的浓度都需要考虑电离的结果，在计算时需要额外乘以电离出的粒子的数目。比如同样是$1\ \mathrm{mol/L}$的$\ce{NaCl}$溶液和$\ce{CaCl2}$溶液，前者溶质粒子的浓度是$2\ \mathrm{mol/L}$，后者为$3\ \mathrm{mol/L}$。
+\begin{formula}
+    \textbf{沸点升高}：
+    \[\Delta T_\mathrm{b}=K_\mathrm{b}m_\mathrm{B}\]
+    \qquad 其中$\Delta T_\mathrm{b}=T_\mathrm{b}-T_\mathrm{b}^*$，是稀溶液的沸点与纯溶剂的沸点的差；$K_\mathrm{b}$是沸点升高常数，单位$\mathrm{K\cdot kg/mol}$；$m_\mathrm{B}$是质量摩尔浓度，单位$\mathrm{mol/kg}$。\par
+    \textbf{凝固点降低}：
+    \[\Delta T_\mathrm{f}=K_\mathrm{f}m_\mathrm{B}\]
+    \qquad 其中$\Delta T_\mathrm{f}=T_\mathrm{f}^*-T_\mathrm{f}$，是纯溶剂的凝固点与稀溶液的凝固点的差；$K_\mathrm{b}$是凝固点降低常数，单位$\mathrm{K\cdot kg/mol}$；$m_\mathrm{B}$是质量摩尔浓度，单位$\mathrm{mol/kg}$。
+\end{formula}\par
+常用溶剂的沸点升高常数和常用溶剂的凝固点降低常数如\autoref{table1.2}和\autoref{table1.3}所示。
+\begin{table}[h]
+    \centering
+    \caption{常用溶剂的沸点升高常数}
+    \begin{tabular}{ccccccc}
+        \toprule
+        溶剂 & 水 & 甲醇 & 乙醇 & 丙酮 & 苯 & 氯仿 \\
+        \midrule
+        $K_\mathrm{b}/(\mathrm{K\cdot kg/mol})$ & 0.52 & 0.80 & 1.20 & 1.72 & 2.57 & 3.88 \\
+        \bottomrule
+    \end{tabular}
+    \label{table1.2}
+\end{table}
+\begin{table}[h]
+    \centering
+    \caption{常用溶剂的凝固点降低常数}
+    \begin{tabular}{ccccccc}
+        \toprule
+        溶剂 & 水 & 乙酸 & 苯 & 环己烷 & 萘 & 三溴甲烷 \\
+        \midrule
+        $K_\mathrm{f}/(\mathrm{K\cdot kg/mol})$ & 1.86 & 3.90 & 5.12 & 20 & 6.9 & 14.4 \\
+        \bottomrule
+    \end{tabular}
+    \label{table1.3}
+\end{table}\par
+这两条性质也可以根据相图和一些公式推导，我们首先基于\autoref{formula1.8}克劳修斯-克拉贝龙方程推导沸点升高的公式和沸点升高常数。
+\begin{derivation}
+    \qquad 根据\autoref{formula1.8}克劳修斯-克拉贝龙方程：
+    \[\ln p_\mathrm{A}^*=-\dfrac{\Delta H_\mathrm{vap}}{RT}+C\Longrightarrow p_\mathrm{A}^*=\mathrm{e}^{-\frac{\Delta H_\mathrm{vap}}{RT}+C}\]
+    代入\autoref{formula1.12}拉乌尔定律$p_\mathrm{A}=p_\mathrm{A}^*x_\mathrm{A}$，得：
+    \[p_\mathrm{A}=x_\mathrm{A}\mathrm{e}^{-\frac{\Delta H_\mathrm{vap}}{RT}+C}\]
+    分别在两个曲线方程中代入纯溶剂的沸点$T_\mathrm{b}^*$和溶液的沸点$T_\mathrm{b}$（相当于与直线$y=p$取交点），得：
+    \[p=\mathrm{e}^{-\frac{\Delta H_\mathrm{vap}}{RT_\mathrm{b}^*}+C}=x_\mathrm{A}\mathrm{e}^{-\frac{\Delta H_\mathrm{vap}}{RT_\mathrm{b}}+C}\]
+    两边取对数，得：
+    \[-\frac{\Delta H_\mathrm{vap}}{RT_\mathrm{b}^*}+C=\ln x_\mathrm{A}+\left(-\frac{\Delta H_\mathrm{vap}}{RT_\mathrm{b}}+C\right)\]
+    移项得：
+    \[\ln x_\mathrm{A}=\dfrac{\Delta H_\mathrm{vap}}{R}\times\dfrac{T_\mathrm{b}^*-T_\mathrm{b}}{T_\mathrm{b}T_\mathrm{b}^*}\]
+    式中$T_\mathrm{b}^*-T_\mathrm{b}=-\Delta T_\mathrm{b}$，$x_\mathrm{A}=1-x_\mathrm{B}$，代入两式得：
+    \[\ln (1-x_\mathrm{B})=\dfrac{\Delta H_\mathrm{vap}}{R}\times\dfrac{-\Delta T_\mathrm{b}}{T_\mathrm{b}T_\mathrm{b}^*}\]
+    \qquad 接下来需要做两个近似，第一个近似是稀溶液中$x_\mathrm{B}\approx0$，所以可以作等价无穷小替换$\ln (1-x_\mathrm{B})\thicksim -x_\mathrm{B}$；第二个近似是在稀溶液中沸点升高的幅度不会很大，所以$T_\mathrm{b}\approx T_\mathrm{b}^*$。代入两个近似得：
+    \[-x_\mathrm{B}=\dfrac{\Delta H_\mathrm{vap}}{R}\times\dfrac{-\Delta T_\mathrm{b}}{(T_\mathrm{b}^*)^2}\]
+    移项得：
+    \[\Delta T_\mathrm{b}=\dfrac{R(T_\mathrm{b}^*)^2}{\Delta H_\mathrm{vap}}x_\mathrm{B}\]
+    还需要再做一个近似：
+    \[x_\mathrm{B}=\dfrac{n_\mathrm{B}}{n_\mathrm{A}+n_\mathrm{B}}\approx \dfrac{n_\mathrm{B}}{n_\mathrm{A}}=\dfrac{n_\mathrm{B}}{m_\mathrm{A}'}M_\mathrm{A}=m_\mathrm{B}M_\mathrm{A}\]
+    其中带$'$的$m$是质量，最后的$m_\mathrm{B}$是质量摩尔浓度。把这个近似代入原式得：
+    \[\Delta T_\mathrm{b}=\dfrac{R(T_\mathrm{b}^*)^2M_\mathrm{A}}{\Delta H_\mathrm{vap}}m_\mathrm{B}\]
+    把这个式子和\autoref{formula1.13}对比，可以发现：
+    \[K_\mathrm{b}=\dfrac{R(T_\mathrm{b}^*)^2M_\mathrm{A}}{\Delta H_\mathrm{vap}}\]
+\end{derivation}\par
+接下来我们基于\autoref{formula1.9}克拉贝龙方程推导凝固点降低的公式和凝固点降低常数。
+\begin{derivation}
+    \qquad 设纯溶剂三相点坐标为$(p_0^*,T_0^*)$，稀溶液三相点坐标为$(p_0,T_0)$，则气-液平衡线和气-固平衡线交于此点，用方程表示为：
+    \[p_0^*=\mathrm{e}^{-\frac{\Delta H_\mathrm{vap}}{RT_0^*}+C_1}=\mathrm{e}^{-\frac{\Delta H_\mathrm{sub}}{RT_0^*}+C_2}\]
+    解得：
+    \[\Delta H_\mathrm{fus}=\Delta H_\mathrm{sub}-\Delta H_\mathrm{vap}=(C_2-C_1)RT_0^*\Longrightarrow C_2-C_1=\dfrac{\Delta H_\mathrm{fus}}{RT_0^*}\]
+    根据上一个推导过程，新的气-液平衡线方程是：
+    \[p_\mathrm{A}=x_\mathrm{A}\mathrm{e}^{-\frac{\Delta H_\mathrm{vap}}{RT}+C_1}\]
+    与气-固平衡线方程联立得：
+    \[p_0=x_\mathrm{A}\mathrm{e}^{-\frac{\Delta H_\mathrm{vap}}{RT_0}+C_1}=\mathrm{e}^{-\frac{\Delta H_\mathrm{sub}}{RT_0}+C_2}\]
+    把$x_\mathrm{A}$放到对数上，解得：
+    \[\Delta H_\mathrm{fus}=\Delta H_\mathrm{sub}-\Delta H_\mathrm{vap}=(C_2-C_1-\ln x_\mathrm{A})RT_0\]
+    代入刚刚得到的$C_2-C_1=\dfrac{\Delta H_\mathrm{fus}}{RT_0^*}$得：
+    \[\Delta H_\mathrm{fus}=(\dfrac{\Delta H_\mathrm{fus}}{RT_0^*}-\ln x_\mathrm{A})RT_0\]
+    移项得：
+    \[\ln x_\mathrm{A}=\dfrac{\Delta H_\mathrm{fus}}{R}\left(\dfrac{1}{T_0^*}-\dfrac{1}{T_0}\right)=\dfrac{\Delta H_\mathrm{fus}}{R}\left(\dfrac{T_0-T_0^*}{T_0^*T_0}\right)\]
+    我们发现在上次推导中也出现了类似的式子，只有焓变一项从$\Delta H_\mathrm{vap}$变成了$\Delta H_\mathrm{fus}$，所以我们可以用类似的方法代值、做近似、移项得到：
+    \[\Delta T_0=\dfrac{R(T_0^*)^2M_\mathrm{A}}{\Delta H_\mathrm{fus}}m_\mathrm{B}\]
+    \qquad 但这只是三相点横坐标的变化，不是凝固点降低的数值。我们需要做一步新的近似：把固-液平衡线近似看作斜率很大的一条直线，这是有原因的。水的三相点横坐标为$273.16\ \mathrm{K}$，一个大气压下凝固点为$273.15\ \mathrm{K}$，只相差了$0.01\ \mathrm{K}$，这个数值相对于凝固点温度非常小，可以省略。\par
+    根据\autoref{formula1.9}克拉贝龙方程：
+    \[\dfrac{\diff p}{\diff T}=\dfrac{\Delta H_\mathrm{fus}}{T\Delta V_\mathrm{fus}}\]
+    \qquad 我们只需要考虑从三相点附近小范围内固-液平衡线的斜率，可以认为$T$基本不变，因此$\Delta H_\mathrm{fus}$和$\Delta V_\mathrm{fus}$也基本不变，所以我们可以近似把固-液平衡线看作一条直线；在\autoref{1.3.3}中我们用\autoref{formula1.9}克拉贝龙方程推导\autoref{formula1.8}克劳修斯-克拉贝龙方程时，我们认为$V_\mathrm{m}^\mathrm{g}$远大于$V_\mathrm{m}^\mathrm{l}$和$V_\mathrm{m}^\mathrm{s}$，可想而知固-液相变时$V_\mathrm{m}^\mathrm{l}\approx V_\mathrm{m}^\mathrm{s}$，所以$\Delta V_\mathrm{fus}=V_\mathrm{m}^\mathrm{l}-V_\mathrm{m}^\mathrm{s}\approx 0$，这样斜率$\dfrac{\Delta H_\mathrm{fus}}{T\Delta V_\mathrm{fus}}$将会是一个很大的数值，我们可以认为固-液平衡线斜率很大。这就说明我们可以将固-液平衡线近似看作斜率很大的一条直线，那样我们可以得到$T_\mathrm{f}\approx T_0$，$T_\mathrm{f}^*\approx T_0^*$，$\Delta T_\mathrm{f}\approx \Delta T_0$，所以刚刚得到的三相点横坐标的变化可以认为就是凝固点横坐标的变化\footnote{但这并不代表我们可以像很多教材一样把三相点温度降低和凝固点降低混为一谈，甚至在相图中把三相点温度降低标记成凝固点降低}：
+    \[\Delta T_\mathrm{f}=\dfrac{R(T_\mathrm{f}^*)^2M_\mathrm{A}}{\Delta H_\mathrm{fus}}m_\mathrm{B}\]
+    把这个式子和\autoref{formula1.13}对比，可以发现：
+    \[K_\mathrm{f}=\dfrac{R(T_\mathrm{f}^*)^2M_\mathrm{A}}{\Delta H_\mathrm{vap}}\]
+\end{derivation}\par
+沸点升高常数和凝固点降低常数可以由实验测量得到。\par
+利用沸点升高和凝固点降低，我们可以测量一些物质的平均相对分子质量，进而从有机物的最简式（实验式）出发判断分子式、判断小分子是否形成二聚体或多聚体，比如下面这道例题。
+\begin{exercise}
+    烟草中有害成分尼古丁的最简式是$\ce{C5H7N}$，现将$496\ \mathrm{mg}$尼古丁溶于$10\ \mathrm{g}$水，所得溶液在$101.325\ \mathrm{kPa}$下的沸点是$100.17\ \mathrm{℃}$。已知水的沸点升高常数为$0.513\ \mathrm{K\cdot kg/mol}$，求尼古丁的分子式。
+\end{exercise}
+\begin{answer}
+    水在$101.325\ \mathrm{kPa}$下的沸点为$100\ \mathrm{℃}$，所以：
+    \[\Delta T_\mathrm{b}=100.17\ \mathrm{℃}-100\ \mathrm{℃}=0.17\ \mathrm{℃}\]
+    根据\autoref{formula1.13}沸点升高：
+    \[\Delta T_\mathrm{b}=K_\mathrm{b}m_\mathrm{B}\Longrightarrow m_\mathrm{B}=\dfrac{\Delta T_\mathrm{b}}{K_\mathrm{b}}=\dfrac{0.17\ \mathrm{℃}}{0.513\ \mathrm{K\cdot kg/mol}}=\dfrac{170}{513}\ \mathrm{mol/kg}\]
+    \[m_\mathrm{B}=\dfrac{n_\mathrm{B}}{m_\mathrm{A}'}=\dfrac{m_\mathrm{B}'}{M_\mathrm{B}m_\mathrm{A}'}\Longrightarrow M_\mathrm{B}=\dfrac{m_\mathrm{B}'}{m_\mathrm{B}m_\mathrm{A}'}=\dfrac{496\ \mathrm{mg}}{\dfrac{170}{513}\ \mathrm{mol/kg}\times 10\ \mathrm{g}}=149.7\ \mathrm{g/mol}\]
+    最简式$\ce{C5H7N}$的式量为：
+    \[12\ \mathrm{g/mol}\times5+1\ \mathrm{g/mol}\times7+14\ \mathrm{g/mol}=81\ \mathrm{g/mol}\]
+    \[\dfrac{149.7\ \mathrm{g/mol}}{81\ \mathrm{g/mol}}=1.848\approx 2\]
+    所以尼古丁的分子式为$\ce{C_{10}H_{14}N2}$。
+\end{answer}\par
+\subsubsection{渗透压}
+第4条性质也可以通过第1条性质推导。我们先明确\textbf{渗透}和\textbf{渗透压}的概念。
+\begin{definition}
+    \textbf{渗透}：只允许溶剂分子透过的半透膜分隔两种不同浓度的溶液时，溶剂分子自发从浓度低的一侧向浓度高的一侧跨膜移动的现象\par
+    \textbf{渗透压}：恰好阻止渗透过程发生时外加的压力\par
+    纯液体的渗透压为$0$
+\end{definition}\\
+\begin{minipage}{0.2\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{1.4.2渗透.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.75\textwidth}
+    \qquad 左图可以体现渗透现象的存在，水分子从蒸气压较大的纯水流向蒸气压较小的糖水一侧，使糖水一侧液面升高，液面升高到一定程度时不再升高。高出纯水液面的这部分糖水提供了向下的压力，恰好阻止渗透过程发生，达到平衡状态。
+\end{minipage}\par
+渗透压的大小可以用\textbf{范特霍夫渗透压公式}计算。
+\begin{formula}
+    \textbf{范特霍夫渗透压公式}：
+    \[\Pi=cRT\]
+    \[\Pi V_\mathrm{l}=n_\mathrm{B}RT\]
+    \[\Pi=x_\mathrm{B}\dfrac{RT}{V_\mathrm{m}^\mathrm{l}}\]
+    \qquad 其中$\Pi$是渗透压，$c$是物质的量浓度，$V_\mathrm{l}$是溶液的体积（可近似看作溶剂的体积），$n_\mathrm{B}$是溶质的物质的量，$x_\mathrm{B}$溶质的摩尔分数，$V_\mathrm{m}^\mathrm{l}$是溶剂的摩尔体积。
+\end{formula}\par
+我们发现这个公式和\autoref{formula1.3}理想气体状态方程的形式很像，只不过把气体的$pV$换成了液体的$\Pi V$，这说明两个公式有内在联系。我们可以根据现有的知识推导出范特霍夫渗透压公式。
+\begin{derivation}
+    \qquad 蒸气压相同的两部分液体之间不会发生渗透作用，所以对于\autoref{figure1.6}中已经达到平衡的溶液和纯液体，半透膜两侧的蒸气压可以看作相同。\footnote{为了不引入化学势等更复杂的内容，这里只能勉强用已经学过的内容解释。}\par
+    \qquad 纯液体一侧的蒸气压即为$p_\mathrm{A}^*$，溶液一侧的蒸气压比较复杂。溶液本身的蒸气压为$p_\mathrm{A}$这里有体系压力（高出纯液体液面的液体压力，数值等于渗透压$\Pi$）存在，我们需要使用\autoref{formula1.10}：
+    \[\dfrac{\diff p_\mathrm{s}}{\diff p}=\dfrac{V_\mathrm{m}^\mathrm{l}}{V_\mathrm{m}^\mathrm{g}}\]
+    根据\autoref{formula1.4}理想气体状态方程的变式，$V_\mathrm{m}^\mathrm{g}=\dfrac{RT}{p_\mathrm{s}}$，代入得：
+    \[\dfrac{\diff p_\mathrm{s}}{\diff p}=\dfrac{V_\mathrm{m}^\mathrm{l}p_\mathrm{s}}{RT}\]
+    移项后两端定积分得：
+    \[\int_{p_\mathrm{A}}^{p_\mathrm{A}^*}  \,\dfrac{\diff p_\mathrm{s}}{p_\mathrm{s}}=\int_{p_0}^{p_0+\Pi}  \,\dfrac{V_\mathrm{m}^\mathrm{l}}{RT}\diff p \]
+    即：
+    \[\ln\dfrac{p_\mathrm{A}^*}{p_\mathrm{A}}=\dfrac{V_\mathrm{m}^\mathrm{l}}{RT}\Pi\]
+    根据\autoref{formula1.12}拉乌尔定律，$p_\mathrm{A}=p_\mathrm{A}^*x_\mathrm{A}$，代入得：
+    \[\ln\dfrac{p_\mathrm{A}^*}{p_\mathrm{A}^*x_\mathrm{A}}=\dfrac{V_\mathrm{m}^\mathrm{l}}{RT}\Pi\]
+    移项得：
+    \[\Pi=\dfrac{RT}{V_\mathrm{m}^\mathrm{l}}\times(-\ln x_\mathrm{A})\]
+    之前的推导中我们用等价无穷小替换得到$\ln x_\mathrm{A}=\ln (1-x_\mathrm{B})\thicksim -x_\mathrm{B}$，在这里同样也可以代入，得：
+    \[\Pi=x_\mathrm{B}\dfrac{RT}{V_\mathrm{m}^\mathrm{l}}\]
+    其中$x_\mathrm{B}=\dfrac{n_\mathrm{B}}{n_\mathrm{A}+n_\mathrm{B}}\approx\dfrac{n_\mathrm{B}}{n_\mathrm{A}}$，$V_\mathrm{m}^\mathrm{l}=\dfrac{V_\mathrm{l}}{n_\mathrm{A}}$，所以$\dfrac{x_\mathrm{B}}{V_\mathrm{m}^\mathrm{l}}=\dfrac{n_\mathrm{B}}{V_\mathrm{l}}=c$，代入得：
+    \[\Pi V_\mathrm{l}=n_\mathrm{B}RT\text{和}\Pi=cRT\]
+\end{derivation}\par
+和沸点升高、凝固点降低类似，渗透压也可以用来测量物质的摩尔质量。渗透压法的有关实验技术比沸点法、凝固点法复杂，但是对于摩尔质量很大的化合物，渗透压法的测量结果会更精准。因为对于摩尔质量很大的化合物，$x_\mathrm{B}$的数值非常小，数量级约为$10^{-5}$甚至更小。对比$\Delta T_\mathrm{b}=\dfrac{K_\mathrm{b}}{M_\mathrm{A}}x_\mathrm{B}$、$\Delta T_\mathrm{f}=\dfrac{K_\mathrm{f}}{M_\mathrm{A}}x_\mathrm{B}$、$\Pi=\dfrac{RT}{V_\mathrm{m}^\mathrm{l}}x_\mathrm{B}$这三条公式，$\dfrac{K_\mathrm{b}}{M_\mathrm{A}}$和$\dfrac{K_\mathrm{f}}{M_\mathrm{A}}$的数量级约为$100\ \mathrm{K}$，而$\dfrac{RT}{V_\mathrm{m}^\mathrm{l}}$的数量级约为$10^8\ \mathrm{Pa}$。这三个常数分别和$x_\mathrm{B}$相乘，前两条公式得到的$\Delta T$数量级约为$10^{-3}\ \mathrm{K}$，测量的相对误差非常大，而第三条公式得到的$\Pi$仍然有$1\ \mathrm{kPa}$，测量的相对误差较小。\par
+稀溶液的依数性这一小节内容非常多，基础的要求是学会使用蒸气压下降、沸点升高、凝固点降低、渗透压的公式解决实际问题，推导过程可以辅助理解公式、追寻公式之间内在的联系、学习推导过程中各种近似计算的方法。\par
+
+\end{document}

@@ -1,0 +1,401 @@
+\documentclass[../../GCET-main.tex]{subfiles}
+
+\begin{document}
+
+\setcounter{chapter}{-1}
+
+\chapter{数学物理基础}\label{0}
+一些读者可能会认为，化学不像数学物理那样需要用很多数学，只需要画画图、套套公式、背背元素知识就可以。事实上，化学中也需要用到一些实用的数学知识，甚至还需要用到一些物理学知识。学习普通化学的最好的时间应该是有一定数学物理基础之后，因为普通化学中的热力学、动力学、原子结构部分需要用到比较多的数学甚至物理。\par
+然而，浙江大学把普通化学放在大一第一个学期作为基础课，这时候的读者没有学过微积分、数学分析，物理学也要等到大一下、大二上才开始学习。这是有原因的。比起物理学，化学并不需要掌握那么多的分析方法，大部分情况只需要应用已有的公式。对于初学者，化学中很多公式也不需要从头开始推导，因为从头开始需要介绍大量的理论（分子动理论、热力学、量子力学……）来为推导作铺垫，对于非物理学和化学专业的同学来说这有些困难，而且意义不大。\par
+这么早学习普通化学会有不少代价。为了避免使用数学（甚至是非常基础的偏应用的微积分和图像分析），老师授课时会直接给出公式或者结论，只讲它们的应用；但有时为了书写公式（通常是给出一个看不懂的公式然后得出另一个可以直接用的公式），又不得不用一些数学，$\diff$、$\partial $、$\nabla $难免让刚进入大学的读者感到困惑。\par
+既然需要用到一些数学物理，那不妨提前介绍一下数学物理。本书中会用到的数学物理知识都会放在本章，\textbf{但不会给出严谨的定义，也不会讨论数学中的各类特殊情况}，只介绍一些能应用于普通化学中各类计算与推导的公式与方法，内容不多也不难，可以提前阅读了解，也可以在后续章节看不懂推导时回到这里看看。这一章节的内容或许在课内学习普通化学/大学化学、普通物理学/大学物理时也会有帮助。\par
+
+\section{三角函数与反三角函数}\label{0.1}
+高中只用到了$\sin x$、$\cos x$、$\tan x$这三个最简单的三角函数，大学需要用到更多的三角函数以及他们的反三角函数。\par
+剩余的三个三角函数为$\cot x$、$\sec x$、$\csc x$，它们可以用之前学过的三角函数表示。
+\begin{formula}
+    \[\cot x=\dfrac{\cos x}{\sin x}=\dfrac{1}{\tan x}\ \ \sec x=\dfrac{1}{\cos x}\ \ \csc x=\dfrac{1}{\sin x}\]
+\end{formula}\par
+我们还需要知道一些反三角函数。顾名思义，反三角函数是三角函数的反函数，在三角函数名前加上arc就是反三角函数名。比如$\arcsin x$就是$\sin x$的反函数。我们需要知道的四个反三角函数的性质如\autoref{table0.1}所示。
+\begin{table}[h]
+    \centering
+    \caption{反三角函数的性质}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        函数名 & 定义域 & 值域 & 图像 \\
+        \hline
+        $y=\arcsin x$ & $[-1,1]$ & $[-\dfrac{\pi}{2},\dfrac{\pi}{2}]$ & \raisebox{-\height/2}{\includegraphics[scale=0.3]{arcsin.png}} \\
+        \hline
+        $y=\arccos x$ & $[-1,1]$ & $[0,\pi]$ & \raisebox{-\height/2}{\includegraphics[scale=0.3]{arccos.png}} \\
+        \hline
+        $y=\arctan x$ & $(-\infty,\infty)$ & $(-\dfrac{\pi}{2},\dfrac{\pi}{2})$ & \raisebox{-\height/2}{\includegraphics[scale=0.3]{arctan.png}} \\
+        \hline
+        $y=\operatorname{arccot} x$ & $[-1,1]$ & $(0,\pi)$ & \raisebox{-\height/2}{\includegraphics[scale=0.3]{arccot.png}} \\
+        \hline
+    \end{tabular}
+    \label{table0.1}
+\end{table}\par
+反三角函数的定义域和值域比较特殊，需要记住。
+
+\section{等价无穷小替换}\label{0.2}
+读者中学里一定用过切线放缩，比如$\mathrm{e}^x\geqslant x+1$，$\ln x\leqslant x-1$。常用的等价无穷小替换和这些式子很像。\par
+对于函数$f(x)=\mathrm{e}^x-1$和$g(x)=\ln (1+x)$，$f(0)=g(0)=0$，并且$y=x$是它们在$(0,0)$处的切线。当$x$无限接近于0时（记作$x\rightarrow 0$），$f(x)$和$g(x)$的值与$x$相差不大，可以用$x$来作近似。数学上把这样的替换称为\textbf{等价无穷小替换}，并且用$\thicksim $连接两个等价的无穷小。
+\begin{formula}
+    \[\mathrm{e}^x-1\thicksim x\thicksim \ln(x+1)\]
+\end{formula}\par
+等价无穷小替换在数学上可以方便极限的计算，但在化学中我们只需要学会用这种方法处理指数/对数里的量就行。
+
+\section{导数与微分}\label{0.3}
+读者中学里已经学习过很多导数，做过的导数题成百上千。到了大学我们只需要额外知道导数可以表达成微分的形式：
+\begin{formula}
+    \[f'(x)=y'=\dfrac{\diff y}{\diff x}=\dfrac{\diff f(x)}{\diff x}\]
+\end{formula}\par
+这里出现的$\diff y$和$\diff x$中的$\diff$是differential的缩写，表示很小的改变。\par
+我们可以发现求导符号$'$其实相当于$\dfrac{\diff}{\diff x}$，在一个函数前加上$\dfrac{\diff}{\diff x}$就是对函数求导。
+\begin{formula}
+    \[y'=\dfrac{\diff}{\diff x}y\]
+\end{formula}\par
+$\diff y$和$\diff x$也可以看作两个单独的部分，可以自由地乘除$\diff y$和$\diff x$，比如\autoref{formula0.3}可以改写为下面的形式。
+\begin{formula}
+    \[\diff f(x)=f'(x)\diff x\]
+\end{formula}\par
+这样的形式很实用，逆着用可以化简一些微分。\par
+高阶导数也可以用微分表示，写法上略有讲究，记住即可。
+\begin{formula}
+    \[y''=(y')'=\dfrac{\diff}{\diff x}y'=\dfrac{\diff \left(\dfrac{\diff y}{\diff x}\right)}{\diff x}=\dfrac{\diff^2 y}{\diff x^2}=\dfrac{\diff^2}{\diff x^2}y\]
+    \[y^{(n)}=\dfrac{\diff^n y}{\diff x^n}\]
+\end{formula}\par
+可以看到，求高阶导数时，$\dfrac{\diff}{\diff x}$仍然是一个整体，分母上的$n$次方加在d上，分子上的$n$次方加在$x$上。\par
+最后给出16个初等函数的导数公式，需要牢记，尤其是幂函数、指数函数、对数函数的导数公式，在化学里有很多用处。
+\begin{formula}
+    \textbf{常用导数公式}：
+    \begin{tasks}[label=](2)
+        \task $(C)'=0$（C为常数）
+        \task $(x^a)'=ax^{a-1}$
+        \task $(a^x)'=a^x\ln a$
+        \task $(\mathrm{e}^x)'=\mathrm{e}^x$
+        \task $(\log_ax)'=\dfrac{1}{x\ln a}$
+        \task $(\ln x)'=\dfrac{1}{x}$
+        \task $(\sin x)'=\cos x$
+        \task $(\cos x)'=-\sin x$
+        \task $(\tan x)'=\sec^2x$
+        \task $(\cot x)'=-\csc^2x$
+        \task $(\sec x)'=\sec x\tan x$
+        \task $(\csc x)'=-\csc x\cot x$
+        \task $(\arcsin x)'=\dfrac{1}{\sqrt{1-x^2}}$
+        \task $(\arccos x)'=-\dfrac{1}{\sqrt{1-x^2}}$
+        \task $(\arctan x)'=\dfrac{1}{1+x^2}$
+        \task $(\operatorname{arccot} x)'=-\dfrac{1}{1+x^2}$
+    \end{tasks}
+\end{formula}
+
+\section{积分}\label{0.4}
+积分是求导的逆运算，求导是一个破坏的过程，积分是一个重组的过程，积分比求导更困难。\par
+积分可以分为\textbf{不定积分}和\textbf{定积分}，它们的区别是是否有下限和上限。\par
+开始了解积分前我们需要先明确\textbf{原函数}的定义。
+\begin{definition}
+    若$F'(x)=f(x)$，则$F(x)$是$f(x)$的\textbf{一个原函数}。\par
+    $f(x)$的\textbf{全体原函数}为$F(x)+C$，其中$C$是常数。
+\end{definition}\par
+由于$(C)'=0$，$F(x)$加上$C$后求导仍然能得到$f(x)$，所以$f(x)$的原函数不止一个。\par
+积分的过程就是找被积函数的原函数，不定积分到这一步为止，定积分则需要在找到原函数之后再把原函数在上界和下界的函数值相减。学会不定积分后，定积分就轻而易举了。
+\subsection{不定积分}\label{0.4.1}
+我们先来考虑不定积分，不定积分可以如下表示。
+\begin{formula}
+    \textbf{不定积分的一般形式}：
+    \[\int f(x)\diff x=F(x)+C\]
+    其中$\displaystyle\int$其实是被拉长的S，是不定积分号，$f(x)$是被积函数，$f(x)\diff x$是被积表达式，$x$是积分变量，$C$是积分常数。
+\end{formula}\par
+要找到原函数，就得熟悉导数公式，如果导数公式的右端是被积函数，那么左端就是被积函数的一个原函数。比如$(x^2)'=2x\Longrightarrow \displaystyle\int 2x\diff x=x^2+C$。根据16个初等函数的导数公式，我们可以得到很多积分公式，但在化学中常用的公式只有一部分指对幂相关的积分公式：
+\begin{formula}
+    \textbf{常用积分公式}：\par
+    一般形式：
+    \begin{tasks}[label=](2)
+        \task $\displaystyle\int x^a\diff x=\dfrac{x^{a+1}}{a+1}+C(a\neq -1)$
+        \task $\displaystyle\int \dfrac{1}{x}\diff x=\ln \left\lvert x\right\rvert +C$
+        \task $\displaystyle\int a^x\diff x=\dfrac{a^x}{\ln a}+C$
+        \task $\displaystyle\int \mathrm{e}^x\diff x=\mathrm{e}^x+C$
+    \end{tasks}
+    特殊形式：
+    \begin{tasks}[label=](2)
+        \task $\displaystyle\int 1\diff x=\displaystyle\int \diff x=x+C$
+        \task $\displaystyle\int \dfrac{1}{x^2}\diff x=-\dfrac{1}{x}+C$
+    \end{tasks}
+\end{formula}\par
+找一个原函数不难，但在最后加$C$很容易忘记。记住一句话：不定积分要加$C$！\par
+不定积分的一些性质如下。
+\begin{formula}
+    \textbf{不定积分的性质}：
+    \[\int [f(x)\pm g(x)]\diff x=\int f(x)\diff x\pm\int g(x)\diff x\]
+    \[\int kf(x)\diff x=k\int f(x)\diff x\]
+    \[\int f'(x)\diff x=\int \diff f(x)=f(x)+C\]
+\end{formula}\par
+前面两条性质说明被积函数可以各自积分再加减，可以先积分再乘以$k$倍。需要注意的是，用第一条性质各自积分后都带有一个积分常数$C$，相加之后只需要保留一个$C$即可；第二条性质先积分再乘以$k$倍的过程中积分常数$C$也不用乘以$k$倍数，保留一个单独的$C$即可。第三条性质实际上就是使用\autoref{formula0.5}先对被积表达式进行化简，再进行积分。这个过程提醒我们，不定积分中的积分变量是可以变化的，变化之后的积分变量是一个关于原来的积分变量的函数，但在积分时需要把它当成变量。
+\subsection{定积分}\label{0.4.2}
+定积分相比不定积分多了一步相减，相减过程中积分常数$C$会抵消，所以定积分不会忘记加$C$。不定积分得到的结果是原函数，而定积分的结果是原函数代值相减之后的数值。定积分基于不定积分的运算如下。
+\begin{formula}
+    如果不定积分为：
+    \[\int f(x)\diff x=F(x)+C\]
+    则定积分为：
+    \[\int_{a}^{b}  \,f(x)\diff x=F(b)-F(a)\]
+    其中$a$与$b$分别是定积分的下限与上限。
+\end{formula}\par
+定积分具有非常好的数学和物理意义。在数学中，定积分表示区间$[a,b]$内函数图像与坐标轴之间的面积，如\autoref{figure0.1}所示。当坐标轴变成物理量时，这个面积就有了物理意义，比如$v-t$图像中面积代表位移$x$。此外，定积分还可以用来求更复杂体积，数学和物理学中很常用，但在化学中涉及不多，这里不过多介绍。
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{定积分.png}
+    \caption{用定积分求面积}
+    \label{figure0.1}
+\end{figure}\par
+普通化学中需要用到的积分只需要用积分公式就可以解决，在此不过多介绍不定积分和定积分的换元积分法和分部积分法。在普通化学课程结束之后，微积分和数学分析课程刚好可以完成这些内容的讲解。
+
+\section{多元函数}\label{0.5}
+上面的几个小节主要介绍了一元函数的微积分，现实中还有一些函数有不止一个自变量，这些自变量是独立变化的，共同影响整个函数的因变量。这些含有多个独立的自变量的函数被称为\textbf{多元函数}。\par
+研究多元函数仍然需要像研究一元函数那样求导数、求积分。但多元函数中有多个自变量，没法同时考虑所有自变量的变化。我们需要用到类似于中学自然科学中“控制变量法”的方法来研究多元函数，即固定其他自变量，只研究一个自变量对因变量的影响。在分别研究每个自变量对因变量的影响之后，我们又可以把这些影响统一起来，这个过程可以用偏导数和全微分实现。
+\subsection{偏导数}\label{0.5.1}
+对于二元函数$z=f(x,y)$，它关于$x$的偏导数和关于$y$的偏导数可以像这样表示。
+\begin{formula}
+    $z=f(x,y)$关于$x$的偏导数：
+    \[f'_x(x,y)=\dfrac{\partial z}{\partial x}\]
+    $z=f(x,y)$关于$y$的偏导数：
+    \[f'_y(x,y)=\dfrac{\partial z}{\partial y}\]
+\end{formula}\par
+这里的$\partial$中文读作“偏”，英文是partial，表示局部，符合偏导数的定义。\par
+求偏导数的方法其实很简单，就是把多元函数中其他自变量看作常数，只对某个自变量求导数即可。由于读者在高中可能没接触过偏导数，这里给一道非常简单的例题供读者练习。
+\begin{exercise}
+    圆锥体的体积$V$是底面半径$r$和高$h$的二元函数，$V=\dfrac{1}{3}\pi r^2h$，求$V$关于$r$的偏导数和$V$关于$h$的偏导数。
+\end{exercise}
+\begin{answer}
+    $V$关于$r$的偏导数：
+    \[\dfrac{\partial V}{\partial r}=\dfrac{2\pi rh}{3}\]
+    $V$关于$h$的偏导数：
+    \[\dfrac{\partial V}{\partial h}=\dfrac{\pi r^2}{3}\]
+\end{answer}\par
+我们会发现$V$关于$r$的偏导数中仍然有两个变量，而$V$关于$h$的偏导数中只剩下一个变量，所以偏导数可能是多元函数，也可能退化成一元函数甚至是常数（比如$\dfrac{\partial(x+y)}{\partial x}=1$）。\par
+如果偏导数中仍然存在自变量，那样我们可以对仍然存在的自变量继续求\textbf{高阶偏导}。如果多次关于同一个自变量多次求偏导，就是\textbf{高阶纯偏导}，如果关于不同的自变量多次求偏导，就是\textbf{高阶混合偏导}。比如，对于\autoref{exercise0.1}中两个偏导数我们可以继续处理。
+\begin{exercise}
+    接\autoref{exercise0.1}，求：
+    \begin{enumerate}
+        \item $V$关于$r$的二阶纯偏导；
+        \item $\dfrac{\partial V}{\partial r}$关于$h$的偏导数；
+        \item $\dfrac{\partial V}{\partial h}$关于$r$的偏导数；
+    \end{enumerate}
+\end{exercise}
+\begin{answer}
+    \begin{enumerate}
+        \item $V$关于$r$的二阶纯偏导：
+        \[\dfrac{\partial^2 V}{\partial r^2}=\dfrac{\partial \left(\dfrac{\partial V}{\partial r}\right)}{\partial r}=\dfrac{\partial \left(\dfrac{2\pi rh}{3}\right)}{\partial r}=\dfrac{2\pi h}{3}\]
+        \item $\dfrac{\partial V}{\partial r}$关于$h$的偏导数：
+        \[\dfrac{\partial \left(\dfrac{\partial V}{\partial r}\right)}{\partial h}=\dfrac{\partial \left(\dfrac{2\pi rh}{3}\right)}{\partial h}=\dfrac{2\pi r}{3}\]
+        \item $\dfrac{\partial V}{\partial h}$关于$r$的偏导数：
+        \[\dfrac{\partial \left(\dfrac{\partial V}{\partial h}\right)}{\partial r}=\dfrac{\partial \left(\dfrac{\pi r^2}{3}\right)}{\partial r}=\dfrac{2\pi r}{3}\]
+    \end{enumerate}
+\end{answer}\par
+细心的读者会发现这里后两问的答案是一样的，这不是巧合。事实上后两问都在求同一个二阶混合偏导$\dfrac{\partial^2 V}{\partial r\partial h}$，得到的结果当然一样。这里可以看出高阶混合偏导的结果与求导顺序无关，尽管在数学上有人为构造的特殊多元函数不满足这一性质，但在物理和化学研究的现实世界里，我们可以相信大自然，所以化学中用到的高阶混合偏导的结果与求导顺序无关。化学中用到的高阶偏导一般是二阶混合偏导。\par
+在数学中求偏导一般不用注明不变的变量，但在热力学中一些多元函数元的选取是比较自由的（可以选取一组变量$x$和$y$作为元，也可以选取另一组变量$z$和$w$作为元），需要在求偏导时用下标注明不变的变量。比如求$f(x,y)$关于$x$的偏导，$y$是不变的变量，需要书写为$\left(\dfrac{\partial f(x,y)}{\partial x}\right)_y$。
+\subsection{全微分}\label{0.5.2}
+在衡量多元函数的变化时考虑每一个自变量的变化，可以得到多元函数的全微分。
+\begin{formula}
+    如果二元函数$z=f(x,y)$，那么$z$的全微分可以表示为：
+    \[\diff z=A\diff x+B\diff y\]
+    其中：
+    \[A=\dfrac{\partial z}{\partial x}，B=\dfrac{\partial z}{\partial y}\]
+    所以全微分也可以表示为：
+    \[\diff z=\dfrac{\partial z}{\partial x}\diff x+\dfrac{\partial z}{\partial y}\diff y\]
+\end{formula}\par
+化学中用到的多元函数可以取多组自变量，但无论如何选取自变量，全微分都可以表示成这样的形式（一阶微分形式不变性）。\par
+在追寻章节的热力学推导中可能需要用到较多全微分和偏导数的知识，注意书写热力学中的全微分时也需要用下标注明求偏导时不变的变量。
+
+\section{微分方程初步}\label{0.6}
+物理和化学是描述现实世界的自然科学，现实世界中很多现象可以用\textbf{微分方程}来描述。我们在普通化学中会遇到很多简单的微分方程，在这里先介绍一下这些简单的微分方程和微分方程的解法。
+\begin{definition}
+    \textbf{微分方程}：含有未知函数以及它的导数/偏导数的方程\par
+    按未知函数和导数的种类分：\par
+    \textbf{常微分方程}(ODE)：未知函数只含有一个自变量、方程里只有普通导数的微分方程\par
+    \textbf{偏微分方程}(PDE)：未知函数有两个及以上自变量、方程里含有偏导数的微分方程\par
+    按方程里导数的阶数分：\par
+    \textbf{一阶微分方程}：方程里最高阶导数是一阶的微分方程\par
+    \textbf{高阶微分方程}：方程里最高阶导数是二阶或更高的微分方程\par
+    按方程中未知函数及其导数是否线性分：\par
+    \textbf{线性微分方程}：方程中未知函数及其导数的最高次数是一次的微分方程\par
+    \textbf{非线性微分方程}：方程中未知函数及其导数的最高次数超过一次（如出现$y^2$、$yy'$）的微分方程\par
+    在\textbf{线性微分方程}中，按照除含有未知函数及其导数的项之外是否存在其他非零项分：\par
+    \textbf{线性齐次微分方程}：形如$\sum_{i = 1}^{n} f_i(x)y^{(i)} =0$的线性微分方程\par
+    \textbf{线性非齐次微分方程}：形如$\sum_{i = 1}^{n} f_i(x)y^{(i)} =f(x)$的线性微分方程
+\end{definition}\par
+微分方程的解可以分为通解与特解。
+\begin{definition}
+    \textbf{通解}：$n$阶微分方程的通解会包含$n$个未知常数$C_1,C_2,\dots,C_n$，表示某个微分方程的所有解\par
+    \textbf{特解}：给定未知函数的初始条件$y(x_0)=a,y'(x_0)=b,\dots$后解出$C_1,C_2,\dots,C_n$代入通解中得到的某个确定的解
+\end{definition}\par
+化学中用到的微分方程只有少部分需要我们我们学会求解，而且是比较简单的常微分方程，本书中出现的有以下几种。
+\subsection*{右端不含未知函数的一阶线性常微分方程}\label{0.6.1}
+\begin{exercise}
+    求解以下方程：
+    \[\dfrac{\diff y}{\diff x}=f(x)\]
+\end{exercise}
+\begin{answer}
+    \[\dfrac{\diff y}{\diff x}=f(x)\]
+    移项得：
+    \[\diff y=f(x)\diff x\]
+    两边积分：
+    \[\int\diff y=\int f(x)\diff x\]
+    即可得到通解：
+    \[y=F(x)+C\]
+    代入初值$y(x_0)=y_0$：
+    \[y_0=F(x_0)+C\Longrightarrow C=y_0-F(x_0)\]
+    即可得到特解：
+    \[y=F(x)+y_0-F(x_0)\]
+    或者写成：
+    \[y-y_0=F(x)-F(x_0)\]
+\end{answer}\par
+这类微分方程求解过程非常简单，只需要移项之后两端积分就可以。细心的读者可能会发现，这类微分方程的通解类似不定积分，仍然会留下常数，形式上也类似；这类微分方程的特解类似定积分，只不过定积分的下限是给定的$x_0$，而上限是变量$x$。
+\subsection*{右端未知函数与自变量分离的一阶线性常微分方程}
+\begin{exercise}
+    求解以下方程：
+    \[\dfrac{\diff y}{\diff x}=f(x)g(y)\]
+\end{exercise}
+\begin{answer}
+    \[\dfrac{\diff y}{\diff x}=f(x)g(y)\]
+    移项得：
+    \[\dfrac{\diff y}{g(y)}=f(x)\diff x\]
+    两边积分：
+    \[\int\dfrac{\diff y}{g(y)}=\int f(x)\diff x\]
+    即可得到通解：
+    \[G(y)=F(x)+C\]
+    代入初值$y(x_0)=y_0$：
+    \[G(y_0)=F(x_0)+C\Longrightarrow C=G(y_0)-F(x_0)\]
+    即可得到特解：
+    \[G(y)=F(x)+G(y_0)-F(x_0)\]
+\end{answer}\par
+这类方程求解也不是很难，因为变量是分离的，本质上还是分离变量之后两边求积分。
+
+\section{国际单位制}\label{0.7}
+只要选定几个物理量的单位，就能够利用物理量之间的关系推导出其他物理量的单位。这些被选定的物理量叫作\textbf{基本量}，它们相应的单位叫作\textbf{基本单位}。由基本量根据物理关系推导出来的其他物理量叫作\textbf{导出量}，推导出来的相应单位叫作\textbf{导出单位}。基本单位和导出单位一起就组成了一个\textbf{单位制}。
+为了方便交流，1960年第11届国际计量大会制定了一种国际通用的、包括一切计量领域的单位制，叫作\textbf{国际单位制}，简称\textbf{SI}。\par
+国际单位制的基本单位共有七个，如\autoref{table0.2}所示，图中单位名称一列包括方括号的是全称，方括号外的是简称。
+\begin{table}[h]
+    \centering
+    \caption{国际单位制的基本单位}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        物理量 & 单位名称 & 单位符号 \\
+        \hline
+        长度 & 米 & $\mathrm{m}$ \\
+        \hline
+        质量 & 千克 & $\mathrm{kg}$ \\
+        \hline
+        时间 & 秒 & $\mathrm{s}$ \\
+        \hline
+        电流 & 安[培] & $\mathrm{A}$ \\
+        \hline
+        热力学温度 & 开[尔文] & $\mathrm{K}$ \\
+        \hline
+        物质的量 & 摩[尔] & $\mathrm{mol}$ \\
+        \hline
+        发光强度 & 坎[德拉] & $\mathrm{cd}$ \\
+        \hline
+    \end{tabular}
+    \label{table0.2}
+\end{table}\par
+在单位前可以加上\textbf{词头}表示倍数，一般$10^3$为一个词头。词头不可以叠加使用\footnote{$\mathrm{kg}$默认带词头k，加词头需要加在g之前，但kg一般不会改变词头}，常用词头如\autoref{table0.3}所示。
+\begin{table}[h]
+    \centering
+    \caption{常用词头}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        词头 & M & k & d & c & m & $\mu$ & n & p & f \\
+        \hline
+        读法 & 兆 & 千 & 分 & 厘 & 毫 & 微 & 纳 & 皮 & 飞 \\
+        \hline
+        倍数 & $10^6$ & $10^3$ & $10^{-1}$ & $10^{-2}$ & $10^{-3}$ & $10^{-6}$ & $10^{-9}$ & $10^{-12}$ & $10^{-15}$ \\
+        \hline
+    \end{tabular}
+    \label{table0.3}
+\end{table}\par
+
+\section{力的微分与环积分}\label{0.8}
+力是矢量而不是标量，作为矢量的力我们写作$\vv{F}$，如果只需要力的大小，我们只需要写作$F$即可。分析物体力的时候，如果力的方向不在同一条直线上，我们需要写成矢量的$\vv{F}$；如果力的方向在同一条直线上，那我们可以只分析数值的大小，用$F$即可。\par
+有时候我们需要对力进行正交分解，但是正交分解之后分力的方向改变了，表示起来不方便。在平面内，我们需要使用\textbf{坐标系}$xOy$和\textbf{单位向量}$\vv{e_x}$和$\vv{e_y}$来表示。
+\begin{forexample}
+    \begin{minipage}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{0.8正交分解.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.7\textwidth}
+        \qquad 对左图中力$\vv{F}$进行正交分解，平行于$x$轴的力的分量大小为$F\cos\theta$，方向与$\vv{e_x}$相同，可以表示为$F\cos\theta\vv{e_x}$；平行于$y$轴的力的分量大小为$F\sin\theta$，方向与$\vv{e_y}$相同，可以表示为$F\sin\theta\vv{e_y}$。所以我们可以得到：
+        \[\vv{F}=F\cos\theta\vv{e_x}+F\sin\theta\vv{e_y}\]
+    \end{minipage}
+\end{forexample}\par
+中学里的力基本都作用在一个质点上，但现实中大多数问题远没有这么简单。我们需要对力取微分，即先研究作用在物体一小部分（可以看作质点）的力$\diff F$，再进行积分求出整体的力。\par
+我们从一个简单的例子开始介绍力的微分。
+\begin{derivation}
+    \begin{minipage}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{0.8单一作用点.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.7\textwidth}
+        \qquad 用一根绳子挂起一个物体，这根绳子的拉力与重力平衡，我们可以得到拉力$\vv{F}$与重力的关系式：
+        \[F=mg\]
+    \end{minipage}
+\end{derivation}
+\begin{derivation}
+    \begin{minipage}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{0.8两个作用点.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.7\textwidth}
+        \qquad 用两根绳子挂起一个物体，每根绳子上的拉力为$\vv{F}$，这时候需要进行正交分解，把$\vv{F}$分解为水平分力$\vv{F_x}=F\cos\theta\vv{e_x}$和竖直分力$\vv{F_y}=F\sin\theta\vv{e_y}$。\par
+        \qquad 其中两根绳子的水平分力方向相反，抵消；竖直分力方向相同，合成之后与重力平衡，我们可以得到拉力$\vv{F}$与重力的关系式：
+        \[2F\sin\theta=mg\]
+    \end{minipage}
+\end{derivation}
+\begin{derivation}
+    \begin{minipage}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{0.8多个作用点.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.7\textwidth}
+        \qquad 我们还可以继续推广至多个作用点。比如用四根绳子拉起一个物体，每根绳子上的拉力为$\vv{F}$，依然把$\vv{F}$分解为水平分力$F\cos\theta\vv{e_x}$和竖直分力$F\sin\theta\vv{e_y}$。\par
+        \qquad 四根绳子的水平分力可以抵消；竖直分力合成之后与重力平衡，我们可以得到拉力$F$与重力$mg$的关系式：
+        \[4F\sin\theta=mg\]
+    \end{minipage}
+\end{derivation}
+\begin{derivation}
+    \begin{minipage}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{0.8无穷多个作用点.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.7\textwidth}
+        \qquad 我们还可以把这样的情况推广到无穷多个作用点。这时候我们不能把每个作用点上的力称为$\vv{F}$了，因为作用点的个数是无限的。对于左图中的圆环，我们需要取圆环上的一小段长度$\diff l$，这一小段长度上的作用力为$\diff \vv{F}$，可想而知$\diff \vv{F}$的大小$\diff F$和$\diff l$是有关系的（取的一小段长度大了受力自然会比较大），我们可以先设$\diff F=k\diff l$，在这里$k$与$l$无关，单位是$\mathrm{N/m}$，这个$k$通常称为\textbf{力的线密度}。
+    \end{minipage}
+\end{derivation}\par
+有微分必然有积分，圆环上的积分需要用\textbf{环积分}来解决。
+\begin{definition}
+    \textbf{环积分}$\displaystyle\oint$：沿一条闭合曲线进行的定积分，曲线的起点与终点相同
+\end{definition}\par
+在物理中环积分最常用的积分变量是$\diff l$，$\displaystyle\oint \diff l=C$，其中$C$是环的周长，如果是圆环，$C=2\pi r$。对其他变量进行积分，通常是转化为对$\diff l$的积分，比如对圆心角$\alpha$进行环积分：\[\displaystyle\oint\diff\alpha=\oint\dfrac{\diff l}{r}=\dfrac{1}{r}\oint\diff l=\dfrac{2\pi r}{r}=2\pi\]\par
+这说明对圆心角$\alpha$进行环积分，结果是周角的大小$2\pi$，符合我们对环积分的理解。
+\begin{derivation}
+    \begin{minipage}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{0.8无穷多个作用点.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.7\textwidth}
+        \qquad 和之前的分析一样，我们需要对$\diff \vv{F}$进行正交分解，把$\diff \vv{F}$分解为水平分力$\diff \vv{F_x}=\diff F\cos\theta\vv{e_x}$和竖直分力$\diff \vv{F_y}=\diff F\sin\theta\vv{e_y}$。\par
+        \qquad 所有的水平分力都指向圆心，一圈水平分力仍然会互相抵消，用环积分可以表示为$\displaystyle\oint \diff \vv{F_x}=0$；竖直分力都向上，积分之后总拉力为：
+        \[\vv{F_y}=\oint\diff F\sin\theta\vv{e_y}=\oint k\diff l\sin\theta\vv{e_y}=2\pi rk\sin\theta\vv{e_y}\]
+        这个力与重力平衡：
+        \[2\pi rk\sin\theta=mg\Longrightarrow k=\dfrac{mg}{2\pi r\sin\theta}\]
+    \end{minipage}
+\end{derivation}\par
+这里我们通过力的平衡计算出了$k$的值，在另一些情况中$k$的值是由力本身的性质决定的，那样我们就可以从$k$出发计算物体的受力；有时候$k$会和$l$有关，即力$\vv{F}$的大小与力作用的位置有关。\par
+力的微分是在物理里使用微积分的方法解决实际问题，事实上微积分是物理学\textbf{决定性的基础}，也是化学的基础。
+
+\end{document}

@@ -33,6 +33,7 @@
 
 \begin{table}[htbp] % 表格环境
     \centering % 居中，不想居中可以不要
+    \caption{第一张示例表} % 标题
     \begin{tabular}{|c|c|} % 正常写表格
         \hline
         序号 & 内容 \\
@@ -40,28 +41,21 @@
         1 & 测试 \\
         \hline
     \end{tabular}
-    \caption{第一张示例表} % 标题
     \label{table1.1} % \label一定要放在\caption之后
 \end{table}
 
 % GCET-book.cls中用tcolorbox宏包新定义了色块，再在这个基础上使用不同颜色定义了新的环境，可以跨多页书写
 % 新定义的环境目前有以下几种：
 % definition
-% concept
 % formula
 % reaction
 % exercise
 % forexample
-% proof
 % derivation
 % answer
 \begin{definition} % 定义 蓝色 自动编号
     理想气体：分子间没有相互作用力、分子本身没有体积的气体
 \end{definition}
-
-\begin{concept} % 概念 蓝色 自动编号
-化学键的概念：
-\end{concept}
 
 \begin{formula} % 公式 紫色 自动编号
 \[pV_m=RT\]
@@ -76,13 +70,13 @@
 求方程$\hat{H}\psi=E\psi$的多电子解
 \end{exercise}
 
+\begin{application} % 应用 橙色 自动编号
+测定我的体积
+\end{application}
+
 \begin{forexample} % 例子 青色 不编号
 常见的中心原子$\ce{sp^3}$杂化的分子：\[\ce{CH4},\ \ce{NH3},\ \ce{H2O}\]
 \end{forexample}
-
-\begin{proof} % 证明（可能不太用到） 绿色 不编号
-    ？这对吗
-\end{proof}
 
 \begin{derivation} % 推导 绿色 不编号
 由理想气体状态方程：
