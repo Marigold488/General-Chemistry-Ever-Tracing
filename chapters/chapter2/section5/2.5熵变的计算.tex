@@ -1,0 +1,258 @@
+\documentclass[../../../GCET-main.tex]{subfiles}
+
+\begin{document}
+
+\section{熵变的计算***}\label{2.5}
+\subsection{单纯$pVT$变化过程的熵变}\label{2.5.1}
+从熵的定义来看，熵的微分等于可逆过程的热温商。对于可逆过程，过程中的熵变可以直接用定义式$\diff S=\dfrac{\delta Q}{T}$积分计算；对于不可逆过程，过程中的熵变不能直接用定义式计算，需要\textbf{利用熵是状态函数的性质}，只要找到一个始态和终态都相同的可逆过程，再用可逆过程的热计算出熵变即可。\par
+\subsubsection{可逆过程熵变}
+可逆过程熵变的计算与热的计算息息相关，我们先给出公式，随后一一推导。
+\begin{formula}
+    从状态1$(p_1,V_1,T_1)$到状态2$(p_2,V_2,T_2)$可逆过程熵变的计算：\par
+    \textbf{绝热可逆过程}：
+    \[\diff S=0\]
+    \[\Delta S=0\]
+    \textbf{恒温可逆过程}：
+    \[\diff S=\dfrac{\delta Q_\mathrm{rev}}{T}=\dfrac{-\delta W_\mathrm{rev}}{T}\]
+    \[\Delta S=\dfrac{Q_\mathrm{rev}}{T}=\dfrac{-W_\mathrm{rev}}{T}=nR\ln\dfrac{V_2}{V_1}\]
+    第二个式子中第三个等号要求理想气体\par
+    \textbf{恒容可逆过程}：
+    \[\diff S=\dfrac{C_\mathrm{V}\diff T}{T}\]
+    如果$C_\mathrm{V}$视为常数：
+    \[\Delta S=C_\mathrm{V}\ln\dfrac{T_2}{T_1}\]
+    \textbf{恒压可逆过程}：
+    \[\diff S=\dfrac{C_\mathrm{p}\diff T}{T}\]
+    如果$C_\mathrm{p}$视为常数：
+    \[\Delta S=C_\mathrm{p}\ln\dfrac{T_2}{T_1}\]
+    $C_\mathrm{V}$和$C_\mathrm{p}$视为常数，对于理想气体的\textbf{任意可逆过程}均成立的三个公式：\par
+    $T,V$：
+    \[\Delta S=C_\mathrm{V}\ln\dfrac{T_2}{T_1}+nR\ln\dfrac{V_2}{V_1}\]
+    $T,p$：
+    \[\Delta S=C_\mathrm{p}\ln\dfrac{T_2}{T_1}-nR\ln\dfrac{p_2}{p_1}\]
+    $V,p$：
+    \[\Delta S=C_\mathrm{p}\ln\dfrac{V_2}{V_1}+C_\mathrm{V}\ln\dfrac{p_2}{p_1}\]
+\end{formula}
+\begin{derivation}
+    \textbf{绝热可逆过程}：\par
+    \qquad 根据\autoref{definition2.19}熵的定义：
+    \[\diff S=\dfrac{\delta Q_\mathrm{rev}}{T}\]
+    绝热过程$\delta Q_\mathrm{rev}=0$，所以：
+    \[\diff S=0\]
+    积分得：
+    \[\Delta S=0\]
+\end{derivation}
+\begin{derivation}
+    \textbf{恒温可逆过程}：\par
+    \qquad 根据\autoref{definition2.19}熵的定义：
+    \[\diff S=\dfrac{\delta Q_\mathrm{rev}}{T}\]
+    积分得：
+    \[\Delta S=\int_{1}^{2}\dfrac{\delta Q_\mathrm{rev}}{T}\]
+    恒温过程$T$是常数，可提出积分外，得到：
+    \[\Delta S=\dfrac{1}{T}\int_{1}^{2}\delta Q_\mathrm{rev}=\dfrac{Q_\mathrm{rev}}{T}\]
+    根据\autoref{formula2.3}热力学第一定律：
+    \[\Delta U=Q_\mathrm{rev}+W_\mathrm{rev}=0\Longrightarrow Q_\mathrm{rev}=-W_\mathrm{rev}\]
+    代入得：
+    \[\Delta S=\dfrac{-W_\mathrm{rev}}{T}\]
+    根据\autoref{formula2.7}，对于理想气体有：
+    \[W_\mathrm{rev}=-nRT\ln\dfrac{V_2}{V_1}\]
+    代入得：
+    \[\Delta S=nR\ln\dfrac{V_2}{V_1}\]
+\end{derivation}
+\begin{derivation}
+    \textbf{恒容可逆过程}：\par
+    \qquad 根据\autoref{definition2.19}熵的定义：
+    \[\diff S=\dfrac{\delta Q_\mathrm{rev}}{T}\]
+    根据\autoref{formula2.11}恒容热公式，$\delta Q_\mathrm{rev}=C_\mathrm{V}\diff T$，代入得：
+    \[\diff S=\dfrac{C_\mathrm{V}\diff T}{T}\]
+    两边积分得：
+    \[\Delta S=\int_{T_1}^{T_2}\dfrac{C_\mathrm{V}\diff T}{T}=C_\mathrm{V}\ln T\bigg|_{T_1}^{T_2}=C_\mathrm{V}\ln\dfrac{T_2}{T_1}\]
+\end{derivation}
+\begin{derivation}
+    \textbf{恒压可逆过程}：\par
+    \qquad 根据\autoref{definition2.19}熵的定义：
+    \[\diff S=\dfrac{\delta Q_\mathrm{rev}}{T}\]
+    根据\autoref{formula2.11}恒压热公式，$\delta Q_\mathrm{rev}=C_\mathrm{p}\diff T$，代入得：
+    \[\diff S=\dfrac{C_\mathrm{p}\diff T}{T}\]
+    两边积分得：
+    \[\Delta S=\int_{T_1}^{T_2}\dfrac{C_\mathrm{p}\diff T}{T}=C_\mathrm{p}\ln T\bigg|_{T_1}^{T_2}=C_\mathrm{p}\ln\dfrac{T_2}{T_1}\]
+\end{derivation}\par
+\begin{derivation}
+    \textbf{任意可逆过程}：\par
+    $T,V$：\par
+    \qquad 根据\autoref{definition2.19}熵的定义：
+    \[\diff S=\dfrac{\delta Q_\mathrm{rev}}{T}\]
+    根据\autoref{formula2.3}热力学第一定律：
+    \[\diff U=\delta Q_\mathrm{rev}+\delta W_\mathrm{rev}=\delta Q_\mathrm{rev}-p_\mathrm{ex}\diff V\Longrightarrow \delta Q_\mathrm{rev}=\diff U+p_\mathrm{ex}\diff V\]
+    可逆过程$p_\mathrm{ex}=p$，所以：
+    \[\delta Q_\mathrm{rev}=\diff U+p\diff V\]
+    代回熵的计算式得：
+    \[\diff S=\dfrac{\diff U+p\diff V}{T}\]
+    根据\autoref{formula2.12}，$\diff U=C_\mathrm{V}\diff T$，代入得：
+    \[\diff S=\dfrac{C_\mathrm{V}\diff T+p\diff V}{T}\]
+    根据\autoref{formula1.3}理想气体状态方程，$pV=nRT\Longrightarrow p=\dfrac{nRT}{V}$，代入得：
+    \[\diff S=\dfrac{C_\mathrm{V}\diff T}{T}+\dfrac{nR\diff V}{V}\]
+    积分得：
+    \[\Delta S=C_\mathrm{V}\ln\dfrac{T_2}{T_1}+nR\ln\dfrac{V_2}{V_1}\]
+    $T,p$：\par
+    \qquad 根据\autoref{definition2.19}熵的定义：
+    \[\diff S=\dfrac{\delta Q_\mathrm{rev}}{T}\]
+    由上面的推导过程：
+    \[\delta Q_\mathrm{rev}=\diff U+p\diff V\]
+    根据\autoref{definition2.15}焓的定义：
+    \[H=U+pV\Longrightarrow\diff H=\diff U+p\diff V+V\diff p\Longrightarrow\diff U+p\diff V=\diff H-V\diff p\]
+    代入$\delta Q_\mathrm{rev}$的表达式得：
+    \[\delta Q_\mathrm{rev}=\diff H-V\diff p\]
+    代回熵的计算式得：
+    \[\diff S=\dfrac{\diff H-V\diff p}{T}\]
+    根据\autoref{formula2.12}，$\diff H=C_\mathrm{p}\diff T$，代入得：
+    \[\diff S=\dfrac{C_\mathrm{p}\diff T-V\diff p}{T}\]
+    根据\autoref{formula1.3}理想气体状态方程，$pV=nRT\Longrightarrow V=\dfrac{nRT}{p}$，代入得：
+    \[\diff S=\dfrac{C_\mathrm{p}\diff T}{T}-\dfrac{nR\diff p}{p}\]
+    积分得：
+    \[\Delta S=C_\mathrm{p}\ln\dfrac{T_2}{T_1}-nR\ln\dfrac{p_2}{p_1}\]
+    $V,p$：
+    根据\autoref{formula1.3}理想气体状态方程：
+    \[pV=nRT\Longrightarrow\dfrac{pV}{T}=nR\Longrightarrow\dfrac{p_1V_1}{T_1}=\dfrac{p_2V_2}{T_2}=nR\]
+    把$T_1$和$T_2$移到一边得：
+    \[\dfrac{T_2}{T_1}=\dfrac{p_2}{p_1}\times\dfrac{V_2}{V_1}\]
+    把这个式子代入刚刚得到的$T,p$的公式中：
+    \begin{align*}
+        \Delta S&=C_\mathrm{p}\ln\left(\dfrac{p_2}{p_1}\times\dfrac{V_2}{V_1}\right)-nR\ln\dfrac{p_2}{p_1}=C_\mathrm{p}\ln\dfrac{p_2}{p_1}+C_\mathrm{p}\ln\dfrac{V_2}{V_1}-nR\ln\dfrac{p_2}{p_1}\\
+        &=C_\mathrm{p}\ln\dfrac{V_2}{V_1}+(C_\mathrm{p}-nR)\ln\dfrac{p_2}{p_1}
+    \end{align*}
+    根据\autoref{formula2.13}理想气体恒容热容与恒压热容的关系，$C_\mathrm{p}=C_\mathrm{V}+nR\Longrightarrow C_\mathrm{p}-nR=C_\mathrm{V}$，代入得：
+    \[\Delta S=C_\mathrm{p}\ln\dfrac{V_2}{V_1}+C_\mathrm{V}\ln\dfrac{p_2}{p_1}\]
+\end{derivation}\par
+\subsubsection{不可逆过程熵变}
+下面展示一个计算不可逆过程熵变的例子，方法是先找到始态和终态相同的可逆过程，再利用可逆过程的公式计算。
+\textbf{自由膨胀}是气体在绝热容器中向真空膨胀，是不可逆过程。理想气体自由膨胀的熵变公式如下。
+\begin{formula}
+    理想气体自由膨胀过程的熵变：
+    \[\Delta S=nR\ln\dfrac{V_2}{V_1}\]
+\end{formula}
+我们先分析理想气体自由膨胀的特征：
+\begin{enumerate}
+    \item $p_\mathrm{ex}=0$，$W=-p_\mathrm{ex}\Delta V=0$
+    \item 绝热容器中$Q=0$
+    \item 根据\autoref{formula2.3}热力学第一定律，$\Delta U=Q+W=0$
+    \item 因为$\Delta U=Q+W=0$，所以$T$不变
+\end{enumerate}\par
+所以我们可以计算恒温可逆膨胀的熵变来间接计算自由膨胀的熵变，推导过程如下。
+\begin{derivation}
+    \qquad 从状态1$(p_1,V_1,T)$到状态2$(p_2,V_2,T)$的自由膨胀过程熵变等于始态和终态相同的恒温膨胀过程的熵变。
+    根据\autoref{formula2.24}，恒温可逆过程的熵变为：
+    \[\Delta S=\dfrac{Q_\mathrm{rev}}{T}=\dfrac{-W_\mathrm{rev}}{T}=nR\ln\dfrac{V_2}{V_1}\]
+    理想气体自由膨胀只能用最后一个式子。
+\end{derivation}\par
+理想气体自由膨胀的$Q=0$，但是$\Delta S\neq 0$，因为自由膨胀过程不可逆，不能用不可逆过程的热计算熵变。
+\subsection{混合过程的熵变}\label{2.5.2}
+不同理想气体的混合过程熵变为各部分理想气体的熵变之和。做题时分别计算各部分理想气体的熵变再求和即可。
+\begin{exercise}
+    一容器中有一隔板，将$1\ \mathrm{mol}\ \ce{N2(g)}$和$1\ \mathrm{mol}\ \ce{O2(g)}$隔开，体系和环境温度恒定，均为$300\ \mathrm{K}$，体积都是$1\ \mathrm{L}$。$\ce{N2(g)}$和$\ce{O2(g)}$都可以视为理想气体。求：
+    \begin{enumerate}
+        \item 抽掉隔板之后混合过程的熵变$\Delta_\mathrm{mix}S_1$；
+        \item 再将容器压缩至总体积为$1\ \mathrm{L}$，求此过程的熵变$\Delta S_2$；
+        \item 求上述两过程的熵变之和$\Delta S_3$；
+        \item 将$\ce{O2(g)}$换成$\ce{N2(g)}$，求抽掉隔板之后的熵变$\Delta S_4$。
+    \end{enumerate}
+\end{exercise}
+\begin{answer}
+    \begin{enumerate}
+        \item $\ce{N2(g)}$和$\ce{O2(g)}$都进行自由膨胀，根据\autoref{formula2.25}：
+        \[\Delta S(\ce{N2})=nR\ln\dfrac{V_2}{V_1}=1\ \mathrm{mol}\times8.314\ \mathrm{J/(mol\cdot K)}\times\ln\dfrac{2\ \mathrm{L}}{1\ \mathrm{L}}=8.314\ln 2\ \mathrm{J/K}\]
+        \[\Delta S(\ce{O2})=nR\ln\dfrac{V_2}{V_1}=1\ \mathrm{mol}\times8.314\ \mathrm{J/(mol\cdot K)}\times\ln\dfrac{2\ \mathrm{L}}{1\ \mathrm{L}}=8.314\ln 2\ \mathrm{J/K}\]
+        \[\Delta_\mathrm{mix}S_1=\Delta S(\ce{N2})+\Delta S(\ce{O2})=11.53\ \mathrm{J/K}\]
+        \item 无论压缩是否可逆，都可以当成理想气体恒温可逆压缩过程计算，根据\autoref{formula2.24}：
+        \[\Delta S_2=nR\ln\dfrac{V_2}{V_1}=2\ \mathrm{mol}\times 8.314\ \mathrm{J/(mol\cdot K)}\times\ln\dfrac{1\ \mathrm{L}}{2\ \mathrm{L}}=-11.53\ \mathrm{J/K}\]
+        \item 相加即可：
+        \[\Delta S_3=\Delta_\mathrm{mix}S_1+\Delta S_2=16.628\ln 2\ \mathrm{J/K}-16.628\ln 2\ \mathrm{J/K}=0\]
+        \item 抽掉隔板后两部分气体种类和状态完全相同，系统不会发生任何变化，$\Delta S=0$。
+    \end{enumerate}
+\end{answer}
+\subsection{可逆相变过程的熵变}\label{2.5.3}
+\textbf{可逆相变过程}\footnote{即在相边界进行的相变}的温度和压强均为定值，摩尔相变熵的计算公式如下。
+\begin{formula}
+    相变过程的摩尔熵变：
+    \[\Delta_\mathrm{trs}S_\mathrm{m}=\dfrac{\Delta_\mathrm{trs}H_\mathrm{m}}{T_\mathrm{trs}}\]
+\end{formula}\par
+这里没有规定标准状态，因为不同压强下的摩尔相变熵都可以这么计算，如果压强是$p^0$，那可以在公式的焓变和熵变中加上上标$0$。此公式的推导过程如下。
+\begin{derivation}
+    \qquad 根据\autoref{definition2.19}熵的定义：
+    \[\diff_\mathrm{trs}S_\mathrm{m}=\dfrac{\delta Q_\mathrm{rev}}{T_\mathrm{trs}}\]
+    积分得：
+    \[\Delta_\mathrm{trs}S_\mathrm{m}=\int_{1}^{2}\dfrac{\delta Q_\mathrm{rev}}{T_\mathrm{trs}}\]
+    $T_\mathrm{trs}$是常数，可提出积分外，得到：
+    \[\Delta_\mathrm{trs}S_\mathrm{m}=\dfrac{1}{T_\mathrm{trs}}\int_{1}^{2}\delta Q_\mathrm{rev}=\dfrac{Q_\mathrm{rev}}{T_\mathrm{trs}}\]
+    $p$也是常数，根据\autoref{formula2.9}恒压热等于焓变，$Q_\mathrm{rev}=\Delta_\mathrm{trs}H_\mathrm{m}$，代入得：
+    \[\Delta_\mathrm{trs}S_\mathrm{m}=\dfrac{\Delta_\mathrm{trs}H_\mathrm{m}}{T_\mathrm{trs}}\]
+\end{derivation}\par
+一般可以查到物质的标准摩尔相变熵$\Delta_\mathrm{trs}S_\mathrm{m}^0$，需要计算含相变的过程的熵时可以在标准状况下计算。
+\subsection{热力学第三定律}\label{2.5.4}
+和内能、焓变等状态函数不同，物质的熵变是有绝对值的，\textbf{热力学第三定律}规定了熵值的基准。
+\begin{formula}
+    \textbf{热力学第三定律}：
+    \[S(0\ \mathrm{K},\text{完美晶体})=0\]
+\end{formula}\par
+有了这个基准，我们就可以用一系列过程计算出物质的\textbf{标准摩尔熵}$S_\mathrm{m}^0(T)$，方法如下：
+\begin{enumerate}
+    \item 确定从$0\ \mathrm{K}$下的完美晶体到物质需要经历多少单纯$pVT$变化过程和相变；
+    \item 若经历单纯$pVT$变化过程，用\autoref{2.5.1}中的计算方法计算出熵变，主要用恒压可逆过程；
+    \item 若经历相变过程，用\autoref{2.5.3}中的计算方法计算出熵变；
+    \item 最后把所有熵变累加即可；
+\end{enumerate}\par
+计算过程可以由\autoref{figure2.4}表示。
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{2.5.4规定熵.png}
+    \caption{标准摩尔熵的计算}
+    \label{figure2.4}
+\end{figure}\par
+非标准态的熵可以继续使用\autoref{2.5.1}中的方法计算，一般我们可以查询到物质在$298.15\ \mathrm{K}$下的标准摩尔熵$S_\mathrm{m}^0(298.15\ \mathrm{K})$。一般气体的标准摩尔熵远大于液体和固体。
+\subsection{化学反应过程的熵变}\label{2.5.5}
+和焓变一样，我们关心\textbf{标准摩尔反应熵}$\Delta_\mathrm{r}S_\mathrm{m}^0$，一般是$298.15\ \mathrm{K}$下的$\Delta_\mathrm{r}S_\mathrm{m}^0(298.15\ \mathrm{K})$。\par
+和标准摩尔反应焓一样，标准摩尔反应熵不考虑物质的混合，但根据\autoref{exercise2.3}，对于理想气体混合再压缩至各气体分压等于反应前分压的过程，熵变为零。如果我们考虑的“混合”前后理想气体压强或理想溶液浓度不变，那这个“混合”过程的熵变其实是零，因为混合物中各组分与混合之前没有什么区别。所以一般也可以认为标准摩尔反应熵是混合物发生反应之后的熵变。\par
+焓变中的\autoref{formula2.16}盖斯定律对于熵变也有类似的计算，只要是状态函数中的广度量都有这样的计算。\par
+与焓不同的是，我们可以知道熵的具体数值，因此我们可以直接用反应中物质的标准摩尔熵$S_\mathrm{m}^0$计算反应的熵变，公式和证明过程与\autoref{formula2.17}类似。
+\begin{formula}
+    标准摩尔熵计算标准摩尔反应熵：
+    \[\Delta_\mathrm{r}S_\mathrm{m}^0=\sum\nu_iS_\mathrm{m}^0[i]\]
+    \qquad 其中$i$代表反应中的物质；$\nu_i$是反应中各物质的计量数，反应物为负数，产物为正数；$S_\mathrm{m}^0[i]$是反应中各物质的标准摩尔熵。
+\end{formula}\par
+对于温度不是$298.15\ \mathrm{K}$的反应，反应熵也可以用类似\autoref{formula2.19}基尔霍夫公式的方法计算，由于熵为热温商，公式的形式和基尔霍夫公式略有区别。
+\begin{formula}
+    \textbf{任意温度$T$下反应熵}：
+    \[\Delta_\mathrm{r}S_\mathrm{m}^0(T)=\Delta_\mathrm{r}S_\mathrm{m}^0(298.15\ \mathrm{K})+\int_{298.15\ \mathrm{K}}^{T}  \,\dfrac{\Delta_\mathrm{r}C_\mathrm{p,m}}{T}\diff T \]
+    \qquad 其中$\Delta_\mathrm{r}C_\mathrm{p,m}=\displaystyle\sum\nu_iC_\mathrm{p,m}[i]$，即产物的恒压摩尔热容总和减去反应物的恒压摩尔热容总和。若认为热容不随温度变化，则上式可改写为：
+    \[\Delta_\mathrm{r}S_\mathrm{m}^0(T)=\Delta_\mathrm{r}S_\mathrm{m}^0(298.15\ \mathrm{K})+\Delta_\mathrm{r}C_\mathrm{p,m}\ln\dfrac{T}{298.15\ \mathrm{K}}\]
+\end{formula}\par
+具体推导过程也和基尔霍夫公式类似。
+\begin{derivation}
+    \[\ce{$a$A($\alpha$) + $b$B($\beta$) -> $y$Y($\gamma$) + $z$Z($\delta$)}\]
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{2.5.4熵变与温度的关系.png}
+    \end{center}
+    \[\Delta_\mathrm{r}S_\mathrm{m}^0(T)=\Delta_\mathrm{r}S_\mathrm{m}^0(298.15\ \mathrm{K})+\Delta S_1+\Delta S_2\]
+    其中$\Delta S_1$和$\Delta S_2$都可以通过摩尔热容计算。
+    根据\autoref{formula2.24}恒压可逆过程熵变的计算公式：
+    \begin{align*}
+        \diff S_1&=\dfrac{aC_\mathrm{p,m}[\ce{A($\alpha$)}]+bC_\mathrm{p,m}[\ce{B($\beta$)}]}{T}\diff T\\
+        \diff S_2&=\dfrac{yC_\mathrm{p,m}[\ce{Y($\gamma$)}]+zC_\mathrm{p,m}[\ce{Z($\delta$)}]}{T}\diff T
+    \end{align*}
+    两式分别积分得（注意积分上下限不同）：
+    \begin{align*}
+    \Delta S_1&=\int_{T}^{298.15\ \mathrm{K}}  \,\dfrac{aC_\mathrm{p,m}[\ce{A($\alpha$)}]+bC_\mathrm{p,m}[\ce{B($\beta$)}]}{T}\diff T\\
+    \Delta S_2&=\int_{298.15\ \mathrm{K}}^{T}  \,\dfrac{yC_\mathrm{p,m}[\ce{Y($\gamma$)}]+zC_\mathrm{p,m}[\ce{Z($\delta$)}]}{T}\diff T
+    \end{align*}
+    改变$\Delta S_1$积分式中的上下限得：
+    \begin{align*}
+    \Delta S_1&=\int_{298.15\ \mathrm{K}}^{T}  \,\dfrac{-aC_\mathrm{p,m}[\ce{A($\alpha$)}]-bC_\mathrm{p,m}[\ce{B($\beta$)}]}{T}\diff T\\
+    \Delta S_2&=\int_{298.15\ \mathrm{K}}^{T}  \,\dfrac{yC_\mathrm{p,m}[\ce{Y($\gamma$)}]+zC_\mathrm{p,m}[\ce{Z($\delta$)}]}{T}\diff T
+    \end{align*}
+    两式相加得：
+    \[\Delta S_1+\Delta S_2=\int_{298.15\ \mathrm{K}}^{T}  \,\dfrac{\sum\nu_iC_\mathrm{p,m}[i]}{T}\diff T=\int_{298.15\ \mathrm{K}}^{T}  \,\dfrac{\Delta_\mathrm{r}C_\mathrm{p,m}}{T}\diff T\]
+    把结果代回$\Delta_\mathrm{r}S_\mathrm{m}^0(T)$的计算式中就可以得到\autoref{formula2.29}：
+    \[\Delta_\mathrm{r}S_\mathrm{m}^0(T)=\Delta_\mathrm{r}S_\mathrm{m}^0(298.15\ \mathrm{K})+\int_{298.15\ \mathrm{K}}^{T}  \,\dfrac{\Delta_\mathrm{r}C_\mathrm{p,m}}{T}\diff T \]
+\end{derivation}\par
+整体上看熵变和焓变的计算大同小异，都是从定义出发一步步推导，有区别地方主要有两个：焓是恒压热，熵是热温熵，积分时有区别；焓没有具体数值，只能用生成焓代替，熵有具体数值，可以直接计算。
+
+\end{document}

@@ -1,0 +1,190 @@
+\documentclass[../../../GCET-main.tex]{subfiles}
+
+\begin{document}
+
+\section{吉布斯自由能}\label{2.6}
+虽然\autoref{2.4.2}中的熵判据已经可以判断孤立体系中的过程和封闭体系中的绝热过程的自发性，但大多数化学反应都发生在封闭体系中，与外界会有热量交换，无法直接用熵判据判断反应的自发性。\par
+生活和生产中的化学反应过程通常为\textbf{封闭体系中恒温恒压且非体积功为零的过程}。如果想判断反应的自发性，我们只能构建一个孤立体系，并利用孤立体系的熵判据判断反应的自发性。\par
+根据\autoref{2.1.1}，如果把体系和环境看成一个新的体系，那么这个体系是一个孤立体系。所以我们可以\textbf{计算体系和环境的总熵变}，并根据总熵变的大小判断过程的自发性。如果总熵变大于零，那么反应自发；如果总熵变等于零，那么反应可逆；如果总熵变小于零，那么反应不自发。
+\begin{derivation}
+    \qquad 恒温恒压条件下，体系温度与环境温度相等，温度可以统一用$T$表示：
+    \[T=T_\mathrm{sys}=T_\mathrm{sur}\]
+    如果反应自发，那么体系和环境的总熵变大于零：
+    \[\diff S_\mathrm{sys}+\diff S_\mathrm{sur}>0\]
+    体系中的过程是自发过程，是不可逆过程，体系的熵变无法用体系的热计算，因为体系的热是不可逆热。环境只有与体系的热交换，且环境温度和体积基本保持不变，所以\textbf{环境中只有可逆过程}，可以用环境的热除以温度计算环境的熵变：
+    \[\diff S_\mathrm{sys}+\dfrac{\delta Q_\mathrm{sur}}{T}>0\]
+    孤立体系和外界没有热交换，所以环境的热$\delta Q_\mathrm{sur}$和体系的热$\delta Q_\mathrm{sys}$大小相等，方向相反：
+    \[\delta Q_\mathrm{sur}=-\delta Q_\mathrm{sys}\]
+    代入原式，我们可以得到一个只与体系的物理量相关的式子：
+    \[\diff S_\mathrm{sys}-\dfrac{\delta Q_\mathrm{sys}}{T}>0\]
+    我们可以去掉下标。又因为反应在恒压条件下进行，所以$\delta Q=\diff H$，代入得：
+    \[\diff S-\dfrac{\diff H}{T}>0\]
+    移项可以得到：
+    \[\diff H-T\diff S<0\]
+    因为温度$T$恒定，所以我们也可以改写成积分形式：
+    \[\Delta H-T\Delta S<0\]
+\end{derivation}\par
+于是我们得到了一个可以用于封闭体系中恒温恒压且非体积功为零的过程的判别式$\Delta H-T\Delta S<0$。如果把$\Delta H$和$T\Delta S$合并，我们可以得到：
+$\Delta(H-TS)<0$\par
+回忆\autoref{2.2.4}中恒压过程的热，我们根据$Q=\Delta(U+pV)$定义了一个新的状态函数$H=U+pV$。熵判据$\Delta S>0$中$S$是一个状态函数，那我们得到的新的判据中$H-TS$会不会也是一个新的状态函数的变化呢？答案是肯定的，这个新的函数被称为\textbf{吉布斯自由能}。
+\subsection{吉布斯自由能的定义**}\label{2.6.1}
+\begin{definition}
+    \textbf{吉布斯自由能}：为了方便判断封闭体系中恒温恒压且非体积功为0的过程的自发性，我们定义一个新的热力学函数吉布斯自由能，符号为$G$：
+    \[G=H-TS=U+pV-TS\]
+    \textbf{吉布斯自由能变}：非体积功为0时吉布斯自由能的变化：
+    \begin{align*}
+        \diff G&=\diff(H-TS)=\diff H-T\diff S-S\diff T\\
+        &=\diff(U+pV-TS)=\diff U+p\diff V+V\diff p-T\diff S-S\diff T
+    \end{align*}
+    \begin{align*}
+        \Delta G&=\Delta(H-TS)\\
+        &=\Delta(U+pV-TS)
+    \end{align*}
+    恒温恒压条件下，$\diff p=0$、$\Delta p=0$、$\diff T=0$、$\Delta T=0$：
+    \[\diff G=\diff H-T\diff S=\diff U+p\diff V-T\diff S\]
+    \[\Delta G=\Delta H-T\Delta S=\Delta U+p\Delta V-T\Delta S\]
+\end{definition}\par
+吉布斯自由能的单位是$\mathrm{J}$。\par
+吉布斯自由能只与系统本身有关，与环境无关，计算起来比较方便。
+\subsection{吉布斯自由能判据**}\label{2.6.2}
+吉布斯自由能判据在根本上仍是熵判据，它的优点是只用体系状态函数的增量描述了体系+环境的熵变。对于封闭体系中恒温恒压且非体积功为零的过程，我们可以用吉布斯自由能变来判断过程是否可以进行和是否可逆：如果$\Delta G>0$，那么过程不能自发进行；如果$\Delta G=0$，那么过程可逆；如果$\Delta G<0$，那么过程可以自发进行，过程不可逆。\par
+吉布斯自由能判据和\autoref{2.4.2}中的熵判据符号是相反的，这是因为我们在导出吉布斯自由能的过程中乘以$T$再移项才得到了和吉布斯自由能相关的判别式。$T>0$，乘以$T$的过程不改变符号，而移项的过程改变了符号，因此最终符号相反。
+\subsection{吉布斯自由能变的计算方法***}\label{2.6.3}
+吉布斯自由能变的计算一般从\autoref{definition2.21}吉布斯自由能的定义式出发，主要有以下两种方式：
+\begin{enumerate}
+    \item 用过程中$p$、$V$、$T$等可测量的物理量的变化直接计算$\Delta G$；
+    \item 先计算过程的$\Delta H$和$\Delta S$，再使用$\Delta G=\Delta(H-TS)$计算。
+\end{enumerate}\par
+下面我们依次介绍这两种方法。
+\subsubsection{从热力学基本方程出发计算}
+\autoref{definition2.21}中吉布斯自由能变的微分形式仍然比较复杂，不适合直接用于计算，我们可以先推导吉布斯自由能的\textbf{热力学基本方程}\footnote{热力学基本方程的定义见\textcolor{blue}{追寻章节}}。热力学基本方程要求封闭体系、可逆过程、无非体积功，我们的推导将基于这几个条件。
+\begin{derivation}
+    \qquad 根据\autoref{definition2.21}：
+    \[\diff G=\diff U+p\diff V+V\diff p-T\diff S-S\diff T\]
+    根据\autoref{formula2.3}热力学第一定律：
+    \[\diff U=\delta Q+\delta W\]
+    在可逆过程中，$\diff S=\dfrac{\delta Q}{T}$，所以$\delta Q=T\diff S$；在非体积功为零的过程中，功只有体积功，所以$\delta W=-p\diff V$，代入得：
+    \[\diff U=T\diff S-p\diff V\]
+    把上式代入$\diff G$的表达式中得：
+    \[\diff G=T\diff S-p\diff V+p\diff V+V\diff p-T\diff S-S\diff T=V\diff p-S\diff T\]
+\end{derivation}\par
+于是我们得到了$G$的热力学基本关系式，这样我们可以通过积分算出$\Delta G$。
+\begin{formula}
+    $G$的热力学基本关系式：
+    \[\diff G=V\diff p-S\diff T\]
+    积分得：
+    \[\Delta G=\int_{p_1}^{p_2}V\diff p-\int_{T_1}^{T_2}S\diff T\]
+    恒温条件下：
+    \[\Delta G=\int_{p_1}^{p_2}V\diff p\xlongequal{\text{理想气体}}{}nRT\ln\dfrac{p_2}{p_1}\]
+    恒压条件下：
+    \[\Delta G=-\int_{T_1}^{T_2}S\diff T\]
+\end{formula}\par
+封闭体系中无非体积功的可逆过程的$\Delta G$都可以这么计算，计算的过程五花八门，和之前的积分运算类似。如果温度$T$和压强$p$不变，那么对应的微分项$\diff T$和$\diff p$为零，可以简化计算。这里已经给出理想气体恒温过程的公式，在\autoref{2.6.6}中我们会用到这个公式。
+\subsubsection{从焓变和熵变出发计算}
+在\autoref{2.2.8}、\autoref{2.3}中我们介绍了各种过程焓变的计算，在\autoref{2.5}中我们介绍了各种过程熵变的计算。我们可以先计算出过程的焓变$\Delta H$和熵变$\Delta S$，再利用$\Delta G=\Delta(H-TS)$计算。\par
+如果是恒温条件（\textbf{相变是其中一种}），那么可以直接用$\Delta G=\Delta H-T\Delta S$计算；如果不是恒温条件，也可以先计算出始态和终态的熵和温度，计算$TS$整体的变化$\Delta (TS)$，再计算$\Delta G=\Delta H-\Delta(TS)$。\par
+这里给出一个非恒温条件的例题。
+\begin{exercise}
+    $2\ \mathrm{mol}\ \ce{He}$在标准压强$p^0=100\ \mathrm{kPa}$下从$200\ \mathrm{℃}$加热到$400\ \mathrm{℃}$。$\ce{He}$可看作单原子理想气体，且已知$\ce{He}$的$S_\mathrm{m}^0(200\ \mathrm{℃})=135.7\ \mathrm{J/(mol\cdot K)}$，求过程的$\Delta G$
+\end{exercise}
+\begin{answer}
+    先把摄氏温度转换为热力学温度，$200\ \mathrm{℃}=473.15\ \mathrm{K}$，$400\ \mathrm{℃}=673.15\ \mathrm{K}$。\par
+    根据\autoref{formula2.14}单原子摩尔气体的$C_\mathrm{p,m}=\dfrac{5}{2}R$，根据\autoref{formula2.12}：
+    \[\Delta H=nC_\mathrm{p,m}\Delta T=2\ \mathrm{mol}\times\dfrac{5}{2}\times8.314\ \mathrm{J/(mol\cdot K)}\times(673.15\ \mathrm{K}-473.15\ \mathrm{K})=8314\ \mathrm{J}\]
+    此过程为恒压过程：
+    \[\diff S=\dfrac{\delta Q}{T}=\dfrac{\diff H}{T}=\dfrac{nC_\mathrm{p,m}\diff T}{T}\]
+    积分得\footnote{根据\autoref{formula2.24}可以直接得到，但建议从基础公式开始推}：
+    \begin{align*}
+        \Delta S&=\int_{473.15\ \mathrm{K}}^{673.15\ \mathrm{K}}\dfrac{nC_\mathrm{p,m}\diff T}{T}=nC_\mathrm{p,m}\ln\dfrac{T_2}{T_1}\\
+        &=2\ \mathrm{mol}\times\dfrac{5}{2}\times8.314\ \mathrm{J/(mol\cdot K)}\times\ln\dfrac{673.15\ \mathrm{K}}{473.15\ \mathrm{K}}=14.7\ \mathrm{J/K}
+    \end{align*}
+    始态的熵为：
+    \[S^0(200\ \mathrm{℃})=nS_\mathrm{m}^0(200\ \mathrm{℃})=2\ \mathrm{mol}\times135.7\ \mathrm{J/(mol\cdot K)}=271.4\ \mathrm{J/K}\]
+    终态的熵为：
+    \[S^0(400\ \mathrm{℃})=S^0(200\ \mathrm{℃})+\Delta S=271.4\ \mathrm{J/K}+14.7\ \mathrm{J/K}=286.1\ \mathrm{J/K}\]
+    所以：
+    \[\Delta(TS)=673.15\ \mathrm{K}\times286.1\ \mathrm{J/K}-473.15\ \mathrm{K}\times271.4\ \mathrm{J/K}=64175.3\ \mathrm{J}\]
+    根据\autoref{definition2.21}吉布斯自由能的定义：
+    \[\Delta G=\Delta(H-TS)=\Delta H-\Delta(TS)=8314\ \mathrm{J}-64175.3\ \mathrm{J}=-55861.3\ \mathrm{J}\]
+\end{answer}\par
+我们现在学习的知识已经很多，公式更是多到记不住。虽然大多数过程都有现成的公式，但还是希望大家只记住几个基本公式，然后根据过程的条件进行变换和积分，这样可以在只记住一小部分公式的情况下解决大多数问题。
+\subsection{化学反应的标准摩尔自由能变***}\label{2.6.4}
+在焓和熵的学习中，我们都是先了解其他过程的焓变和熵变，最后再学习化学反应过程的焓变和熵变。吉布斯自由能也是这样，但有所不同的是，吉布斯自由能变是\textbf{直接判断反应是否自发的物理量}，需要落地到反应的具体条件上。\par
+\textbf{标准摩尔反应吉布斯自由能}的定义和\autoref{definition2.18}中标准摩尔反应焓的定义类似，符号为$\Delta_\mathrm{r}G_\mathrm{m}^0$，一般是$298.15\ \mathrm{K}$下的$\Delta_\mathrm{r}G_\mathrm{m}^0(298.15\ \mathrm{K})$。\par
+标准摩尔反应吉布斯自由能也没有考虑混合，但是和\autoref{2.5.5}中的熵变一样，对于理想气体和理想溶液，只要混合前后压强确定，混合物中各组分就和混合之前没有什么区别。所以我们计算的$\Delta_\mathrm{r}G_\mathrm{m}^0$可以认为就是反应体系中混合物的$\Delta_\mathrm{r}G_\mathrm{m}^0$。
+同样，吉布斯自由能也是状态函数中的广度量，可以使用类似\autoref{formula2.16}盖斯定律的计算，也可以用标准摩尔生成吉布斯自由能$\Delta_\mathrm{f}G_\mathrm{m}^0(298.15\ \mathrm{K})$计算标准摩尔反应吉布斯自由能$\Delta_\mathrm{r}G_\mathrm{m}^0$，公式和证明过程也与\autoref{formula2.17}类似。
+\begin{formula}
+    标准摩尔生成吉布斯自由能计算标准摩尔反应吉布斯自由能：
+    \[\Delta_\mathrm{r}G_\mathrm{m}^0=\sum\nu_i\Delta_\mathrm{f}G_\mathrm{m}^0[i]\]
+    \qquad 其中$i$代表反应中的物质；$\nu_i$是反应中各物质的计量数，反应物为负数，产物为正数；$\Delta_\mathrm{f}G_\mathrm{m}^0[i]$是反应中各物质的标准摩尔生成吉布斯自由能。最稳定单质的标准摩尔生成吉布斯自由能为0。
+\end{formula}\par
+这里“最稳定单质的标准摩尔生成吉布斯自由能为0”是显然的。$\Delta_\mathrm{r}G_\mathrm{m}^0$的定义是由最稳定单质生成某物质的过程的$\Delta G_\mathrm{m}$，而最稳定单质生成最稳定单质的过程中始态和终态相等，$G$是状态函数，此过程的$\Delta G_\mathrm{m}$当然为零，因此最稳定单质的$\Delta_\mathrm{r}G_\mathrm{m}^0=0$。
+\subsection{温度变化对标准摩尔自由能变的影响*}\label{2.6.5}
+对于$\Delta_\mathrm{r}H_\mathrm{m}^0(T)$，我们有\autoref{formula2.19}基尔霍夫公式；对于$\Delta_\mathrm{r}S_\mathrm{m}^0(T)$，我们也有类似的\autoref{formula2.29}；但对于$\Delta_\mathrm{r}G_\mathrm{m}^0(T)$，这样的公式会比较复杂，因为$G=H-TS$，要得出类似的积分式需要先求出$\Delta_\mathrm{r}H_\mathrm{m}^0(T)$和$\Delta_\mathrm{r}S_\mathrm{m}^0(T)$其中之一再积分，也就是需要进行两次积分才可以。如果认为热容随温度变化，那积分式会特别复杂；即使认为热容不随温度变化，我们也需要对$\ln T$进行积分，鉴于我们现在还没有系统学习微积分，这样的计算也不简单。\par
+所以我们不如直接计算出$\Delta_\mathrm{r}H_\mathrm{m}^0(T)$和$\Delta_\mathrm{r}S_\mathrm{m}^0(T)$，然后使用公式$\Delta_\mathrm{r}G_\mathrm{m}^0(T)=\Delta_\mathrm{r}H_\mathrm{m}^0(T)-T\Delta_\mathrm{r}S_\mathrm{m}^0(T)$，这样得到的结果和类似基尔霍夫公式的那种算法是一样的。\par
+实际情况下如果认为$\Delta_\mathrm{r}H_\mathrm{m}^0$和$\Delta_\mathrm{r}S_\mathrm{m}^0$不随温度变化，我们也可以直接用$298.15\ \mathrm{K}$下的焓变和熵变数据，只改变温度$T$，计算$\Delta_\mathrm{r}G_\mathrm{m}^0$。
+\begin{formula}
+    \textbf{任意温度$T$下反应吉布斯自由能}：
+    \[\Delta_\mathrm{r}G_\mathrm{m}^0(T)=\Delta_\mathrm{r}H_\mathrm{m}^0(T)-T\Delta_\mathrm{r}S_\mathrm{m}^0(T)\]
+    如果认为$\Delta_\mathrm{r}H_\mathrm{m}^0$和$\Delta_\mathrm{r}S_\mathrm{m}^0$不随温度变化：
+    \[\Delta_\mathrm{r}G_\mathrm{m}^0(T)=\Delta_\mathrm{r}H_\mathrm{m}^0-T\Delta_\mathrm{r}S_\mathrm{m}^0\]
+\end{formula}\par
+根据上面的第二个公式，我们可以根据$\Delta_\mathrm{r}H_\mathrm{m}^0$和$\Delta_\mathrm{r}S_\mathrm{m}^0$的正负性判断$\Delta_\mathrm{r}G_\mathrm{m}^0$的正负性，进而判断化学反应的自发性，列表如下。
+\begin{table}[h]
+    \centering
+    \caption{焓变、熵变与化学反应的自发性}
+    \begin{tabular}{cccc}
+        \toprule
+        $\Delta_\mathrm{r}H_\mathrm{m}^0$ & $\Delta_\mathrm{r}S_\mathrm{m}^0$ & $\Delta_\mathrm{r}G_\mathrm{m}^0$ & 化学反应的自发性\\
+        \midrule
+        $>0$ & $>0$ & 低温$>0$，高温$<0$ & 低温不自发，高温自发 \\
+        $>0$ & $<0$ & $>0$ & 任意温度下不自发 \\
+        $<0$ & $>0$ & $<0$ & 任意温度下自发 \\
+        $<0$ & $<0$ & 低温$<0$，高温$>0$ & 低温自发，高温不自发 \\
+        \bottomrule
+    \end{tabular}
+    \label{table2.1}
+\end{table}
+\subsection{组分分压/浓度与自由能变的关系**}\label{2.6.6}
+标准摩尔反应吉布斯自由能$\Delta_\mathrm{r}G_\mathrm{m}^0$是在标准状态下的摩尔吉布斯自由能变，要求压强为$p^0=100\ \mathrm{kPa}$或浓度为$c^0=1\ \mathrm{mol/L}$，但更多时候反应并不在标准状态下进行，因此我们需要计算非标准状态下的摩尔反应吉布斯自由能$\Delta_\mathrm{r}G_\mathrm{m}$。\par
+我们仍然可以利用$G$是状态函数的性质，在已经算出对应温度下的$\Delta_\mathrm{r}G_\mathrm{m}^0$的情况下，把反应的过程拆分成三个过程，先改变压强或浓度至标准状态，再在标准状态下发生反应，最后改变压强或浓度至产物的压强或浓度，得到的公式如下。\par
+\begin{formula}
+    对于反应：
+    \[\ce{$a$A($p_\mathrm{A}$) + $b$B($c_\mathrm{B}$) -> $y$Y($p_\mathrm{Y}$) + $z$Z($c_\mathrm{Z}$)}\]
+    设某温度下的标准摩尔反应吉布斯自由能为$\Delta_\mathrm{r}G_\mathrm{m}^0$，则该状态的标准摩尔反应吉布斯自由能$\Delta_\mathrm{r}G_\mathrm{m}$为：
+    \[\Delta_\mathrm{r}G_\mathrm{m}=\Delta_\mathrm{r}G_\mathrm{m}^0+RT\ln\dfrac{\left(\dfrac{p_\mathrm{Y}}{p^0}\right)^y\left(\dfrac{c_\mathrm{Z}}{c^0}\right)^z}{\left(\dfrac{p_\mathrm{A}}{p^0}\right)^a\left(\dfrac{c_\mathrm{B}}{c^0}\right)^b}=\Delta_\mathrm{r}G_\mathrm{m}^0+RT\ln J\]
+    对数中的部分是\textbf{反应商}$J$，即压强$p_i$或浓度$c_i$除以标准压强$p^0$或标准浓度$c^0$的系数$\nu_\mathrm{i}$\footnote{依然产物的系数为正数，反应物的系数为负数}次幂，再取自然对数与$RT$相乘，最后加到$\Delta_\mathrm{r}G_\mathrm{m}^0$上，通式可表示为：
+    \[\Delta_\mathrm{r}G_\mathrm{m}=\Delta_\mathrm{r}G_\mathrm{m}^0+RT\ln\prod_i\left(\dfrac{p_i}{p^0}\text{或}\dfrac{c_i}{c^0}\right)^{\nu_i}=\Delta_\mathrm{r}G_\mathrm{m}^0+RT\sum_i\nu_i\ln\left(\dfrac{p_i}{p^0}\text{或}\dfrac{c_i}{c^0}\right)\]
+\end{formula}
+下面以压强的变化为例，推导上述公式。
+\begin{derivation}
+    \[\ce{$a$A($p_\mathrm{A}$) + $b$B($p_\mathrm{B}$) -> $y$Y($p_\mathrm{Y}$) + $z$Z($p_\mathrm{Z}$)}\]
+    过程1：反应物$\ce{A}$、$\ce{B}$变化为标准状态\par
+    根据\autoref{formula2.30}：
+    \[\Delta G_\mathrm{m,1}=aRT\ln\dfrac{p^0}{p_\mathrm{A}}+bRT\ln\dfrac{p^0}{p_\mathrm{B}}=RT\ln\left[\left(\dfrac{p^0}{p_\mathrm{A}}\right)^a\left(\dfrac{p^0}{p_\mathrm{B}}\right)^b\right]\]
+    过程2：在标准状态下发生反应
+    \[\Delta G_\mathrm{m,2}=\Delta_\mathrm{r}G_\mathrm{m}^0\]
+    过程3：产物$\ce{Y}$、$\ce{Z}$从标准状态变化为最终状态\par
+    根据\autoref{formula2.30}：
+    \[\Delta G_\mathrm{m,3}=yRT\ln\dfrac{p_\mathrm{Y}}{p^0}+zRT\ln\dfrac{p_\mathrm{Z}}{p^0}=RT\ln\left[\left(\dfrac{p_\mathrm{Y}}{p^0}\right)^y\left(\dfrac{p_\mathrm{Z}}{p^0}\right)^z\right]\]
+    全过程：
+    \begin{align*}
+        \Delta_\mathrm{r}G_\mathrm{m}&=\Delta G_\mathrm{m,1}+\Delta G_\mathrm{m,2}+\Delta G_\mathrm{m,3}\\
+        &=RT\ln\left[\left(\dfrac{p^0}{p_\mathrm{A}}\right)^a\left(\dfrac{p^0}{p_\mathrm{B}}\right)^b\right]+\Delta_\mathrm{r}G_\mathrm{m}^0+RT\ln\left[\left(\dfrac{p_\mathrm{Y}}{p^0}\right)^y\left(\dfrac{p_\mathrm{Z}}{p^0}\right)^z\right]\\
+        &=\Delta_\mathrm{r}G_\mathrm{m}^0+RT\ln\dfrac{\left(\dfrac{p_\mathrm{Y}}{p^0}\right)^y\left(\dfrac{p_\mathrm{Z}}{p^0}\right)^z}{\left(\dfrac{p_\mathrm{A}}{p^0}\right)^a\left(\dfrac{p_\mathrm{B}}{p^0}\right)^b}
+    \end{align*}
+    即：
+    \[\Delta_\mathrm{r}G_\mathrm{m}=\Delta_\mathrm{r}G_\mathrm{m}^0+RT\ln J\]
+\end{derivation}\par
+浓度的变化和压强的变化类似，推导过程与压强的式子有关联，但是以我们目前的知识还无法推导。对于纯固体和纯液体，压强变化对体积的影响很小，因此吉布斯自由能的变化不大，可以忽略。所以我们只需要考虑压强和浓度对理想气体和溶液自由能的影响即可。\paragraph{}
+这个式子是我们计算化学反应在任意条件下的摩尔反应吉布斯自由能$\Delta_\mathrm{r}G_\mathrm{m}(T)$的最后一步。\par
+计算$\Delta_\mathrm{r}G_\mathrm{m}(T)$的步骤为：
+\begin{enumerate}
+    \item 使用$298\ \mathrm{K}$下的$\Delta_\mathrm{r}H_\mathrm{m}^0(298\ \mathrm{K})$和$\Delta_\mathrm{r}S_\mathrm{m}^0(298\ \mathrm{K})$计算出对应温度下的$\Delta_\mathrm{r}H_\mathrm{m}^0(T)$和$\Delta_\mathrm{r}S_\mathrm{m}^0(T)$；
+    \item 在对应温度下使用$\Delta_\mathrm{r}H_\mathrm{m}^0(T)$和$\Delta_\mathrm{r}S_\mathrm{m}^0(T)$计算出$\Delta_\mathrm{r}G_\mathrm{m}^0(T)$；
+    \item 用$\Delta_\mathrm{r}G_\mathrm{m}^0(T)$和反应商$Q$计算出$\Delta_\mathrm{r}G_\mathrm{m}(T)$；
+    \item 使用$\Delta_\mathrm{r}G_\mathrm{m}(T)$判断此条件下反应的自发性。
+\end{enumerate}\par
+至此，我们解决了判断任意条件下化学反应自发性的问题。但我们的追寻还未结束，我们需要考虑更多的问题，我们需要\textbf{化学平衡}。
+
+\end{document}

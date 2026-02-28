@@ -1,0 +1,119 @@
+\documentclass[../../../GCET-main.tex]{subfiles}
+
+\begin{document}
+
+\section{热力学第二定律}\label{2.4}
+热力学第二定律描述的是过程的方向性，我们首先要了解\textbf{自发过程}和\textbf{非自发过程}。
+热力学第二定律有很多种表述，但最根本的是关于\textbf{熵}的不等式。
+\begin{formula}
+    \textbf{热力学第二定律}：\par
+    克劳修斯表述：热不能自发地从低温物体传到高温物体。\par
+    开尔文表述：不可能从单一热源吸收热量，使之完全变成功，而不产生其他影响。\par
+    一切自发过程的\textbf{总熵}增加：
+    \[\Delta S>0\]
+\end{formula}\par
+热力学第二定律表明从单一热源吸收热量，并将其全部转化为功，而不引起其他任何变化的“第二类永动机”也是不可能实现的。但要从理论层面理解热力学第二定律，我们需要先了解\textbf{熵}和\textbf{吉布斯自由能}这两个状态函数。
+\subsection{熵的定义*}\label{2.4.1}
+\subsubsection{热力学角度定义的熵}
+我们在\autoref{2.2.3}体积功的计算中已经提到过可逆过程，可逆膨胀过程中体系对环境做最大功，不可逆膨胀过程的功都小于可逆膨胀的功。实际过程都是不可逆过程，可逆过程是实际过程的极限。\par
+\textbf{热机}是从高温热源吸收热量做功，再向低温热源放出热量的机器，它把热转换为功，热机的效率就是输出的功的绝对值除以吸收的热量的绝对值。为了研究热机效率的理论极限，1824年法国工程师卡诺提出了由四个可逆过程组成的循环过程——\textbf{卡诺循环}。卡诺循环是实际不可能达到的循环，它的效率是实际热机效率的上限。
+\begin{formula}
+    \textbf{卡诺循环的效率}：设高温热源的温度为$T_1$，低温热源的温度为$T_2$，两次传热分别为$Q_1$和$Q_2$，功为$W$，则卡诺循环的效率为：
+    \[\eta=\dfrac{-W}{Q_1}=\dfrac{Q_1+Q_2}{Q_1}=\dfrac{T_1-T_2}{T_1}\]
+\end{formula}\par
+整理上面的式子并推广可以得到一个非常特殊的等式。
+\begin{derivation}
+    \qquad 原式为：
+    \[\dfrac{Q_1+Q_2}{Q_1}=\dfrac{T_1-T_2}{T_1}\]
+    进行一系列移项：
+    \[(Q_1+Q_2)T_1=(T_1-T_2)Q_1\]
+    \[Q_1T_1+Q_2T_1=T_1Q_1-T_2Q_1\]
+    \[Q_2T_1+T_2Q_1=0\]
+    \[\dfrac{Q_1}{T_1}+\dfrac{Q_2}{T_2}=0\]
+    这说明卡诺循环中的“热温商”总和为0。\par
+    \qquad 对于一个无限小的卡诺循环，上面的式子中热量可以改成微分形式：
+    \[\dfrac{\delta Q_1}{T_1}+\dfrac{\delta Q_2}{T_2}=0\]
+    可以证明，所有的可逆循环过程都可以分割为无数个无限小的卡诺循环，那样整个过程的热温商总和也为0，可以写作：
+    \[\dfrac{\delta Q_1}{T_1}+\dfrac{\delta Q_2}{T_2}+\dfrac{\delta Q_3}{T_3}+\dots=0\]
+    又因为循环过程的起点和终点是相同的，所以我们可以把上面的式子改写成环积分的形式：
+    \[\oint \dfrac{\delta Q_\mathrm{rev}}{T}=0\]
+    其中$Q_\mathrm{rev}$是可逆过程的热
+\end{derivation}\par
+上面的推导说明$\dfrac{\delta Q_\mathrm{rev}}{T}$这个量在循环过程中不变，而在循环过程中不变的量一定是状态函数\footnote{用高等数学可以证明，从热力学的角度也可以理解}，所以我们可以由此定义一个新的状态函数——熵。
+\begin{definition}
+    \textbf{熵}$S$：
+    \[\diff S=\dfrac{\delta Q_\mathrm{rev}}{T}\]
+    对于一个从状态1到状态2的宏观过程，它的熵变为：
+    \[\Delta S=\int_{1}^{2}\dfrac{\delta Q_\mathrm{rev}}{T}\]
+    \qquad 注意，公式中的热\textbf{只能是可逆过程的热}。积分上下限可以按需要改成$p$、$V$、$T$。
+\end{definition}\par
+热力学角度定义的熵又被称为\textbf{克劳修斯熵}，它是由克劳修斯在1850年提出的。从定义式中可以看出，熵的单位是热的单位除以温度的单位，即$\mathrm{J/K}$。
+\subsubsection{统计力学角度定义的熵}
+1877年，玻尔兹曼用微观状态数$\Omega$定义了\textbf{玻尔兹曼熵}。
+\begin{definition}
+    \textbf{玻尔兹曼熵}：
+    \[S=k\ln\Omega\]
+    \qquad 其中$k$为玻尔兹曼常数，$k=\dfrac{R}{N_\mathrm{A}}=1.38\times10^{-23}\ \mathrm{J/K}$；$\Omega$是微观状态数，是粒子分布的可能情况的数目
+\end{definition}\par
+玻尔兹曼熵的单位和玻尔兹曼常数的单位相同，也是$\mathrm{J/K}$。玻尔兹曼熵的定义说明熵可以用来描述“混乱度”。熵越大，微观状态数越多，混乱度越大。\par
+微观状态数的计算需要用到数学中的排列组合。比如将4个不同的分子放在1个容器中，只有$1^4=1$种方法；将4个不同的分子放在2个容器中，有$2^4=16$种方法。在热力学中微观状态数的计算还需要考虑能量。\par
+玻尔兹曼熵的计算公式中含有对数，这是因为，如果要把两个体系看作一个体系，微观状态数$\Omega_\text{总}=\Omega_1\times\Omega_2$，而熵$S_\text{总}=S_1+S_2$。$S=f(\Omega)$需要满足将$\Omega$中的乘法运算转换为$S$的加法运算，只有对数函数能做到这一点。
+两种熵的定义是统一的，具体的证明过程可以参考\textcolor{blue}{追寻章节}。
+\subsection{熵判据**}\label{2.4.2}
+从熵的定义来看，熵的微分等于可逆过程的热温商，而不是不可逆过程的热温商。不可逆过程的熵和可逆过程的熵可以由\textbf{克劳修斯不等式}统一描述。在推导克劳修斯不等式的过程中，我们也可以得到不可逆过程的热温商与可逆过程的热温商之间的关系。
+\begin{formula}
+    对于始态和终态相同的不可逆过程和可逆过程，它们的热温商之间的关系为：
+    \[\dfrac{\delta Q_\mathrm{rev}}{T}>\dfrac{\delta Q_\mathrm{irr}}{T}\]
+    \qquad 其中$Q_\mathrm{rev}$是可逆过程的热，$Q_\mathrm{irr}$是不可逆过程的热。\par
+    \textbf{克劳修斯不等式}：
+    \[\diff S\geqslant \dfrac{\delta Q}{T}\]
+    \qquad 如果过程为可逆过程，上式取等号；如果过程为不可逆过程，上式取大于号。
+\end{formula}\par
+克劳修斯不等式说明熵变不小于过程的热温商。此外，对于始态和终态相同的可逆过程和不可逆过程，可逆过程的熵大于不可逆过程的热温商，这可以用\autoref{2.3.3}中的结论、\autoref{formula2.3}热力学第一定律和\autoref{definition2.19}熵的定义推导。
+\begin{derivation}
+    \qquad 由\autoref{formula2.6}中的结论，对于始态和终态相同的可逆过程和不可逆过程，可逆过程的功小于不可逆过程的功：
+    \[\delta W_\mathrm{rev}<\delta W_\mathrm{irr}\]
+    根据\autoref{formula2.3}热力学第一定律：
+    \[\diff U=\delta Q+\delta W=\delta Q_\mathrm{rev}+\delta W_\mathrm{rev}=\delta Q_\mathrm{irr}+\delta W_\mathrm{irr}\]
+    移项可以得到$\delta Q_\mathrm{rev}$和$\delta Q_\mathrm{irr}$：
+    \begin{align*}
+        \delta Q_\mathrm{rev}&=\diff U-\delta W_\mathrm{rev}\\
+        \delta Q_\mathrm{irr}&=\diff U-\delta W_\mathrm{irr}
+    \end{align*}
+    由于$\delta W_\mathrm{rev}<\delta W_\mathrm{irr}$，$\delta Q_\mathrm{rev}$和$\delta Q_\mathrm{irr}$有以下大小关系：
+    \[\delta Q_\mathrm{rev}>\delta Q_\mathrm{irr}\]
+    两边同除以体系温度$T$\footnote{无限小过程温度可视为不变}得：
+    \[\dfrac{\delta Q_\mathrm{rev}}{T}>\dfrac{\delta Q_\mathrm{irr}}{T}\]
+    根据\autoref{definition2.19}熵的定义：
+    \[\diff S=\dfrac{\delta Q_\mathrm{rev}}{T}\]
+    我们可以将两式合并：
+    \[\diff S=\dfrac{\delta Q_\mathrm{rev}}{T}>\dfrac{\delta Q_\mathrm{irr}}{T}\]
+    接下来我们需要进行分类讨论：
+    \begin{enumerate}
+        \item 如果过程为可逆过程：
+        \[\diff S=\dfrac{\delta Q_\mathrm{rev}}{T}\]
+        \item 如果过程为不可逆过程：
+        \[\diff S>\dfrac{\delta Q_\mathrm{irr}}{T}\]
+    \end{enumerate}
+    综上，得到\autoref{formula2.22}克劳修斯不等式：
+    \[\diff S\geqslant \dfrac{\delta Q}{T}\]
+\end{derivation}\par
+从克劳修斯不等式出发我们可以继续得到一个非常重要的不等式——\textbf{熵增原理}。
+\begin{formula}
+    \textbf{熵增原理}：对于孤立体系中的过程和封闭体系中的绝热过程（即所有$\delta Q=0$的过程），熵变满足：
+    \[\Delta S\geqslant 0\]
+\end{formula}\par
+这可以用\autoref{formula2.22}克劳修斯不等式推导。
+\begin{derivation}
+    \qquad 根据\autoref{formula2.22}克劳修斯不等式：
+    \[\diff S\geqslant \dfrac{\delta Q}{T}\]
+    由于过程的$\delta Q=0$，所以：
+    \[\diff S\geqslant 0\]
+    积分即可得到：
+    \[\Delta S\geqslant 0\]
+\end{derivation}\par
+这样我们就得到了一个非常重要的结论：孤立体系的熵只会增加。在\autoref{2.1.1}介绍体系时我们提到过，整个宇宙是一个孤立体系，所以整个宇宙的熵只会增加，不会减少，人只会衰老，不会变年轻。\par
+在\autoref{formula2.20}热力学第二定律中我们的结论是“一切自发过程的总熵增加”，表达式为$\Delta S>0$，刚刚得到的$\Delta S\geqslant0$离这个结论还有一些距离。我们需要注意，只有在可逆过程中$\Delta S=0$才成立，而\textbf{自发过程一定是不可逆过程}、\textbf{实际过程一定是不可逆过程}，所以根本找不到$\Delta S=0$的情况，现实中的最终结论是$\Delta S>0$。\par
+我们可以用熵变的大小来判断过程是否可以自发进行和是否可逆：如果$\Delta S>0$，那么过程可以自发进行，过程不可逆；如果$\Delta S=0$，那么过程可逆；如果$\Delta S<0$，那么过程不可以自发进行。这样的判断方法称为\textbf{熵判据}，需要注意的是，\textbf{熵变不是系统的熵变，而是系统和环境的总熵变}，我们在后续提及\textbf{吉布斯自由能判据}时仍然会用到这一点。
+
+\end{document}

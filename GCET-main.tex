@@ -28,9 +28,23 @@
 
 \begin{document}
 
+\includepdf[
+    pages={1},
+]{./chapters/other/GCET封面.pdf}
+
+\thispagestyle{empty}
+\null
+\clearpage
+
+\renewcommand{\thepage}{\Roman{page}}
+\setcounter{page}{1}
+
+\subfile{chapters/other/序/序.tex}
+
 {\linespread{0}\tableofcontents} % 生成目录
 \newpage
 
+\renewcommand{\thepage}{\arabic{page}}
 \setcounter{page}{1}
 
 \subfile{chapters/chapter0/0数学物理基础.tex}

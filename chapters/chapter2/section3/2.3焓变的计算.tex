@@ -1,0 +1,174 @@
+\documentclass[../../../GCET-main.tex]{subfiles}
+
+\begin{document}
+
+\section{焓变的计算}\label{2.3}
+之前我们讨论的一些热、功、内能、焓基本是在不发生相变也不发生化学反应的情况下，化学热力学更关心的是相变和化学反应中的能量。一般的化学反应在恒压条件下进行，根据\autoref{2.2.6}，在不考虑非体积功的情况下，恒压反应热与焓变相等，所以化学反应中的能量一般用焓变来衡量。
+\subsection{恒压反应热与恒容反应热的关系**}\label{2.3.1}
+\autoref{2.2.6}中我们得到了热与内能和焓的关系，发生相变或化学反应的过程中体系也需要吸收或放出热量，这部分热量称为\textbf{反应热}。\par
+恒压反应热等于体系的焓变，恒容反应热等于体系内能的变化。恒压反应热与恒容反应热满足下列关系。
+\begin{formula}
+    恒压反应热与恒容反应热的关系：
+    \[Q_\mathrm{p}=Q_\mathrm{V}+\Delta n\times RT\]
+    \qquad 其中$\Delta n$为反应前后气体物质的量变化，数值等于反应后气体物质的量减去反应前气体物质的量。
+\end{formula}\par
+我们可以利用\autoref{formula2.9}热与内能和焓的关系以及\autoref{formula1.3}理想气体状态方程推导恒压反应热与恒容反应热的关系。
+\begin{derivation}
+    \qquad 根据\autoref{formula2.9}热与内能和焓的关系：
+    \[Q_\mathrm{V}=\Delta U,\ Q_\mathrm{p}=\Delta H\]
+    在第二个式子中代入$H=U+pV$得：
+    \[Q_\mathrm{p}=\Delta H=\Delta(U+pV)=\Delta U+\Delta(pV)\]
+    \qquad 反应中固体和液体的体积远小于气体的体积，可以忽略不计。我们只需要计算气体体积的变化。根据\autoref{formula1.3}理想气体状态方程：
+    \[pV=nRT\Longrightarrow\Delta(pV)=\Delta(nRT)=\Delta n\times RT\]
+    所以恒压热的表达式可以变为：
+    \[Q_\mathrm{p}=\Delta U+\Delta nRT\]
+    再代入$Q_\mathrm{V}=\Delta U$，得到恒压反应热与恒容反应热的关系：
+    \[Q_\mathrm{p}=Q_\mathrm{V}+\Delta n\times RT\]
+\end{derivation}\par
+我们可以用一道例题帮助我们更好地理解恒压反应热与恒容反应热的关系。
+\begin{exercise}
+    $1\ \mathrm{mol}\ \ce{N2H4}$恒容条件下在$\ce{O2}$中完全燃烧生成氮气和液态水，放热$662.0\ \mathrm{kJ}$，反应前后温度均为$298.15\ \mathrm{K}$。反应方程式为：
+    \[\ce{N2H4(g) + O2(g) -> N2(g) + 2H2O(l)}\]
+    求燃烧过程中体系的$\Delta U$和$Q_\mathrm{p}$（精确到$0.1\ \mathrm{kJ}$）。
+\end{exercise}
+\begin{answer}
+    由题意，恒容反应热$Q_\mathrm{V}=-662.0\ \mathrm{kJ}$，根据\autoref{formula2.9}恒容热与内能的关系：
+    \[\Delta U=Q_\mathrm{V}=-662.0\ \mathrm{kJ}\]
+    根据\autoref{formula2.15}恒压热与恒容热的关系：
+    \[Q_\mathrm{p}=Q_\mathrm{V}+\Delta n\times RT\]
+    其中$\Delta n=-1\ \mathrm{mol}$，$R=8.314\ \mathrm{J/(mol\cdot K)}$，$T=298.15\ \mathrm{K}$，代入计算得：
+    \[Q_\mathrm{p}=-662.0\ \mathrm{kJ}+(-1\ \mathrm{mol})\times8.314\ \mathrm{J/(mol\cdot K)}\times298.15\ \mathrm{K}=-664.5\ \mathrm{kJ}\]
+\end{answer}\par
+从恒压反应热与恒容反应热的关系可以看出，如果反应前后气体分子数增多，体系的体积增大，就需要吸收更多的热量用于做体积功；如果反应前后气体分子数减少，体系的体积减小，就可以放出更多的热量。
+\subsection{标准摩尔焓变}\label{2.3.2}
+一般的化学反应在恒压条件下进行，实验室里玻璃仪器基本是与大气连通的，工厂的设备中也有通气口，反应的压强接近大气压$101.325\ \mathrm{kPa}$和标准压强$p^0=100\ \mathrm{kPa}$。比起内能的变化，我们更关心焓变，因此化学中定义\textbf{标准摩尔焓变}。
+\begin{definition}
+    \textbf{标准摩尔焓变}：在\textbf{标准状态}下，发生$1\ \mathrm{mol}$变化（相变或化学反应）时的焓变，符号为$\Delta H_\mathrm{m}^0$，常用单位为$\mathrm{kJ/mol}$\par
+    \textbf{标准状态}\footnote{这和\autoref{exercise1.1}中的\textbf{标准状况}不一样}：气体：标准压强$p^0=100\ \mathrm{kPa}$；溶液中的溶质：标准浓度$c^0=1\ \mathrm{mol/L}$；纯液体或纯固体：纯物质
+\end{definition}\par
+标准摩尔焓变对温度没有要求，没有标注温度的数据一般是$298.15\ \mathrm{K}$下的$\Delta H_\mathrm{m}^0(298.15\ \mathrm{K})$。\par
+标准摩尔焓变有很多种，主要有以下几类：\textbf{标准摩尔反应焓}、\textbf{标准摩尔生成焓}、\textbf{标准摩尔燃烧焓}、\textbf{键焓}、\textbf{标准摩尔相变焓}\footnote{这些标准摩尔焓变虽然都以“焓”结尾，但根据“焓”前面的过程，可以知道“焓”指的是焓变。}。
+\begin{definition}
+    \textbf{标准摩尔反应焓}：发生$1\ \mathrm{mol}$反应的标准摩尔焓变，符号为$\Delta_\mathrm{r}H_\mathrm{m}^0$\par
+    \textbf{标准摩尔生成焓}：由最稳定单质生成$1\ \mathrm{mol}$该物质时的标准摩尔焓变，符号为$\Delta_\mathrm{f}H_\mathrm{m}^0$，最稳定单质的标准摩尔生成焓为0\par
+    \textbf{标准摩尔燃烧焓}：$1\ \mathrm{mol}$物质完全燃烧时的标准摩尔焓变，符号为$\Delta_\mathrm{c}H_\mathrm{m}^0$\par
+    \textbf{键焓}：气态分子中的$1\ \mathrm{mol}$化学键断裂\footnote{此处是均裂}成为气态原子的平均标准摩尔焓变\par
+    \textbf{标准摩尔相变焓}：$1\ \mathrm{mol}$物质发生相变时的标准摩尔焓变，符号为$\Delta_\mathrm{trs}H_\mathrm{m}^0$，可以细分为蒸发焓$\Delta_\mathrm{vap}H_\mathrm{m}^0$、熔化焓$\Delta_\mathrm{fus}H_\mathrm{m}^0$、升华焓$\Delta_\mathrm{sub}H_\mathrm{m}^0$
+\end{definition}\par
+除上面列出的标准摩尔焓变之外，电离、溶解、\textbf{混合}时也有对应的标准摩尔焓变。需要注意，\textbf{任何与反应有关的状态函数的变化都不考虑物质的混合}，因此反应焓、生成焓、燃烧焓都需要假设过程中各物质在各自的标准态下发生反应，与现实中混合接触的反应过程不完全一致。但是对于理想气体和理想溶液，不同种分子间作用力相等，混合焓$\Delta H_\mathrm{mix}=0$。\par
+为了方便，标准摩尔焓变的中文可以省略“标准摩尔”，符号中可以省略标准符号和摩尔符号，如\autoref{1}中我们提到的蒸发焓$\Delta H_\mathrm{vap}$的完整形式应该是$\Delta_\mathrm{vap}H_\mathrm{m}^0$。\par
+从各种不同的标准摩尔焓变的具体定义可以看出，“摩尔”可以代表$1\ \mathrm{mol}$反应、$1\ \mathrm{mol}$反应物、$1\ \mathrm{mol}$生成物等。标准摩尔反应焓中$1\ \mathrm{mol}$反应指的是按照化学方程式中的计量数进行反应。比如\autoref{exercise2.1}中联氨燃烧反应方程式为
+\[\ce{N2H4(g) + O2(g) -> N2(g) + 2H2O(l)}\]
+这个方程式中的$1\ \mathrm{mol}$反应指$1\ \mathrm{mol}\ \ce{N2H4(g)}$和$1\ \mathrm{mol}\ \ce{O2(g)}$反应生成$1\ \mathrm{mol}\ \ce{N2(g)}$和$2\ \mathrm{mol}\ \ce{H2O(l)}$，$\Delta_\mathrm{r}H_\mathrm{m}^0=-664.5\ \mathrm{kJ}$。\par
+如果把方程式改写为
+\[\ce{$\frac{1}{2}$ N2H4(g) + $\frac{1}{2}$ O2(g) -> $\frac{1}{2}$ N2(g) + H2O(l)}\]
+那么这个方程式中的$1\ \mathrm{mol}$反应就变成了$\dfrac{1}{2}\ \mathrm{mol}\ \ce{N2H4(g)}$和$\dfrac{1}{2}\ \mathrm{mol}\ \ce{O2(g)}$反应生成$\dfrac{1}{2}\ \mathrm{mol}\ \ce{N2(g)}$和$1\ \mathrm{mol}\ \ce{H2O(l)}$。$1\ \mathrm{mol}$反应改变的同时，标准摩尔焓变$\Delta_\mathrm{r}H_\mathrm{m}^0$也会改变，$\Delta_\mathrm{r}H_\mathrm{m}^0=\dfrac{1}{2}\times(-664.5\ \mathrm{kJ})=-332.25\ \mathrm{kJ}$。所以\textbf{反应焓与反应方程式一一对应}。
+\subsection{盖斯定律***}\label{2.3.3}
+一些过程的焓变可以由实验测出，但另一些过程的焓变无法用实验测出。比如碳燃烧生成一氧化碳的反应，无论如何控制反应条件，燃烧产物中必定有二氧化碳。\par
+焓是状态函数中的广度量，焓变的数值只与始态和终态有关。设某个体系有三个状态，状态1到状态2是过程1，状态2到状态3是过程2，状态1到状态3是过程3。过程1的焓变$\Delta H_{12}=H_2-H_1$，过程2的焓变$\Delta H_{23}=H_3-H_2$，过程3的焓变$\Delta H_{13}=H_3-H_1$，很容易发现这三个焓变有以下关系：$\Delta H_{13}=\Delta H_{12}+\Delta H_{23}$。把焓变换成任何广度量，这样的关系都可以成立。对于反应焓，这样的关系称为\textbf{盖斯定律}。
+\begin{formula}
+    \textbf{盖斯定律}：一个化学反应，不管是一步完成还是分几步完成的，其反应热是相同的
+    \[\Delta_\mathrm{r}H_\mathrm{m,13}^0=\Delta_\mathrm{r}H_\mathrm{m,12}^0+\Delta_\mathrm{r}H_\mathrm{m,23}^0\]
+\end{formula}\par
+盖斯定律可以帮助我们计算那些无法直接用实验测出的反应焓，只需要把一个化学反应分成几步，再列出等式解出未知的反应焓即可。
+\begin{exercise}
+    与碳和氧相关的一些反应的反应焓如下：
+    \begin{align*}
+        \ce{C(s,\text{石墨}) + $\dfrac{1}{2}$O2(g) &-> CO(g)}&\Delta_\mathrm{r}H_\mathrm{m,1}^0&=?\tag{1}\\
+        \ce{2CO(g) + O2(g) &-> 2CO2(g)}&\Delta_\mathrm{r}H_\mathrm{m,2}^0&=-565.96\ \mathrm{kJ/mol}\tag{2}\\
+        \ce{C(s,\text{石墨}) + O2(g) &-> CO2(g)}&\Delta_\mathrm{r}H_\mathrm{m,3}^0&=-393.51\ \mathrm{kJ/mol}\tag{3}
+    \end{align*}
+    求$\Delta_\mathrm{r}H_\mathrm{m,1}^0$。
+\end{exercise}
+\begin{answer}
+    可以观察（或者利用待定系数法）得出，三个反应方程式的关系是：
+    \[2\times(1)+(2)=2\times(3)\]
+    所以三个焓变的关系也是：
+    \[2\Delta_\mathrm{r}H_\mathrm{m,1}^0+\Delta_\mathrm{r}H_\mathrm{m,2}^0=2\Delta_\mathrm{r}H_\mathrm{m,3}^0\]
+    代入数值得：
+    \[2\Delta_\mathrm{r}H_\mathrm{m,1}^0+(-565.96\ \mathrm{kJ/mol})=2\times(-393.51\ \mathrm{kJ/mol})\]
+    解得：
+    \[\Delta_\mathrm{r}H_\mathrm{m,1}^0=-110.53\ \mathrm{kJ/mol}\]
+\end{answer}\par
+解题的时候需要注意反应方程式的倍数会影响焓变，只有正确地表示出不同反应之间的关系，才能解出正确的反应焓。\par
+盖斯定律还可以帮助我们用标准摩尔生成焓计算反应焓。标准摩尔生成焓可以看作\textbf{反应物是最稳定单质、生成物是$1\ \mathrm{mol}$物质的反应}的反应焓，也可以根据盖斯定律计算其他焓变。我们可以用以下公式从生成焓出发计算反应焓。
+\begin{formula}
+    标准摩尔生成焓计算标准摩尔反应焓：
+    \[\Delta_\mathrm{r}H_\mathrm{m}^0=\sum\nu_i\Delta_\mathrm{f}H_\mathrm{m}^0[i]\]
+    \qquad 其中$i$代表反应中的物质；$\nu_i$是反应中各物质的计量数，反应物为负数，产物为正数；$\Delta_\mathrm{f}H_\mathrm{m}^0[i]$是反应中各物质的标准摩尔生成焓。
+\end{formula}\par
+上面的计算方法相当于是用产物的生成焓总和减去反应物的生成焓总和，可以用下面的方程式理解。
+\begin{derivation}
+    \[\ce{$a$A($\alpha$) + $b$B($\beta$) -> $y$Y($\gamma$) + $z$Z($\delta$)}\]
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{2.3.3生成焓计算反应焓.png}
+    \end{center}
+    根据盖斯定律，有：
+    \[\Delta_\mathrm{r}H_\mathrm{m}^0=\Delta H_2-\Delta H_1\]
+    其中$\Delta H_1=a\Delta_\mathrm{f}H_\mathrm{m}^0[\ce{A($\alpha$)}]+b\Delta_\mathrm{f}H_\mathrm{m}^0[\ce{B($\beta$)}]$，$\Delta H_2=y\Delta_\mathrm{f}H_\mathrm{m}^0[\ce{Y($\gamma$)}]+z\Delta_\mathrm{f}H_\mathrm{m}^0[\ce{Z($\delta$)}]$，即产物的生成焓总和减去反应物的生成焓总和。
+\end{derivation}\par
+我们还可以从标准摩尔燃烧焓出发计算反应焓，公式和生成焓的有所区别。
+\begin{formula}
+    标准摩尔燃烧焓计算标准摩尔反应焓：
+    \[\Delta_\mathrm{r}H_\mathrm{m}^0=-\sum\nu_i\Delta_\mathrm{c}H_\mathrm{m}^0[i]\]
+    其中$i$代表反应中的物质；$\nu_i$是反应中各物质的计量数，反应物为负数，产物为正数；$\Delta_\mathrm{c}H_\mathrm{m}^0[i]$是反应中各物质的标准摩尔燃烧焓。
+\end{formula}\par
+这里需要用反应物的燃烧焓总和减去产物的燃烧焓总和，与生成焓计算反应焓的方向相反。这是因为生成焓对应的反应方程式中物质是产物，而燃烧焓对应的反应方程式中物质是反应物。我们可以用下面的方式理解。
+\begin{derivation}
+    \[\ce{C6H5C2H5(g) -> C6H5C2H3(g) + H2(g)}\]
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{2.3.3燃烧焓计算反应焓.png}
+    \end{center}
+    根据盖斯定律，有：
+    \[\Delta_\mathrm{r}H_\mathrm{m}^0=\Delta H_1-\Delta H_2\]
+    其中$\Delta H_1=\Delta_\mathrm{c}H_\mathrm{m}^0[\ce{C6H5C2H5(g)}]$，$\Delta H_2=\Delta_\mathrm{c}H_\mathrm{m}^0[\ce{C6H5C2H3(g)}]+\Delta_\mathrm{c}H_\mathrm{m}^0[\ce{H2(g)}]$，即反应物的燃烧焓总和减去产物的燃烧焓总和。
+\end{derivation}\par
+特别地，如果反应物是最稳定单质，我们也可以用燃烧焓计算生成焓，具体过程和计算反应焓的方法类似。\par
+与燃烧焓类似的还有键焓。对于反应物和产物都是气体的反应，直接用反应物的键焓总和减去产物的键焓总和即可；如果反应中有的物质不是气态，则需要考虑相变焓。
+焓变计算的种类很多，上面给出的计算方法很容易混淆。我们给出通用的计算方法：
+\begin{enumerate}
+    \item 画出所有过程的示意图，注意考虑焓对应的反应方程式的方向和倍数
+    \item 根据示意图列出焓变的等式
+    \item 代入焓变数值，解出未知焓变
+\end{enumerate}
+\qquad 这样无论我们碰到什么类型的焓变，即使没有记住公式，也可以从示意图中知道怎么计算焓变。
+\subsection{焓变与温度的关系***}\label{2.3.4}
+我们已经学会用$298.15\ \mathrm{K}$下的生成焓、燃烧焓等基础热力学数据计算反应焓，但是对于反应温度不是$298.15\ \mathrm{K}$的反应，我们不能直接使用$298.15\ \mathrm{K}$下的焓变数据计算反应焓，因为焓变的数据会随温度变化。焓变与温度的关系可以用\textbf{基尔霍夫公式}描述。
+\begin{formula}
+    \textbf{基尔霍夫公式}：
+    \[\Delta_\mathrm{r}H_\mathrm{m}^0(T)=\Delta_\mathrm{r}H_\mathrm{m}^0(298.15\ \mathrm{K})+\int_{298.15\ \mathrm{K}}^{T}  \,\Delta_\mathrm{r}C_\mathrm{p,m}\diff T \]
+    \qquad 其中$\Delta_\mathrm{r}C_\mathrm{p,m}=\displaystyle\sum\nu_iC_\mathrm{p,m}[i]$，即产物的恒压摩尔热容总和减去反应物的恒压摩尔热容总和。若认为热容不随温度变化，则上式可改写为：
+    \[\Delta_\mathrm{r}H_\mathrm{m}^0(T)=\Delta_\mathrm{r}H_\mathrm{m}^0(298.15\ \mathrm{K})+\Delta_\mathrm{r}C_\mathrm{p,m}(T-298.15\ \mathrm{K})\]
+\end{formula}\par
+我们仍然可以用拆分过程的思想推导出这个公式。虽然我们不能直接计算非$298.15\ \mathrm{K}$下的反应焓，但是我们可以先把反应物的温度改变到$298.15\ \mathrm{K}$，再在$298.15\ \mathrm{K}$下反应，最后把产物的温度改变到原来的温度，整个过程的始态和终态与在原来的温度下直接反应完全一致。具体推导过程如下。
+\begin{derivation}
+    \[\ce{$a$A($\alpha$) + $b$B($\beta$) -> $y$Y($\gamma$) + $z$Z($\delta$)}\]
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{2.3.4焓变与温度的关系.png}
+    \end{center}
+    根据盖斯定律，有：
+    \[\Delta_\mathrm{r}H_\mathrm{m}^0(T)=\Delta_\mathrm{r}H_\mathrm{m}^0(298.15\ \mathrm{K})+\Delta H_1+\Delta H_2\]
+    其中$\Delta H_1$和$\Delta H_2$都可以通过摩尔热容计算。根据\autoref{formula2.12}：
+    \begin{align*}
+        \diff H_1&=\left\{aC_\mathrm{p,m}[\ce{A($\alpha$)}]+bC_\mathrm{p,m}[\ce{B($\beta$)}]\right\}\diff T\\
+        \diff H_2&=\left\{yC_\mathrm{p,m}[\ce{Y($\gamma$)}]+zC_\mathrm{p,m}[\ce{Z($\delta$)}]\right\}\diff T
+    \end{align*}
+    两式分别积分得（注意积分上下限不同）：
+    \begin{align*}
+    \Delta H_1&=\int_{T}^{298.15\ \mathrm{K}}  \,\left\{aC_\mathrm{p,m}[\ce{A($\alpha$)}]+bC_\mathrm{p,m}[\ce{B($\beta$)}]\right\}\diff T\\
+    \Delta H_2&=\int_{298.15\ \mathrm{K}}^{T}  \,\left\{yC_\mathrm{p,m}[\ce{Y($\gamma$)}]+zC_\mathrm{p,m}[\ce{Z($\delta$)}]\right\}\diff T
+    \end{align*}
+    改变$\Delta H_1$积分式中的上下限得：
+    \begin{align*}
+    \Delta H_1&=\int_{298.15\ \mathrm{K}}^{T}  \,\left\{-aC_\mathrm{p,m}[\ce{A($\alpha$)}]-bC_\mathrm{p,m}[\ce{B($\beta$)}]\right\}\diff T\\
+    \Delta H_2&=\int_{298.15\ \mathrm{K}}^{T}  \,\left\{yC_\mathrm{p,m}[\ce{Y($\gamma$)}]+zC_\mathrm{p,m}[\ce{Z($\delta$)}]\right\}\diff T
+    \end{align*}
+    两式相加得：
+    \[\Delta H_1+\Delta H_2=\int_{298.15\ \mathrm{K}}^{T}  \,\sum\nu_iC_\mathrm{p,m}[i]\diff T=\int_{298.15\ \mathrm{K}}^{T}  \,\Delta_\mathrm{r}C_\mathrm{p,m}\diff T\]
+    把结果代回$\Delta_\mathrm{r}H_\mathrm{m}^0(T)$的计算式中就可以得到基尔霍夫公式：
+    \[\Delta_\mathrm{r}H_\mathrm{m}^0(T)=\Delta_\mathrm{r}H_\mathrm{m}^0(298.15\ \mathrm{K})+\int_{298.15\ \mathrm{K}}^{T}  \,\Delta_\mathrm{r}C_\mathrm{p,m}\diff T \]
+\end{derivation}\par
+实际计算时我们不一定需要按照基尔霍夫公式的逻辑计算——先算出$\Delta_\mathrm{r}C_\mathrm{p,m}$，再代入基尔霍夫公式。我们可以按照推导的逻辑，先算出反应物从$T$到$298.15\ \mathrm{K}$的焓变，再加上$298.15\ \mathrm{K}$下的反应焓，最后加上产物从$298.15\ \mathrm{K}$到$T$的焓变即可。\par
+任何关于状态函数的计算都有一个共同的道理：只要始态和终态一致，无论用什么方式怎么计算，结果都是一致的。
+
+\end{document}

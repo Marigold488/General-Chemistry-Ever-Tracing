@@ -1,0 +1,136 @@
+\documentclass[../../../GCET-main.tex]{subfiles}
+
+\begin{document}
+
+\section{化学平衡***}\label{2.7}
+化学反应都可以看作\textbf{可逆反应}，可逆反应的\textbf{正反应}和\textbf{逆反应}会同时进行，对应的速率为\textbf{正反应速率}$v_\text{正}$和\textbf{逆反应速率}$v_\text{逆}$。当$v_\text{正}>v_\text{逆}$时，反应正向进行；当$v_\text{正}<v_\text{逆}$时，反应逆向进行；当$v_\text{正}=v_\text{逆}$时，反应在宏观上不再进行，达到\textbf{化学平衡状态}，但此时正反应和逆反应仍然在进行，因此被称为\textbf{动态平衡}。
+\begin{definition}
+    \textbf{可逆反应}：在同一条件下，既能正向进行，又能逆向进行的反应。\par
+    \textbf{化学平衡状态}：在一定条件下的可逆反应中，当正反应速率等于逆反应速率时，体系中各物质的含量不再随时间变化的状态
+\end{definition}\par
+\subsection{标准平衡常数及其计算}\label{2.7.1}
+化学平衡状态可以用反应过程中正反应的$\Delta_\mathrm{r}G_\mathrm{m}$来衡量。如果$\Delta_\mathrm{r}G_\mathrm{m}<0$，则正反应自发，反应正向进行；如果$\Delta_\mathrm{r}G_\mathrm{m}=0$，则正反应不再自发，反应达到化学平衡状态；如果$\Delta_\mathrm{r}G_\mathrm{m}>0$，则正反应不自发，反应逆向进行。根据\autoref{formula2.33}，我们可以计算出平衡状态下的反应商$J^\mathrm{eq}$。
+\begin{derivation}
+    \qquad 根据\autoref{formula2.33}：
+    \[\Delta_\mathrm{r}G_\mathrm{m}=\Delta_\mathrm{r}G_\mathrm{m}^0+RT\ln J\]
+    平衡状态$\Delta_\mathrm{r}G_\mathrm{m}=0$：
+    \[\Delta_\mathrm{r}G_\mathrm{m}^0+RT\ln J^\mathrm{eq}=0\]
+    移项解得：
+    \[J^\mathrm{eq}=\mathrm{e}^{-\dfrac{\Delta_\mathrm{r}G_\mathrm{m}^0}{RT}}\]
+    其中$\displaystyle J=\prod_i\left(\dfrac{p_i}{p^0}\text{或}\dfrac{c_i}{c^0}\right)^{\nu_i}$，$\displaystyle J^\mathrm{eq}=\prod_i\left(\dfrac{p_i^\mathrm{eq}}{p^0}\text{或}\dfrac{c_i^\mathrm{eq}}{c^0}\right)^{\nu_i}$。
+\end{derivation}\par
+这里的$J^\mathrm{eq}$是一个非常特殊的量，它可以描述平衡状态下反应中各物质的气压和浓度，并且对于一个确定的反应，它是一个只与温度有关的函数\footnote{因为$\Delta_\mathrm{r}G_\mathrm{m}^0$也是温度的函数}。我们定义$J^\mathrm{eq}$为\textbf{标准平衡常数}，符号为$K^0$。
+\begin{definition}
+    \textbf{标准平衡常数}$K^0$：\par
+    定义式：
+    \[K^0=\mathrm{e}^{-\dfrac{\Delta_\mathrm{r}G_\mathrm{m}^0}{RT}}\Longleftrightarrow \Delta_\mathrm{r}G_\mathrm{m}^0=-RT\ln K^0\]
+    计算式：
+    \[K^0=\prod_i\left(\dfrac{p_i^\mathrm{eq}}{p^0}\text{或}\dfrac{c_i^\mathrm{eq}}{c^0}\right)^{\nu_i}\]
+    纯固体和纯液体不参与标准平衡常数的计算（或认为浓度为1）。\footnote{\autoref{2.6.6}中已说明纯固体和纯液体对自由能变无影响，此处同理无需考虑}需要注意的是，水作为溶剂时不参与平衡常数的计算，但在一些有机反应（如酯化反应）中水不作溶剂，此时水应当参与平衡常数的计算。
+\end{definition}\par
+从定义可以看出，标准平衡常数是一个无量纲的物理量。在物理和化学中，需要进行指数运算和对数运算的物理量都是无量纲的，因为量纲无法参与指数运算和对数运算。\par
+标准平衡常数的“标准”和之前焓、熵、自由能中的“标准”不同，之前的标准指“标准状态”$p^0=100\ \mathrm{K}$或$c^0=1\ \mathrm{mol}$，而这里的标准指“标准化”，即将压强和浓度除以$p^0$和$c^0$再累乘，最后得到无量纲的常数。中学阶段的平衡常数没有“标准”两字，计算的时候不用标准化，得到的平衡常数是带单位的，无法和吉布斯自由能产生关联。\par
+标准平衡常数可以衡量化学反应的限度，$K^0$越大，到达平衡状态时反应物越少、产物越多，反应进行得更完全。一般$K<10^{-5}$说明正反应基本不会发生，逆反应进行得很完全，$K>10^{5}$说明正反应进行得很完全，逆反应基本不会发生。这两种情况下可以认为正逆反应其中一方的速率为零。\par
+标准平衡常数的运算和吉布斯自由能的运算有紧密关联。对于几个反应相加的多重反应，标准平衡常数的计算规则如下。
+\begin{formula}
+    标准平衡常数的计算规则：
+    \[c\text{反应(3)}=a\text{反应(1)}+b\text{反应(2)}\Longrightarrow \left(K_3^0\right)^c=\left(K_1^0\right)^a\left(K_2^0\right)^b\]
+\end{formula}\par
+我们可以用吉布斯自由能的加和性证明以上运算规则。
+\begin{derivation}
+    \qquad 根据$\Delta_\mathrm{r}G_\mathrm{m}^0$的加和性：
+    \[c\text{反应(3)}=a\text{反应(1)}+b\text{反应(2)}\Longrightarrow c\Delta_\mathrm{r}G_\mathrm{m,3}^0=a\Delta_\mathrm{r}G_\mathrm{m,1}^0+b\Delta_\mathrm{r}G_\mathrm{m,2}^0\]
+    根据\autoref{definition2.22}：
+    \[\Delta_\mathrm{r}G_\mathrm{m}^0=-RT\ln K^0\]
+    代入得：
+    \[c\left(-RT\ln K_3^0\right)=a\left(-RT\ln K_1^0\right)+b\left(-RT\ln K_2^0\right)\]
+    约去$-RT$得：
+    \[c\ln K_3^0=a\ln K_1^0+b\ln K_2^0\]
+    利用对数运算法则有：
+    \[\ln \left(K_3^0\right)^c=\ln \left[\left(K_1^0\right)^a\left(K_2^0\right)^b\right]\]
+    取$\mathrm{e}$的指数得：
+    \[\left(K_3^0\right)^c=\left(K_1^0\right)^a\left(K_2^0\right)^b\]
+\end{derivation}\par
+这样的运算规则可以方便我们进行多重反应平衡常数的运算。
+\subsection{反应自发方向的判断***}\label{2.7.2}
+标准平衡常数只能衡量反应处于化学平衡状态时的反应商，要判断反应自发进行的方向，我们还需要将它与反应商$J$进行比较，方法很简单，我们可以从\autoref{formula2.33}开始推导。
+\begin{derivation}
+    \qquad 根据\autoref{formula2.33}：
+    \[\Delta_\mathrm{r}G_\mathrm{m}=\Delta_\mathrm{r}G_\mathrm{m}^0+RT\ln J\]
+    根据\autoref{definition2.22}：
+    \[\Delta_\mathrm{r}G_\mathrm{m}^0=-RT\ln K^0\]
+    代入得：
+    \[\Delta_\mathrm{r}G_\mathrm{m}=-RT\ln K^0+RT\ln J=RT\ln\dfrac{J}{K^0}\]
+\end{derivation}\par
+这样$\Delta_\mathrm{r}G_\mathrm{m}$的值只与$\dfrac{J}{K^0}$的大小相关，我们有以下的判断法则：
+\begin{enumerate}
+    \item $J<K^0$时，$\dfrac{J}{K^0}<1$，$\Delta_\mathrm{r}G_\mathrm{m}<0$，反应自发正向进行；
+    \item $J=K^0$时，$\dfrac{J}{K^0}=1$，$\Delta_\mathrm{r}G_\mathrm{m}=0$，反应达到化学平衡状态；
+    \item $J>K^0$时，$\dfrac{J}{K^0}>1$，$\Delta_\mathrm{r}G_\mathrm{m}>0$，反应自发逆向进行。
+\end{enumerate}\par
+利用上面的判断法则，我们只需要用宏观的压强和浓度就可以判断反应的自发方向，不需要经过微观的吉布斯自由能。
+\subsection{平衡移动***}\label{2.7.3}
+当反应达到平衡状态之后，改变反应体系的浓度、压强、温度等可以破坏平衡状态，最后建立新的平衡。从$J$和$K^0$的角度看，改变反应体系的浓度、压强、温度后$J\neq K^0$，因此原本平衡的反应会继续发生，直至$J=K^0$。\par
+为了判断改变某一条件后平衡移动的方向，勒夏特列总结出\textbf{勒夏特列原理}：如果改变影响平衡的一个因素，平衡就向着能够减弱这种改变的方向移动。此外，平衡移动只会削弱改变，并不能回到改变之前的状态。\par
+对浓度、压强、温度这三个因素，我们使用勒夏特列原理可以得到：
+\begin{enumerate}
+    \item 增大温度，平衡向吸收热量的方向移动；减小温度，平衡向放出热量的方向移动。
+    \item 增大系统压强，平衡向气体分子数减少（压强减小）的方向移动；减小系统压强，平衡向气体分子数增大（压强增大）的方向移动。
+    \item 增大某物质浓度，平衡向减小这种物质浓度的方向移动；减小某物质浓度，平衡向增大这种物质浓度的方向移动。改变气相中单一物质的压强也视为改变浓度。
+\end{enumerate}\par
+勒夏特列原理是定性的经验规则，我们需要从理论出发，用定量的方法检验这一原理的正确性。虽然温度、压强、浓度都满足勒夏特列原理，但它们影响反应平衡的原因有所不同。\par
+对于温度，我们可以用\textbf{范特霍夫方程}描述温度对平衡常数的影响。
+\begin{formula}
+    \textbf{范特霍夫方程}：\par
+    微分形式：
+    \[\dfrac{\diff \ln K^0}{\diff T}=\dfrac{\Delta_\mathrm{r}H_\mathrm{m}^0}{RT^2}\]
+    不定积分形式：
+    \[\ln K^0=-\dfrac{\Delta_\mathrm{r}H_\mathrm{m}^0}{RT}+\dfrac{\Delta_\mathrm{r}S_\mathrm{m}^0}{R}\]
+    定积分形式：
+    \[\ln\dfrac{K^0(T_2)}{K^0(T_1)}=-\dfrac{\Delta_\mathrm{r}H_\mathrm{m}^0}{R}\left(\dfrac{1}{T_2}-\dfrac{1}{T_1}\right)\]
+    注意，范特霍夫方程的不定积分形式和定积分形式能如上表示的前提是认为$\Delta_\mathrm{r}H_\mathrm{m}^0$随温度变化极小，可看作常数。
+\end{formula}\par
+我们可以用\autoref{definition2.22}推导范特霍夫方程。
+\begin{derivation}
+    \qquad 根据\autoref{definition2.22}：
+    \[\Delta_\mathrm{r}G_\mathrm{m}^0=-RT\ln K^0\]
+    根据\autoref{formula2.32}，$\Delta_\mathrm{r}G_\mathrm{m}^0=\Delta_\mathrm{r}H_\mathrm{m}^0-T\Delta_\mathrm{r}S_\mathrm{m}^0$，代入得：
+    \[-RT\ln K^0=\Delta_\mathrm{r}H_\mathrm{m}^0-T\Delta_\mathrm{r}S_\mathrm{m}^0\]
+    移项得：
+    \[\ln K^0=-\dfrac{\Delta_\mathrm{r}H_\mathrm{m}^0}{RT}+\dfrac{\Delta_\mathrm{r}S_\mathrm{m}^0}{R}\]
+    这就是\autoref{formula2.35}范特霍夫方程的不定积分形式。两边对$T$求导得到微分形式：
+    \[\dfrac{\diff \ln K^0}{\diff T}=\dfrac{\Delta_\mathrm{r}H_\mathrm{m}^0}{RT^2}\]
+    取$T=T_1$和$T=T_2$的两式相减即可得到定积分形式：
+    \[\ln\dfrac{K^0(T_2)}{K^0(T_1)}=-\dfrac{\Delta_\mathrm{r}H_\mathrm{m}^0}{R}\left(\dfrac{1}{T_2}-\dfrac{1}{T_1}\right)\]
+\end{derivation}\par
+范特霍夫方程说明标准平衡常数会随着温度改变而改变。如果反应吸热，则$\Delta_\mathrm{r}H_\mathrm{m}^0>0$，温度升高，$K^0$增大，使$J<K$，平衡正向移动，正向是吸热反应，符合勒夏特列原理，其他情况同理。\par
+和温度变化影响$K^0$不同，改变反应体系中浓度或压强不会影响$K^0$，而是影响反应商$J$。\par
+增大整个体系的压强，$J$中每种气体对应的$\dfrac{p}{p^0}$都会增大同样的倍数，如果产物气体分子数多，那么$J$的分子增大的倍数比分母增大的倍数多，$J$增大，$J>K$，平衡逆向移动，即向气体分子数较少的反应物一边移动，符合勒夏特列原理，其他情况同理。\par
+对于反应物，浓度增大会使$J$减小，$J<K^0$，平衡正向移动，符合勒夏特列原理，其他情况同理。\par
+判断反应平衡移动方向可以分为定性和定量两种。如果只需要定性判断，只需要使用勒夏特列原理即可；如果需要计算新的平衡状态下各物质的浓度，那么需要结合反应商和标准平衡常数进行计算。
+\subsection{范特霍夫方程与克-克方程的联系}\label{2.7.4}
+细心的读者可能会注意到我们刚刚推到的\autoref{formula2.35}范特霍夫方程和我们之前没有推导的\autoref{formula1.8}克劳修斯-克拉贝龙方程长得很像。事实上克劳修斯-克拉贝龙方程是范特霍夫方程在气-液相变过程中的特殊情况。
+\begin{derivation}
+    \qquad 以水的气-液相变为例，相变也可以用反应方程式表示为：
+    \[\ce{H2O(l) <=> H2O(g)}\]
+    该反应的标准平衡常数为：
+    \[K^0=p(\ce{H2O})=\dfrac{p_\mathrm{s}}{p^0}\]
+    把平衡常数代入\autoref{formula2.35}范特霍夫方程中，可以得到3个形式：\par
+    微分形式：
+    \[\dfrac{\diff \ln \dfrac{p_\mathrm{s}}{p^0}}{\diff T}=\dfrac{\Delta_\mathrm{vap}H_\mathrm{m}^0}{RT^2}\]
+    其中$\diff\ln\dfrac{p_\mathrm{s}}{p^0}=\diff(\ln p_\mathrm{s}-\ln p^0)=\diff\ln p_\mathrm{s}-\diff\ln p^0=\diff\ln p_\mathrm{s}$（常数的导数为0），代入得\autoref{formula1.8}克劳修斯-克拉贝龙方程的微分形式：
+    \[\dfrac{\diff \ln p_\mathrm{s}}{\diff T}=\dfrac{\Delta_\mathrm{vap}H_\mathrm{m}^0}{RT^2}\]
+    注意，这里的$p_\mathrm{s}$是不带单位的，单位已经被$p^0$消去，如果带单位则不满足对数运算无量纲的要求。\par
+    不定积分形式：
+    \[\ln \dfrac{p_\mathrm{s}}{p^0}=-\dfrac{\Delta_\mathrm{vap}H_\mathrm{m}^0}{RT}+\dfrac{\Delta_\mathrm{vap}S_\mathrm{m}^0}{R}\]
+    移项得：
+    \[\ln p_\mathrm{s}=-\dfrac{\Delta_\mathrm{vap}H_\mathrm{m}^0}{RT}+\dfrac{\Delta_\mathrm{vap}S_\mathrm{m}^0}{R}+\ln p^0\]
+    令$\dfrac{\Delta_\mathrm{vap}S_\mathrm{m}^0}{R}+\ln p^0$为常数$C$，即可得到\autoref{formula1.8}克劳修斯-克拉贝龙方程的不定积分形式：
+    \[\ln p_\mathrm{s}=-\dfrac{\Delta_\mathrm{vap}H_\mathrm{m}^0}{RT}+C\]
+    注意，这个式子满足对数运算无量纲的要求，因为$\ln p_\mathrm{s}$的单位会被$C$消去。\par
+    定积分形式：
+    \[\ln\dfrac{\dfrac{p_\mathrm{s}(T_2)}{p^0}}{\dfrac{p_\mathrm{s}(T_1)}{p^0}}=-\dfrac{\Delta_\mathrm{vap}H_\mathrm{m}^0}{R}\left(\dfrac{1}{T_2}-\dfrac{1}{T_1}\right)\]
+    对数中分子分母同乘以$p^0$即可得到\autoref{formula1.8}克劳修斯-克拉贝龙方程的定积分形式，这里公式本身就满足对数运算无量纲的要求。
+\end{derivation}
+
+\end{document}

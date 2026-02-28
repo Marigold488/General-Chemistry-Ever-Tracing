@@ -1,0 +1,193 @@
+\documentclass[../../../GCET-main.tex]{subfiles}
+\begin{document}
+
+\section*{习题解答}
+\subsection*{判断题}
+\begin{enumerate}
+    \item 经过一个循环后，$Q$、$W$、$\Delta U$、$\Delta H$、$\Delta S$、$\Delta G$一定都等于0。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{2.1}循环过程中状态函数的变化$\Delta X=0$，因此$\Delta U$、$\Delta H$、$\Delta S$、$\Delta G$确实都等于0。但是$Q$和$W$是过程量，与途径有关，因此不一定等于0。}
+    \item 现实世界中存在可逆过程。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{definition2.10}可逆过程是一种理想过程，现实中不存在。}
+    \item 理想气体的恒温过程中，体系与环境有可能只有功交换，没有热交换。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{formula2.3}恒温过程$\Delta U=0$，题目中$W\neq0$、$Q=0$，不符合热力学第一定律。}
+    \item 一定量的理想气体可以吸收热量而不改变内能。\hfill （\ \ $\checkmark$\ \ ） % True
+    \ans{\autoref{2.2.1}理想气体的内能只与温度有关，在恒温过程中内能不变，仍然可以吸热，只需要满足$\Delta U=Q+W=0$即可。}
+    \item 与外界无物质交换的绝热恒容容器中发生任何过程，都有$\Delta U=0$。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{formula2.3}与外界无物质交换，说明容器是封闭体系，满足热力学第一定律；容器绝热，说明$Q=0$；容器恒容，说明体积功为0；但是非体积功不一定为0，所以$\Delta U$不一定等于0。}
+    \item 在发生相变化和化学反应的过程中$\Delta U$、$\Delta H$仍然可以直接用对应的$\Delta U=C_\mathrm{V}\Delta T$和$\Delta H=C_\mathrm{p}\Delta T$计算。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{formula2.12}只有在单纯$pVT$变化过程中才可以这么计算，相变化过程中温度不变但是内能增大，发生化学反应的过程中反应会导致内能和焓变化。}
+    \item 气体分子数不变时，恒压反应热和恒容反应热的大小相同。\hfill （\ \ $\checkmark$\ \ ） % True
+    \ans{\autoref{formula2.15}气体分子数不变时，反应过程可以同时做到恒容和恒压，因此恒容反应热等于恒压反应热。}
+    \item 在孤立体系中，$\Delta S=0$不一定能说明该过程为可逆过程。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{formula2.23}孤立体系中$\Delta S\geqslant0$，其中大于号在不可逆过程成立，等于号在可逆过程成立，因此$\Delta S=0$一定能说明该过程为可逆过程。}
+    \item 焓和熵都没有具体数值，我们不能知道某物质的焓和熵是多少，只能计算过程的焓变和熵变。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{2.5.4}焓没有具体数值，熵有具体数值，我们可以知道某物质的熵是多少。}
+    \item 封闭体系在恒温恒压且非体积功为零的情况下，若$\Delta G=0$，可以认为该过程为可逆过程。\hfill （\ \ $\checkmark$\ \ ） % True
+    \ans{\autoref{2.6.2}题干符合吉布斯自由能判据的三个条件：封闭体系、恒温恒压、非体积功为零，正确。}
+    \item 石墨的标准摩尔生成焓、标准摩尔熵、标准摩尔生成吉布斯自由能都是0。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{2.5.4}石墨是碳元素的最稳定单质，标准摩尔生成焓和标准摩尔生成吉布斯自由能确实是0，但是只有$0\ \mathrm{K}$下的完美晶体的标准摩尔熵才等于0。}
+    \item 平衡状态的反应商$J^{eq}$等于标准平衡常数$K^0$。\hfill （\ \ $\checkmark$\ \ ） % True
+    \ans{\autoref{2.7.1}标准平衡常数$K^0$的就是平衡状态的反应商$J^{eq}$。}
+    \item 一定条件下某反应的$K^0<1$，说明该条件下此反应不能自发进行。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{2.7.2}$K^0<1$只能说明该反应达到平衡状态时产物较少，不能说明一定条件下反应的自发性。反应的自发性只能根据$J$与$K^0$的大小关系判断，如果该条件下$J<K^0$，无论$K^0$多小，反应仍然能自发进行。}
+    \item $\mathrm{pH}+\mathrm{pOH}=14$在任意温度下均成立。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{formula2.37}本式只在$25\ \mathrm{℃}$下成立，温度变化时水的离子积常数$K_\mathrm{w}$会变化，$\mathrm{pH}+\mathrm{pOH}=\mathrm{p}K_\mathrm{w}$的值也会变化。}
+    \item $\mathrm{p}K_\mathrm{a}$越大，酸性越强。\hfill （\ \ $\times$\ \ ） % False
+    \ans{\autoref{2.8.2}$\mathrm{p}K_\mathrm{a}$越大，$K_\mathrm{a}$越小，酸性越弱。}
+    \item 在$\ce{HAc}$溶液中加入纯$\ce{NaAc}$会抑制$\ce{HAc}$的电离。\hfill （\ \ $\checkmark$\ \ ） % True
+    \ans{\autoref{2.8.6}加入纯$\ce{NaAc}$会增大溶液中$\ce{Ac-}$的浓度，使$HAc$的电离平衡逆向移动，即抑制$\ce{HAc}$的电离。}
+\end{enumerate}
+\subsection*{简答题}
+\begin{enumerate}[start=17]
+    \item $\ce{SiH2}$是$\ce{SiH4}$和$\ce{Si2H6}$热分解的关键中间体，现已知
+    \[\Delta_\mathrm{f}H_\mathrm{m}^0(\ce{SiH2})=+274\ \mathrm{kJ/mol}\]
+    \[\Delta_\mathrm{f}H_\mathrm{m}^0(\ce{SiH4})=+34.3\ \mathrm{kJ/mol}\]
+    \[\Delta_\mathrm{f}H_\mathrm{m}^0(\ce{Si2H6})=+80.3\ \mathrm{kJ/mol}\]
+    计算下列反应的标准化学反应焓：
+    \begin{enumerate}
+        \item $\ce{SiH4(g) -> SiH2(g) + H2(g)}$
+        \item $\ce{Si2H6(g) -> SiH2(g) + SiH4(g)}$
+    \end{enumerate}
+    \ans{
+        \begin{enumerate}[label=(\arabic*)]
+            \item \begin{align*}
+            \Delta_\mathrm{r}H_\mathrm{m,1}^0&=\Delta_\mathrm{f}H_\mathrm{m}^0(\ce{SiH2(g)})+\Delta_\mathrm{f}H_\mathrm{m}^0(\ce{H2(g)})-\Delta_\mathrm{f}H_\mathrm{m}^0(\ce{SiH4(g)})\\
+            &=274\ \mathrm{kJ/mol}+0-34.3\ \mathrm{kJ/mol}=239.7\ \mathrm{kJ/mol}
+            \end{align*}
+            \item \begin{align*}
+            \Delta_\mathrm{r}H_\mathrm{m,2}^0&=\Delta_\mathrm{f}H_\mathrm{m}^0(\ce{SiH2(g)})+\Delta_\mathrm{f}H_\mathrm{m}^0(\ce{SiH4(g)})-\Delta_\mathrm{f}H_\mathrm{m}^0(\ce{Si2H6(g)})\\
+            &=274\ \mathrm{kJ/mol}+34.3\ \mathrm{kJ/mol}-80.3\ \mathrm{kJ/mol}=228\ \mathrm{kJ/mol}
+            \end{align*}
+        \end{enumerate}
+    }
+    \item 已知玻尔兹曼常数$k=1.38\times10^{-23}\ \mathrm{J/K}$，如果一个过程$\Delta S=0.001\ \mathrm{J/K}$，那么从始态到终态，体系的微观状态数扩大几倍？
+    \ans{
+        根据\autoref{definition2.20}玻尔兹曼熵的定义：
+        \[S=k\ln\Omega\]
+        设始态的微观状态数为$\Omega_1$，终态的微观状态数为$\Omega_2$，则：
+        \[S_1=k\ln\Omega_1\]
+        \[S_2=k\ln\Omega_2\]
+        相减得：
+        \[\Delta S=S_2-S_1=k\ln\Omega_2-k\ln\Omega_1=k\ln\dfrac{\Omega_2}{\Omega_1}=0.001\ \mathrm{J/K}\]
+        玻尔兹曼常数$k=1.38\times10^{-23}\ \mathrm{J/K}$，因此：
+        \[\ln\dfrac{\Omega_2}{\Omega_1}=7.25\times10^{19}\]
+        \[\dfrac{\Omega_2}{\Omega_1}=\mathrm{e}^{7.25\times10^{19}}\]
+        即微观状态数扩大了$\mathrm{e}^{7.25\times10^{19}}$倍。
+    }
+    \item 定性判断下列反应的$\Delta_\mathrm{r}S_\mathrm{m}^0$的符号
+    \begin{enumerate}
+        \item $\ce{Zn(s) + 2HCl(aq) -> ZnCl2(aq) + H2(g)}$
+        \item $\ce{CaCO3(s) -> CaO(s) + CO2(g)}$
+        \item $\ce{NH3(g) + HCl(g) -> NH4Cl(s)}$
+        \item $\ce{CuO(s) + H2(g) -> Cu(s) + H2O(l)}$
+    \end{enumerate}
+    \ans{
+        \begin{enumerate}[label=(\arabic*)]
+            \item 气体分子数增加，$\Delta_\mathrm{r}S_\mathrm{m}^0>0$
+            \item 气体分子数增加，$\Delta_\mathrm{r}S_\mathrm{m}^0>0$
+            \item 气体分子数减少，$\Delta_\mathrm{r}S_\mathrm{m}^0<0$
+            \item 气体分子数减少，$\Delta_\mathrm{r}S_\mathrm{m}^0<0$
+        \end{enumerate}
+    }
+    \item 已知分解反应：
+    \[\ce{SnS2(s) -> S(g) + SnS(s)}\]
+    \begin{center}
+        \begin{tabular}{cccc}
+            \toprule
+            分解温度附近数值 & $\ce{SnS2(s)}$ & $\ce{S(g)}$ & $\ce{SnS(s)}$ \\
+            \midrule
+            $\Delta_\mathrm{f}H_\mathrm{m}^0(\mathrm{kJ/mol})$ & -116.14 & 76.84 & -75.69 \\
+            $S_\mathrm{m}^0(\mathrm{J/(mol\cdot K)})$ & 160.32 & 135.36 & 136.10 \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+    假设$\Delta_\mathrm{f}H_\mathrm{m}^0$和$S_\mathrm{m}^0$不随温度变化，反应在标准状态下进行，通过计算确定该分解反应自发进行的温度范围。
+    \ans{
+        先计算该分解反应的$\Delta_\mathrm{r}H_\mathrm{m}^0$和$\Delta_\mathrm{r}S_\mathrm{m}^0$：
+        \begin{align*}
+            \Delta_\mathrm{r}H_\mathrm{m}^0&=\Delta_\mathrm{f}H_\mathrm{m}^0(\ce{S(g)})+\Delta_\mathrm{f}H_\mathrm{m}^0(\ce{SnS(s)})-\Delta_\mathrm{f}H_\mathrm{m}^0(\ce{SnS2(s)})\\
+            &=76.84\ \mathrm{kJ/mol}-75.69\ \mathrm{kJ/mol}+116.14\ \mathrm{kJ/mol}=117.29\ \mathrm{kJ/mol}\\
+            \Delta_\mathrm{r}S_\mathrm{m}^0&=S_\mathrm{m}^0(\ce{S(g)})+S_\mathrm{m}^0(\ce{SnS(s)})-S_\mathrm{m}^0(\ce{SnS2(s)})\\
+            &=135.36\ \mathrm{J/(mol\cdot K)}+136.10\ \mathrm{J/(mol\cdot K)}-160.32\ \mathrm{J/(mol\cdot K)}=111.14\ \mathrm{J/(mol\cdot K)}
+        \end{align*}
+        反应自发进行时：
+        \[\Delta_\mathrm{r}G_\mathrm{m}^0=\Delta_\mathrm{r}H_\mathrm{m}^0-T\Delta_\mathrm{r}S_\mathrm{m}^0<0\]
+        即：
+        \[T>\dfrac{\Delta_\mathrm{r}H_\mathrm{m}^0}{\Delta_\mathrm{r}S_\mathrm{m}^0}=\dfrac{117.29\ \mathrm{kJ/mol}}{111.14\ \mathrm{J/(mol\cdot K)}}=\dfrac{117290}{111.14}=1055.3\ \mathrm{K}\]
+        所以分解反应自发进行的温度大于$1055.3\ \mathrm{K}$。
+    }
+    \item 下列反应在$298.15\ \mathrm{K}$、$100\ \mathrm{kPa}$下进行：
+    \[\ce{$\dfrac{1}{2}$Br2(g) + $\dfrac{1}{2}$H2(g) <=> HBr(g)}\]
+    已知$\Delta_\mathrm{f}G_\mathrm{m}^0(\ce{Br2(g)})=3.08\ \mathrm{kJ/mol}$，$\Delta_\mathrm{f}G_\mathrm{m}^0(\ce{HBr(g)})=-53.45\ \mathrm{kJ/mol}$，此时反应容器中$p(\ce{Br2})=40\ \mathrm{kPa}$，$p(\ce{H2})=10\ \mathrm{kPa}$，回答下列问题：
+    \begin{enumerate}
+        \item 求此反应的$\Delta_\mathrm{r}G_\mathrm{m}^0$；
+        \item 求此反应的$K^0$；
+        \item 判断此条件下反应能否自发进行。
+    \end{enumerate}
+    \ans{
+        \begin{enumerate}[label=(\arabic*)]
+            \item 
+            \begin{align*}
+                \Delta_\mathrm{r}G_\mathrm{m}^0&=\Delta_\mathrm{f}G_\mathrm{m}^0(\ce{HBr(g)})-\dfrac{1}{2}\Delta_\mathrm{f}G_\mathrm{m}^0(\ce{Br2(g)})-\dfrac{1}{2}\Delta_\mathrm{f}G_\mathrm{m}^0(\ce{H2(g)})\\
+                &=-53.45\ \mathrm{kJ/mol}-\dfrac{1}{2}\times3.08\ \mathrm{kJ/mol}-0=-54.99\ \mathrm{kJ/mol}
+            \end{align*}
+            \item 根据\autoref{definition2.23}标准平衡常数$K^0$的定义式：
+            \[K^0=\mathrm{e}^{-\dfrac{\Delta_\mathrm{r}G_\mathrm{m}^0}{RT}}=\mathrm{e}^{-\dfrac{-54.99\ \mathrm{kJ/mol}}{8.314\ \mathrm{J/(mol\cdot K)}\times298.15\ \mathrm{K}}}=\mathrm{e}^{22.18}=4.3\times10^9\]
+            \item 先计算$\ce{HBr}$的分压：
+            \[p(\ce{HBr})=100\ \mathrm{kPa}-p(\ce{Br2})-p(\ce{H2})=100\ \mathrm{kPa}-40\ \mathrm{kPa}-10\ \mathrm{kPa}=50\ \mathrm{kPa}\]
+            再计算反应商$J$：
+            \[J=\dfrac{\dfrac{p(\ce{HBr})}{p^0}}{\left[\dfrac{p(\ce{Br2})}{p^0}\right]^\frac{1}{2}\left[\dfrac{p(\ce{H2})}{p^0}\right]^\frac{1}{2}}=\dfrac{0.5}{\sqrt{0.4\times0.1}}=2.5<K^0=4.3\times10^9\]
+            所以此条件下反应能自发进行。
+        \end{enumerate}
+    }
+    \item $10\ \mathrm{dm^3}$氩气由$273\ \mathrm{K}$和$506.625\ \mathrm{kPa}$，经绝热可逆膨胀到$101.325\ \mathrm{kPa}$，计算终态温度$T$和此过程的$Q$、$\Delta U$。
+    \ans{
+        氩气是单原子理想气体，$C_\mathrm{V,m}=\dfrac{3}{2}R$，$C_\mathrm{p,m}=\dfrac{5}{2}R$，$\gamma=\dfrac{C_\mathrm{p,m}}{C_\mathrm{V,m}}=\dfrac{5}{3}$。\\
+        根据\autoref{2.9.1}中有关绝热可逆过程的推导：
+        \[T^\gamma p^{1-\gamma}=C\]
+        因此：
+        \[(273\ \mathrm{K})^\frac{5}{3}\times(506.625\ \mathrm{kPa})^{1-\frac{5}{3}}=T^\frac{5}{3}\times(101.325\ \mathrm{kPa})^{1-\frac{5}{3}}\]
+        解得：
+        \[T=143.4\ \mathrm{K}\]
+        绝热可逆膨胀为绝热过程：
+        \[Q=0\]
+        根据\autoref{formula1.3}理想气体状态方程计算氩气的物质的量：
+        \[pV=nRT\Longrightarrow n=\dfrac{pV}{RT}=\dfrac{506.625\ \mathrm{kPa}\times10\ \mathrm{dm^3}}{8.314\ \mathrm{J/(mol\cdot K)}\times273\ \mathrm{K}}=2.232\ \mathrm{mol}\]
+        根据\autoref{formula2.12}计算$\Delta U$：
+        \[\Delta U=nC_\mathrm{V,m}\Delta T=2.232\ \mathrm{mol}\times\dfrac{3}{2}R\times(143.4\ \mathrm{K}-273\ \mathrm{K})=-3607\ \mathrm{J}\]
+    }
+    \item 已知乙醇（$M=46\ \mathrm{g/mol}$）的$C_\mathrm{p,m}=111.46\ \mathrm{J/(mol\cdot K)}$且可认为不随温度变化，150克乙醇（$22\ \mathrm{℃}$）与200克乙醇（$56\ \mathrm{℃}$）在绝热容器中恒压下混合，求体系熵变。
+    \ans{
+        \autoref{2.9.3}中介绍了本题的方法。\\
+        两部分乙醇的物质的量分别为：
+        \[n_1=\dfrac{m_1}{M}=\dfrac{150\ \mathrm{g}}{46\ \mathrm{g/mol}}=\dfrac{75}{23}\ \mathrm{mol},\ n_2=\dfrac{m_2}{M}=\dfrac{200\ \mathrm{g}}{46\ \mathrm{g/mol}}=\dfrac{100}{23}\ \mathrm{mol}\]
+        体系绝热，因此体系内各部分物质的热相加为零：
+        \[Q_1+Q_2=0\]
+        恒压条件下：
+        \[n_1C_\mathrm{p,m}(T-295.15\ \mathrm{K})+n_2C_\mathrm{p,m}(T-329.15\ \mathrm{K})=0\]
+        消去$C_\mathrm{p.m}$并利用$n_1:n_2=3:4$解得：
+        \[T=314.58\ \mathrm{K}\]
+        各部分气体的熵变分别为：
+        \begin{align*}
+            \Delta S_1&=\int_{295.15\ \mathrm{K}}^{314.58\ \mathrm{K}}\dfrac{n_1C_\mathrm{p,m}\diff T}{T}=n_1C_\mathrm{p,m}\ln\dfrac{314.58\ \mathrm{K}}{295.15\ \mathrm{K}}=23.17\ \mathrm{J/K}\\
+            \Delta S_2&=\int_{329.15\ \mathrm{K}}^{314.58\ \mathrm{K}}\dfrac{n_2C_\mathrm{p,m}\diff T}{T}=n_2C_\mathrm{p,m}\ln\dfrac{314.58\ \mathrm{K}}{329.15\ \mathrm{K}}=-21.94\ \mathrm{J/K}
+        \end{align*}
+        因此总熵变为：
+        \[\Delta S=\Delta S_1+\Delta S_2=23.17\ \mathrm{J/K}-21.94\ \mathrm{J/K}=1.23\ \mathrm{J/K}\]
+    }
+    \item 已知苯在$101.325\ \mathrm{kPa}$的沸点是$353.25\ \mathrm{K}$，摩尔蒸发焓$\Delta_\mathrm{vap}H_\mathrm{m}=30.7\ \mathrm{kJ/mol}$。$1\ \mathrm{mol}$苯在$101.325\ \mathrm{kPa}$、$353.25\ \mathrm{K}$下蒸发，得到$101.325\ \mathrm{kPa}$、$353.25\ \mathrm{K}$的苯蒸气。液态苯的体积相对于气态苯可忽略不计，求该过程中的$Q$、$W$、$\Delta U$、$\Delta S$、$\Delta G$。
+    \ans{
+        恒压条件下：
+        \[Q=\Delta H=n\Delta_\mathrm{vap}H_\mathrm{m}=1\ \mathrm{mol}\times30.7\ \mathrm{kJ/mol}=30.7\ \mathrm{kJ}\]
+        \[W=-p_\mathrm{ex}\Delta V\]
+        因为液态苯的体积相对于气态苯可忽略不计，所以$\Delta V=V_\mathrm{g}-V_\mathrm{l}=V_\mathrm{g}$，代入得：
+        \[W=-p_\mathrm{ex}V_\mathrm{g}=-nRT=-1\ \mathrm{mol}\times8.314\ \mathrm{J/(mol\cdot K)}\times353.25\ \mathrm{K}=-2.94\ \mathrm{kJ}\]
+        根据\autoref{formula2.3}热力学第一定律：
+        \[\Delta U=Q+W=30.7\ \mathrm{kJ}-2.94\ \mathrm{kJ}=27.76\ \mathrm{kJ}\]
+        相变过程温度恒定，熵变为：
+        \[\Delta S=\int_{1}^{2}\dfrac{\delta Q}{T}=\dfrac{Q}{T}=\dfrac{30.7\ \mathrm{kJ}}{353.25\ \mathrm{K}}=86.91\ \mathrm{J/K}\]
+        \[\Delta G=\Delta(H-TS)=\Delta H-T\Delta S=Q-T\times\dfrac{Q}{T}=0\]
+    }
+\end{enumerate}
+
+\end{document}

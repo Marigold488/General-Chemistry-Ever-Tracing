@@ -1,0 +1,277 @@
+\documentclass[../../../GCET-main.tex]{subfiles}
+
+\begin{document}
+
+\section{热力学第一定律}\label{2.2}
+\textbf{热力学第一定律}描述的是\textbf{内能的变化}与\textbf{热}和\textbf{功}的关系，在此之前我们需要明确内能、热和功的概念。
+\subsection{内能、热和功**}\label{2.2.1}
+\begin{definition}
+    \textbf{内能}$U$：系统内部所有微观粒子动能和势能的总和\par
+    \textbf{热}$Q$：体系与环境之间因温度差异而交换的能量\par
+    \textbf{功}$W$：除热以外的体系与环境之间交换的能量
+\end{definition}\par
+根据上一节的分类，内能属于状态函数，内能的微小变化记作$\diff U$，较大变化记作$\Delta U$。一般选取温度$T$和体积$V$作为自变量，这样内能可以表示为$U=f(T,V)$。比较特殊的是，理想气体分子间没有作用力，因此理想气体没有势能。体积变化只能改变势能，所以\textbf{理想气体的内能与体积无关}，理想气体的内能可以表示为$U=f(T)$。我们的研究对象主要是理想气体。\par
+对于大部分物质，内能$U$的具体数值无法测量也无法计算，但是内能的变化量$\Delta U$可以通过测量或计算得到，因此我们研究的主要是内能的变化量，而不是内能的具体数值。\par
+热和功都是过程量，它们分别是\textbf{传热}和\textbf{做功}两个过程中体系与环境交换的能量。本书中规定环境对体系传热或做功时热和功为正值，体系对环境传热或做功时热和功为负值。\textbf{本书中做功的正负和《新编普通化学》的规定有区别，读者需要注意，理解其中一种即可。}在学习热力学第一定律之后你就会知道，这两种规定本质上没有区别，只是物理学教材一般规定对体系做功为正值，化学教材一般规定对体系做功为负值。\par
+功还可以细分为\textbf{体积功}和\textbf{非体积功}，它们的定义如下。
+\begin{definition}
+    \textbf{体积功}：做功过程中体系体积发生变化的功\par
+    \textbf{非体积功}：做功过程中体系体积不发生变化的功
+\end{definition}\par
+体积功主要是气体膨胀和压缩过程做的机械功，非体积功有电功、不引起体系体积变化的机械功、表面功（表面张力做功）、磁场功，以电功为主。本章我们\textbf{只考虑体积功，不考虑非体积功}，在\textcolor{blue}{（章节）}中我们会考虑非体积功中的电功。
+\subsection{热力学第一定律***}\label{2.2.2}
+对于封闭体系，体系与环境间没有物质交换，只有能量交换，所以体系的内能改变只与能量交换有关。\par
+设体系处于状态1时内能为$U_1$，体系处于状态2时内能为$U_2$，那么体系从状态1变化到状态2时，内能的变化为：
+\[\Delta U=U_2-U_1\]\par
+19世纪30年代，人们逐渐认识到，为了使体系的热力学状态发生变化，既可以向它传热，也可以对它做功。\par
+实验结果表明，在各种不同的绝热过程中，使体系从状态1变化到状态2，所需环境做功的数量是相同的。环境对体系做功，$W>0$，体系内能增加，$\Delta U>0$；体系对环境做功，$W<0$，体系内能减少，$U<0$。所以做功改变内能，内能的符号与功的符号是一致的\footnote{约定体系对环境做功为正时}，数值也是相同的，可以表示为：
+\[\Delta U=W\]\par
+此外，在各种$W=0$的过程中，通过传热使体系从状态1变化到状态2时，内能的变化量也与热相同，可以表示为：
+\[\Delta U=Q\]\par
+做功和传热都能改变体系的内能，它们的区别在于，做功的过程中内能和其他形式的能发生转化，而传热只是不同物体或一个物体的不同部分之间内能的转移。一开始人们用焦耳$\mathrm{J}$来计量功，用卡路里$\mathrm{cal}$来计量热。后来实验表明，为了改变系统的状态，做功和传热这两种方法是等价的，并且焦耳和卡路里这两种单位也可以互相转换，这称为\textbf{热功当量定律}。
+\begin{formula}
+    \textbf{热功当量定律}：对系统做一定量的功，与系统吸收一定量的热，在改变系统内能的效果上完全等价。
+    \[1\ \mathrm{cal}=4.184\ \mathrm{J}\]
+    \qquad 其中$1\ \mathrm{cal}$是$1\ \mathrm{g}$水温度升高$1\ \mathrm{℃}$所需的热量。
+\end{formula}\par
+既然传热和做功对改变系统的内能是等价的，那么当环境既对系统做功又对系统传热时，内能的变化量就应该是两者之和，这就是\textbf{热力学第一定律}。
+\begin{formula}
+    \textbf{热力学第一定律}：一个封闭系统的内能改变量等于环境向它传递的热量与环境对它做的功的和。\footnote{《新编普通化学》中规定环境对系统做功为负时$\Delta U=Q-W$，和这里规定环境对系统做功为正时$\Delta U=Q+W$是一致的}
+    \[\Delta U=Q+W\]
+    微分形式为：
+    \[\diff U=\delta Q+\delta W\]
+\end{formula}\par
+热力学第一定律是能量守恒定律在热力学领域的体现，它表明不需要任何动力和燃料却能不断地对外做功的“第一类永动机”是不可能实现的，因为此时$Q=0,\ W<0,\ \Delta U=0$，不符合热力学第一定律。
+\subsection{体积功的计算***}\label{2.2.3}
+一般来说功用力乘以位移计算，即$\delta W=\vv{F}\cdot\diff \vv{s}$。对于气体，我们可以用\textbf{外压}$p_\mathrm{ex}$和\textbf{气体自身体积}$V$来表示体积功。
+\begin{formula}
+    \textbf{体积功的计算}：
+    \[\delta W=-p_\mathrm{ex}\diff V\]
+    \[W=-\int_{V_1}^{V_2}  \,p_\mathrm{ex}\diff V\]
+\end{formula}\par
+这个公式可以用$\delta W=\vv{F}\cdot\diff \vv{s}$推导。
+\begin{derivation}
+    \begin{minipage}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{2.2.3体积功.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.7\textwidth}
+        \qquad 如左图所示，气缸中有一个质量不计、面积为$S$的活塞，外压为$p_\mathrm{ex}$。根据功的计算公式：\[\delta W=\vv{F}\cdot\diff \vv{l}\]
+        \qquad 我们需要把矢量运算转换为数值运算，显然力$\vv{F}$和位移$\diff \vv{l}$在同一条直线上，所以$\vv{F}\cdot\diff \vv{l}=F\diff l$。因为我们规定环境对体系做功为正，所以从环境指向体系为正方向。
+    \end{minipage}\par
+    \vspace{0.6em}
+    \qquad 力的大小为$p_\mathrm{ex}S$，外压对应的力是外力，方向指向体系，符号为正。\par
+    \qquad 位移$\diff \vv{l}$的大小为$\dfrac{\diff V}{S}$，气体膨胀时，位移指向环境，$\diff V>0$时$\diff l<0$；气体被压缩时，位移指向体系，$\diff V<0$时$\diff l>0$，所以$\diff l=-\dfrac{\diff V}{S}$。\par
+    \qquad 把力和位移的表达式代入得到：
+    \[\delta W=\vv{F}\cdot\diff \vv{l}=p_\mathrm{ex}S\cdot(-\dfrac{\diff V}{S})=-p_\mathrm{ex}\diff V\]
+    \qquad 对上式积分即可得到积分形式。
+\end{derivation}\par
+我们只需要掌握理想气体体积功的计算。在本书中，如果没有特殊强调，我们计算的功、热、内能的变化、焓变、熵变等都是在理想气体的情况下。\par
+显然，恒容过程中体积不变，$\Delta V=0$，因此体积功$W=0$。\par
+如果膨胀或压缩时外压保持恒定，那么$W$的积分式中$p_\mathrm{ex}$可以直接提出，这样的过程称为\textbf{恒外压膨胀/压缩}：
+\begin{formula}
+    \textbf{恒外压过程的体积功}：
+    \[W=-\int_{V_1}^{V_2}  \,p_\mathrm{ex}\diff V=-p_\mathrm{ex}\int_{V_1}^{V_2}  \,\diff V=-p_\mathrm{ex}(V_2-V_1)=-p_\mathrm{ex}\Delta V\]
+\end{formula}\par
+恒外压过程与恒压过程不同，恒压过程要求内压不变，而恒外压过程只要求外压不变。恒压过程属于恒外压过程。除恒压过程外，我们也可以通过在恒温条件下突然改变外压制造恒外压过程。如果恒外压膨胀过程的外压$p_\mathrm{ex}=0$，那么体系向真空膨胀，体积功$W=-p_\mathrm{ex}\Delta V=0$。\par
+如果我们需要在恒温条件下使理想气体从状态1$(p_1,V_1)$变化到状态2$(p_2,V_2)$或从状态2$(p_2,V_2)$变化到状态1$(p_1,V_1)$（$V_1<V_2$），我们可以有以下几种方法：\par
+如\autoref{figure2.1}，直接让外压从$p_1$改变为$p_2$，只经过一次恒外压膨胀/压缩：
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.25\textwidth]{2.2.3一次恒外压膨胀.png}
+    \includegraphics[width=0.25\textwidth]{2.2.3一次恒外压压缩.png}
+    \caption{一次恒外压膨胀与一次恒外压压缩}
+    \label{figure2.1}
+\end{figure}\par
+恒外压膨胀/压缩需要突然增大/减小外压，功的绝对值即为图中阴影部分面积。\par
+如\autoref{figure2.2}，多次改变外压，经过多次恒外压膨胀/压缩：
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.25\textwidth]{2.2.3多次恒外压膨胀.png}
+    \includegraphics[width=0.25\textwidth]{2.2.3多次恒外压压缩.png}
+    \caption{多次恒外压膨胀与多次恒外压压缩}
+    \label{figure2.2}
+\end{figure}\par
+多次恒外压膨胀/压缩需要多次突然增大/减小外压，功的绝对值仍然是图中阴影部分面积。可以发现多次恒外压膨胀的阴影部分面积明显大于一次恒外压膨胀，多次恒外压压缩的阴影部分面积明显小于一次恒外压膨胀。\par
+如\autoref{figure2.3}，如果可以无限次改变外压，让外压缓慢地从$p_1$改变为$p_2$，那么这一过程可以满足\autoref{definition2.10}中可逆过程的定义，称为\textbf{恒温可逆膨胀/压缩}：
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.25\textwidth]{2.2.3恒温可逆膨胀.png}
+    \includegraphics[width=0.25\textwidth]{2.2.3恒温可逆压缩.png}
+    \caption{恒温可逆膨胀与恒温可逆压缩}
+    \label{figure2.3}
+\end{figure}\par
+恒温可逆膨胀/压缩是可逆过程，需要无数次缓慢改变外压$p_\mathrm{ex}$，使过程中体系压强始终等于外压，体系始终处于平衡态，功的绝对值仍然是图中阴影部分面积。可以发现恒温可逆膨胀的阴影部分面积在膨胀过程中最大，恒温可逆压缩的阴影部分面积在压缩过程中最小，说明恒温可逆膨胀过程中体系对环境做最大功，恒温可逆压缩过程中环境对体系做最小功。\par
+我们可以证明，对于所有始态和终态相同的可逆过程和不可逆过程，可逆过程的功小于不可逆过程的功。
+\begin{formula}
+    始态和终态相同的$W_\mathrm{rev}$和$W_\mathrm{irr}$之间的关系：
+    \[\delta W_\mathrm{rev}<\delta W_\mathrm{irr}\]
+    \[W_\mathrm{rev}<W_\mathrm{irr}\]
+\end{formula}
+\begin{derivation}
+    \qquad 根据\autoref{formula2.4}：
+    \[\delta W=-p_\mathrm{ex}\diff V\]
+    对于可逆过程，$p=p_\mathrm{ex,rev}$，所以：
+    \[\delta W_\mathrm{rev}=-p_\mathrm{ex,rev}\diff V=-p\diff V\]
+    对于不可逆过程，$p>p_\mathrm{ex,irr}$（只有内压大于外压才能使体积增大），所以：
+    \[\delta W_\mathrm{irr}=-p_\mathrm{ex,irr}\diff V>-p\diff V\]
+    所以：
+    \[\delta W_\mathrm{rev}<\delta W_\mathrm{irr}\]
+\end{derivation}\par
+理想气体恒温可逆过程的体积功的计算与恒外压过程不同。在这里外压$p_\mathrm{ex}$始终等于体系压强$p$，而理想气体的压强$p$又可以通过\autoref{formula1.3}理想气体状态方程与体积$V$产生联系，在这里$p$是$V$的函数，因此积分时不可以把$p_\mathrm{ex}$单独拿出积分符号外。在这里先给出结论，随后给出推导过程。
+\begin{formula}
+    \textbf{理想气体恒温可逆过程的体积功}：
+    \[W=-nRT\ln\dfrac{V_2}{V_1}\]
+\end{formula}
+\begin{derivation}
+    \qquad 根据\autoref{formula2.4}：
+    \[W=-\int_{V_1}^{V_2}  \,p_\mathrm{ex}\diff V\]
+    恒温可逆过程中体系压强$p$始终等于外压$p_\mathrm{ex}$，有：
+    \[p=p_\mathrm{ex}\]
+    根据\autoref{formula1.3}理想气体状态方程：
+    \[pV=nRT\Longrightarrow p=\dfrac{nRT}{V}\]
+    将上面两个公式代入最初的公式：
+    \[W=-\int_{V_1}^{V_2}  \,p_\mathrm{ex}\diff V=-\int_{V_1}^{V_2}  \,p\diff V=-\int_{V_1}^{V_2}  \,\dfrac{nRT}{V}\diff V=-nRT\ln V\bigg|_{V_1}^{V_2}=-nRT\ln\dfrac{V_2}{V_1}\]
+\end{derivation}\par
+体积功的计算主要是恒外压过程和恒温可逆过程这两种，除此之外还有绝热过程的体积功，我们在\autoref{2.9.1}中再学习。
+\subsection{热的计算**}\label{2.2.4}
+这一节讨论单纯$pVT$变化过程热的计算，相变过程和化学反应过程热的计算参见\autoref{2.3}。单纯$pVT$变化过程热的计算需要分好几种情况，我们先给出公式，随后一一推导。
+\begin{formula}
+    \textbf{单纯$pVT$变化过程热的计算}：\par
+    \textbf{绝热过程}：
+    \[\delta Q=0\]
+    \[Q=0\]
+    \textbf{恒温过程}：
+    \[\delta Q=-\delta W\]
+    \[Q=-W\]
+    \textbf{恒容过程}：
+    \[\delta Q=\diff U\]
+    \[Q=\Delta U\]
+    \textbf{恒压过程}：
+    \[\delta Q=\diff U+p\diff V\]
+    \[Q=\Delta U+p\Delta V\]
+\end{formula}
+\begin{derivation}
+    \textbf{绝热过程}：\par
+    \qquad 显然，绝热过程体系与环境不发生热交换：
+    \[Q=0\]
+    \textbf{恒温过程}：\par
+    \qquad 对于恒温过程，理想气体的内能不变：
+    \[\Delta U=0\]
+    根据\autoref{formula2.3}热力学第一定律：
+    \[\Delta U=Q+W=0\Longrightarrow Q=-W\]
+    只需要使用\autoref{2.2.3}中的方法计算出恒温过程的体积功即可。\par
+    \textbf{恒容过程}：\par
+    \qquad 对于恒容过程，$\Delta V=0$，所以：
+    \[W=-p_\mathrm{ex}\Delta V=0\]
+    根据\autoref{formula2.3}热力学第一定律：
+    \[\Delta U=Q+W=Q\]
+    即：
+    \[Q=\Delta U\]\par
+    \textbf{恒压过程}：\par
+    \qquad 对于恒压过程，$p_\mathrm{ex}=p$：
+    \[W=-p_\mathrm{ex}\Delta V=-p\Delta V\]
+    根据\autoref{formula2.3}热力学第一定律：
+    \[\Delta U=Q+W\Longrightarrow Q=\Delta U-W=\Delta U+p\Delta V\]
+\end{derivation}\par
+我们发现恒压过程的热似乎比较特殊，我们可以把$U+pV$定义成一个新的函数，这就是我们熟知的\textbf{焓}。
+\subsection{焓与焓变的概念**}\label{2.2.5}
+\begin{definition}
+    \textbf{焓}：为了方便恒压热的计算，我们定义一个新的热力学函数焓，符号为$H$：
+    \[H=U+pV\]
+    \textbf{焓变}：焓的变化：
+    \[\diff H=\diff(U+pV)=\diff U+\diff(pV)=\diff U+p\diff V+V\diff p\]
+    \[\Delta H=\Delta(U+pV)\]
+    恒压条件下，$\diff p=0$、$\Delta p=0$：
+    \[\diff H=\diff U+p\diff V\]
+    \[\Delta H=\Delta U+p\Delta V\]
+\end{definition}\par
+内能$U$、压强$p$和体积$V$均为状态函数，所以焓也是状态函数，这从焓变是$\Delta H$也可以看出。焓的单位是$\mathrm{J}$。\par
+对于物质的量确定的单组分理想气体，根据\autoref{2.2.1}，$U$只是$T$的函数，根据\autoref{formula1.3}理想气体状态方程，$pV$也只是$T$的函数，所以在这种情况下焓也只是$T$的函数，即$H=H(T)$。
+\subsection{热与内能和焓的关系**}\label{2.2.6}
+在\autoref{formula2.8}中我们可以发现，恒容过程与恒压过程的热都是状态函数的变化。恒容过程的热与内能的变化相同，恒压过程的热与焓的变化相同。如果我们用下标表示过程中不变的量，那么恒容热和恒压热可以如下表示。
+\begin{formula}
+    \textbf{恒容热}：
+    \[\delta Q_\mathrm{V}=\diff U\]
+    \[Q_\mathrm{V}=\Delta U\]
+    \textbf{恒压热}：
+    \[\delta Q_\mathrm{p}=\diff H\]
+    \[Q_\mathrm{p}=\Delta H\]
+\end{formula}\par
+把热和状态函数的变化联系起来具有很大的意义。热是实验可以测量的，可以通过测量不同条件下的热来测量$\Delta U$或$\Delta H$的数值；状态函数是理论可以推导的，和实验数据结合可以检验理论的正确性。\par
+\subsection{热容、比热容和摩尔热容**}\label{2.2.7}
+对于理想气体，内能和焓都只是$T$的函数，所以内能的变化和焓变也都只与温度有关，所以恒容热$Q_\mathrm{V}$和恒压热$Q_\mathrm{p}$的数值也只与温度有关。为了研究$Q$与$T$的关系，我们引入\textbf{热容}$C$、比热容$c$和摩尔热容$C_\mathrm{m}$。
+\begin{definition}
+    \textbf{热容}$C$：系统升高单位温度吸收的热量，单位$\mathrm{J/K}$。
+    \[C=\dfrac{\delta Q}{\diff T}\]
+    \textbf{比热容}$c$：单位质量物质升高单位温度吸收的热量，单位$\mathrm{J/(kg\cdot K)}$或$\mathrm{J/(g\cdot K)}$。
+    \[c=\dfrac{\delta Q}{m\diff T}\]
+    \textbf{摩尔热容}$C_\mathrm{m}$：$1\ \mathrm{mol}$物质升高单位温度吸收的热量，单位$\mathrm{J/(mol\cdot K)}$。
+    \[C_\mathrm{m}=\dfrac{\delta Q}{n\diff T}\]
+\end{definition}\par
+其中比热容在初中科学中就提到过，但在大学化学中不常用。我们主要使用的是热容和摩尔热容。热容、比热容、摩尔热容可以互相转换，转换方式如下。
+\begin{formula}
+    热容、比热容、摩尔热容的关系：
+    \[C=mc,\ C=nC_\mathrm{m}\]
+\end{formula}\par
+按照热的类型，我们也可以把热容分成\textbf{恒容热容}$C_\mathrm{V}$和\textbf{恒压热容}$C_\mathrm{p}$，同样摩尔热容也可以分成\textbf{恒容摩尔热容}$C_\mathrm{V,m}$和\textbf{恒压摩尔热容}$C_\mathrm{p,m}$。
+\subsection{热容用于热、内能的变化、焓变的计算***}\label{2.2.8}
+（摩尔）热容是随温度变化的，但在一定温度范围内变化不大，为了方便计算，我们一般把（摩尔）热容视为常数。在单纯$pVT$变化过程中通过（摩尔）热容计算热的几个公式如下。
+\begin{formula}
+    在单纯$pVT$变化过程中：\par
+    \textbf{恒容热}：
+    \[\delta Q_\mathrm{V}=C_\mathrm{V}\diff T=nC_\mathrm{V,m}\diff T\]
+    如果$C_\mathrm{V}$视为常数：
+    \[Q_\mathrm{V}=C_\mathrm{V}\Delta T=nC_\mathrm{V,m}\Delta T\]
+    \textbf{恒压热}：
+    \[\delta Q_\mathrm{p}=C_\mathrm{p}\diff T=nC_\mathrm{p,m}\diff T\]
+    如果$C_\mathrm{p}$视为常数：
+    \[Q_\mathrm{p}=C_\mathrm{p}\Delta T=nC_\mathrm{p,m}\Delta T\]
+\end{formula}\par
+根据\autoref{formula2.9}，我们发现在单纯$pVT$变化过程中内能的变化和焓变也可以用（摩尔）热容计算。
+\begin{formula}
+    在单纯$pVT$变化过程中：\par
+    \textbf{内能的变化}：
+    \[\diff U=\delta Q_\mathrm{V}=C_\mathrm{V}\diff T=nC_\mathrm{V,m}\diff T\]
+    如果$C_\mathrm{V}$视为常数：
+    \[\Delta U=Q_\mathrm{V}=C_\mathrm{V}\Delta T=nC_\mathrm{V,m}\Delta T\]
+    \textbf{焓变}：
+    \[\diff H=\delta Q_\mathrm{p}=C_\mathrm{p}\diff T=nC_\mathrm{p,m}\diff T\]
+    如果$C_\mathrm{p}$视为常数：
+    \[\Delta H=Q_\mathrm{p}=C_\mathrm{p}\Delta T=nC_\mathrm{p,m}\Delta T\]
+\end{formula}\par
+内能的变化和焓变的计算与热的计算有本质不同。热是过程量，如果不满足恒容或者恒压的条件，我们就没法用公式计算热。但是内能和焓变是状态函数，对于单组分理想气体，内能的变化和焓变的大小只与温度有关，即使过程不满足恒容或者恒压的条件，我们也可以用这些公式计算内能的变化与焓变。\par
+在了解热容与内能、焓的关系之后，我们可以推导出理想气体恒容（摩尔）热容与恒压（摩尔）热容的关系，公式与推导过程如下：
+\begin{formula}
+    理想气体恒容热容与恒压热容的关系：
+    \[C_\mathrm{p}=C_\mathrm{V}+nR\]
+    理想气体恒容摩尔热容与恒压摩尔热容的关系：
+    \[C_\mathrm{p,m}=C_\mathrm{V,m}+R\]
+\end{formula}
+\begin{derivation}
+    \qquad 根据\autoref{definition2.15}焓的定义：
+    \[H=U+pV\]
+    $H$、$U$、$pV$均是温度的函数，两边同时对温度$T$求导得：
+    \[\dfrac{\diff H}{\diff T}=\dfrac{\diff}{\diff T}(U+pV)=\dfrac{\diff U}{\diff T}+\dfrac{\diff (pV)}{\diff T}\]
+    根据\autoref{formula1.3}理想气体状态方程：
+    \[pV=nRT\Longrightarrow \dfrac{\diff(pV)}{\diff T}=\dfrac{\diff(nRT)}{\diff T}=nR\]
+    根据\autoref{formula2.12}：
+    \[\diff U=C_\mathrm{V}\diff T\Longrightarrow\dfrac{\diff U}{\diff T}=C_\mathrm{V}\]
+    \[\diff H=C_\mathrm{p}\diff T\Longrightarrow\dfrac{\diff H}{\diff T}=C_\mathrm{p}\]
+    将这三个式子代入对$T$求导的式子中即可得到：
+    \[C_\mathrm{p}=C_\mathrm{V}+nR\]
+    两边同除以$n$得：
+    \[C_\mathrm{p,m}=C_\mathrm{V,m}+R\]
+\end{derivation}\par
+此外，用统计热力学的方法可以得出单原子分子理想气体和双原子分子理想气体的摩尔热容，数值如下。
+\begin{formula}
+    单原子分子理想气体的摩尔热容：
+    \[C_\mathrm{V,m}=\dfrac{3}{2}R\]
+    \[C_\mathrm{p,m}=\dfrac{5}{2}R\]
+    双原子分子理想气体的摩尔热容：
+    \[C_\mathrm{V,m}=\dfrac{5}{2}R\]
+    \[C_\mathrm{p,m}=\dfrac{7}{2}R\]
+\end{formula}
+
+\end{document}

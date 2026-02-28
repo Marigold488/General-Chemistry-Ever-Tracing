@@ -34,12 +34,12 @@
 \begin{table}[htbp] % 表格环境
     \centering % 居中，不想居中可以不要
     \caption{第一张示例表} % 标题
-    \begin{tabular}{|c|c|} % 正常写表格
-        \hline
+    \begin{tabular}{cc} % 正常写表格
+        \toprule
         序号 & 内容 \\
-        \hline
+        \midrule
         1 & 测试 \\
-        \hline
+        \bottomrule
     \end{tabular}
     \label{table1.1} % \label一定要放在\caption之后
 \end{table}

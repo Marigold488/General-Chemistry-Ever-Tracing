@@ -1,0 +1,328 @@
+\documentclass[../../../GCET-main.tex]{subfiles}
+
+\begin{document}
+
+\section{$pVT$和相变计算专题}\label{2.9}
+本节对单纯$pVT$变化过程和相变化过程进行梳理总结，帮助大家复习本章前半部分知识。
+\subsection{单种理想气体$pVT$变化过程}\label{2.9.1}
+\subsubsection{可逆过程}
+\begin{table}[h]
+    \centering
+    \caption{四个可逆过程中各物理量的变化}
+    \begin{tabular}{cccccc}
+        \toprule
+        过程名称 & $Q$ & $W$ & $\Delta U$ & $\Delta H$ & $\Delta S$ \\
+        \midrule
+        恒温可逆过程 & $nRT\ln\dfrac{V_2}{V_1}$ & $-nRT\ln\dfrac{V_2}{V_1}$ & $0$ & $0$ & $nR\ln\dfrac{V_2}{V_1}$ \\
+        恒压可逆过程 & $C_\mathrm{p}\Delta T$ & $-p\Delta V$ & $C_\mathrm{V}\Delta T$ & $C_\mathrm{p}\Delta T$ & $C_\mathrm{p}\ln\dfrac{T_2}{T_1}$ \\
+        恒容可逆过程 & $C_\mathrm{V}\Delta T$ & $0$ & $C_\mathrm{V}\Delta T$ & $C_\mathrm{p}\Delta T$ & $C_\mathrm{V}\ln\dfrac{T_2}{T_1}$ \\
+        绝热可逆过程 & $0$ & $C_\mathrm{V}\Delta T$ & $C_\mathrm{V}\Delta T$ & $C_\mathrm{p}\Delta T$ & $0$ \\
+        \bottomrule
+    \end{tabular}
+    \label{table2.3}
+\end{table}\par
+上边的表格中没有给出$\Delta G$，方法都是按定义$G=H-TS$计算，需要的读者可以查看推导过程。下面按照过程类别进行推导，这里不再引用公式，都从最基础的公式出发进行推导，希望读者能掌握推导过程。\par
+所有的可逆过程都满足$p=p_\mathrm{ex}$，以下计算体积功时直接写$p$。
+\begin{derivation}
+    \textbf{恒温可逆过程}：\par
+    \qquad 恒温可逆过程$T$不变，直接得到：
+    \[\Delta U=C_\mathrm{V}\Delta T=0\]
+    \[\Delta H=C_\mathrm{p}\Delta T=0\]
+    根据理想气体状态方程计算功：
+    \[W=\int_{V_1}^{V_2}-p\diff V=\int_{V_1}^{V_2}-\dfrac{nRT}{V}\diff V=-nRT\ln\dfrac{V_2}{V_1}\]
+    根据热力学第一定律计算热：
+    \[\Delta U=Q+W=0\]
+    \[Q=-W=nRT\ln\dfrac{V_2}{V_1}\]
+    根据定义计算熵变：
+    \[\Delta S=\int_{1}^{2}\dfrac{\delta Q}{T}=\dfrac{Q}{T}=nR\ln\dfrac{V_2}{V_1}\]
+    根据定义计算吉布斯自由能变：
+    \[\Delta G=\Delta(H-TS)=\Delta H-T\Delta S=0-T\times nR\ln\dfrac{V_2}{V_1}=-nRT\ln\dfrac{V_2}{V_1}\]
+\end{derivation}
+\begin{derivation}
+    \textbf{恒压可逆过程}：\par
+    \qquad 恒压可逆过程$p$不变，直接得到：
+    \[\Delta U=C_\mathrm{V}\Delta T\]
+    \[\Delta H=C_\mathrm{p}\Delta T\]
+    根据恒压热等于焓变：
+    \[Q=\Delta H=C_\mathrm{p}\Delta T\]
+    根据定义计算功：
+    \[W=\int_{V_1}^{V_2}-p\diff V=-p\int_{V_1}^{V_2}\diff V=-p\Delta V\]
+    根据定义计算熵变：
+    \[\delta Q=\diff H=C_\mathrm{p}\diff T\]
+    \[\Delta S=\int_{1}^{2}\dfrac{\delta Q}{T}=\int_{T_1}^{T_2}\dfrac{C_\mathrm{p}\diff T}{T}=C_\mathrm{p}\ln\dfrac{T_2}{T_1}\]
+    根据定义计算吉布斯自由能变：
+    \[S_2=S_1+\Delta S=S_1+C_\mathrm{p}\ln\dfrac{T_2}{T_1}\]
+    \[\Delta(TS)=S_2T_2-S_1T_1=(S_1+C_\mathrm{p}\ln\dfrac{T_2}{T_1})T_2-S_1T_1=S_1\Delta T+C_\mathrm{p}T_2\ln\dfrac{T_2}{T_1}\]
+    \[\Delta G=\Delta(H-TS)=\Delta H-\Delta(TS)=(C_\mathrm{p}-S_1)\Delta T-C_\mathrm{p}T_2\ln\dfrac{T_2}{T_1}\]
+\end{derivation}
+\begin{derivation}
+    \textbf{恒容可逆过程}：\par
+    \qquad 恒容可逆过程$V$不变，直接得到：
+    \[\Delta U=C_\mathrm{V}\Delta T\]
+    \[\Delta H=C_\mathrm{p}\Delta T\]
+    \[W=0\]
+    根据热力学第一定律计算热：
+    \[\Delta U=Q+W=Q\]
+    \[Q=\Delta U=C_\mathrm{V}\Delta T\]
+    根据定义计算熵变：
+    \[\delta Q=C_\mathrm{V}\diff T\]
+    \[\Delta S=\int_{1}^{2}\dfrac{\delta Q}{T}=\int_{T_1}^{T_2}\dfrac{C_\mathrm{V}\diff T}{T}=C_\mathrm{V}\ln\dfrac{T_2}{T_1}\]
+    根据定义计算吉布斯自由能变：
+    \[S_2=S_1+\Delta S=S_1+C_\mathrm{V}\ln\dfrac{T_2}{T_1}\]
+    \[\Delta(TS)=S_2T_2-S_1T_1=(S_1+C_\mathrm{V}\ln\dfrac{T_2}{T_1})T_2-S_1T_1=S_1\Delta T+C_\mathrm{V}T_2\ln\dfrac{T_2}{T_1}\]
+    \[\Delta G=\Delta(H-TS)=\Delta H-\Delta(TS)=(C_\mathrm{p}-S_1)\Delta T-C_\mathrm{V}T_2\ln\dfrac{T_2}{T_1}\]
+\end{derivation}
+\begin{derivation}
+    \textbf{绝热可逆过程}：\par
+    \qquad 绝热可逆过程$Q=0$，直接得到：
+    \[\Delta U=C_\mathrm{V}\Delta T\]
+    \[\Delta H=C_\mathrm{p}\Delta T\]
+    \[\Delta S=\int_{1}^{2}\dfrac{\delta Q}{T}=0\]
+    根据热力学第一定律计算功：
+    \[\Delta U=Q+W=W\]
+    \[W=\Delta U=C_\mathrm{V}\Delta T\]
+    但我们一般无法直接知道$\Delta T$，我们需要分析绝热可逆过程中$pVT$之间的关系。\par
+    $W$有另一种计算方法：
+    \[\delta W=\diff U=C_\mathrm{V}\diff T\]
+    \[\delta W=-p\diff V=-\dfrac{nRT}{V}\diff V\]
+    两种计算方法得到的数值应该相等：
+    \[C_\mathrm{V}\diff T=-\dfrac{nRT}{V}\diff V\]
+    \[\dfrac{\diff T}{T}=-\dfrac{nR}{C_\mathrm{V}}\dfrac{\diff V}{V}\]
+    两边积分得：
+    \[\ln\dfrac{T_2}{T_1}=-\dfrac{nR}{C_\mathrm{V}}\ln\dfrac{V_2}{V_1}\]
+    因为$C_\mathrm{p}-C_\mathrm{V}=nR$，如果设$\dfrac{C_\mathrm{p}}{C_\mathrm{V}}=\gamma$，则：
+    \[\dfrac{nR}{C_\mathrm{V}}=\dfrac{C_\mathrm{p}-C_\mathrm{V}}{C_\mathrm{V}}=\gamma-1\]
+    代回原式得：
+    \[\ln\dfrac{T_2}{T_1}=(1-\gamma)\ln\dfrac{V_2}{V_1}\]
+    两边取$\mathrm{e}$的指数得：
+    \[\dfrac{T_2}{T_1}=\left(\dfrac{V_2}{V_1}\right)^{1-\gamma}\]
+    即：
+    \[T_1V_1^{\gamma-1}=T_2V_2^{\gamma-1}\Longleftrightarrow TV^{\gamma-1}=C\]
+    除此之外根据$\dfrac{pV}{T}=C$还可以得到：
+    \[pV^\gamma=C\]
+    \[T^\gamma p^{1-\gamma}=C\]
+    用含$T$的两个式子可以求出$\Delta T$，随后$W$、$\Delta U$、$\Delta H$都可以求出。\par
+    根据定义计算吉布斯自由能变：
+    \[\Delta G=\Delta(H-TS)=\Delta H-S\Delta T=(C_\mathrm{p}-S)\Delta T\]
+\end{derivation}
+\subsubsection{不可逆过程}
+\begin{table}[h]
+    \centering
+    \caption{两个不可逆过程中各物理量的变化}
+    \begin{tabular}{ccccccc}
+        \toprule
+        过程名称 & $Q$ & $W$ & $\Delta U$ & $\Delta H$ & $\Delta S$ & $\Delta G$ \\
+        \midrule
+        恒温恒外压过程 & $p_\mathrm{ex}\Delta V$ & $-p_\mathrm{ex}\Delta V$ & $0$ & $0$ & $nR\ln\dfrac{V_2}{V_1}$ & $-nRT\ln\dfrac{V_2}{V_1}$ \\
+        自由膨胀过程 & $0$ & $0$ & $0$ & $0$ & $nR\ln\dfrac{V_2}{V_1}$ & $-nRT\ln\dfrac{V_2}{V_1}$ \\
+        \bottomrule
+    \end{tabular}
+    \label{table2.4}
+\end{table}
+\textbf{恒温恒外压过程}是在恒定的$T$和恒定的$p_\mathrm{ex}$下膨胀或压缩的过程，在\autoref{2.2.3}中提到过体积功的计算方法。\par
+\textbf{自由膨胀}是指在绝热容器中向真空膨胀，是恒外压膨胀的一种特殊情况，在\autoref{2.5}中已经提及。
+\begin{derivation}
+    \textbf{恒温恒外压过程}：\par
+    \qquad 恒温恒外压过程$T$不变，直接得到：
+    \[\Delta U=C_\mathrm{V}\Delta T=0\]
+    \[\Delta H=C_\mathrm{p}\Delta T=0\]
+    根据定义计算功：
+    \[W=\int_{V_1}^{V_2}-p_\mathrm{ex}\diff V=-p_\mathrm{ex}\Delta V\]
+    根据热力学第一定律计算热：
+    \[\Delta U=Q+W=0\]
+    \[Q=-W=p_\mathrm{ex}\Delta V\]
+    构造始态和终态相同的恒温可逆过程计算熵变：
+    \[\Delta S=\int_{1}^{2}\dfrac{\delta Q_\mathrm{rev}}{T}=\dfrac{Q_\mathrm{rev}}{T}=\dfrac{-W_\mathrm{rev}}{T}=\dfrac{nRT\ln\dfrac{V_2}{V_1}}{T}=nR\ln\dfrac{V_2}{V_1}\]
+    根据定义计算吉布斯自由能变：
+    \[\Delta G=\Delta(H-TS)=\Delta H-T\Delta S=0-T\times nR\ln\dfrac{V_2}{V_1}=-nRT\ln\dfrac{V_2}{V_1}\]
+\end{derivation}
+\begin{derivation}
+    \textbf{自由膨胀过程}：\par
+    \qquad 自由膨胀过程$Q=0$，根据定义计算功：
+    \[W=\int_{V_1}^{V_2}-p_\mathrm{ex}\diff V=-p_\mathrm{ex}\Delta V=0\]
+    根据热力学第一定律计算内能的变化：
+    \[\Delta U=Q+W=0\]
+    所以：
+    \[\Delta T=0\]
+    直接得到：
+    \[\Delta H=C_\mathrm{p}\Delta T=0\]
+    构造始态和终态相同的恒温可逆过程计算熵变：
+    \[\Delta S=\int_{1}^{2}\dfrac{\delta Q_\mathrm{rev}}{T}=\dfrac{Q_\mathrm{rev}}{T}=\dfrac{-W_\mathrm{rev}}{T}=\dfrac{nRT\ln\dfrac{V_2}{V_1}}{T}=nR\ln\dfrac{V_2}{V_1}\]
+    根据定义计算吉布斯自由能变：
+    \[\Delta G=\Delta(H-TS)=\Delta H-T\Delta S=0-T\times nR\ln\dfrac{V_2}{V_1}=-nRT\ln\dfrac{V_2}{V_1}\]
+\end{derivation}
+\subsection{卡诺循环效率推导}\label{2.9.2}
+绝热可逆过程的$pV^\gamma=C$，其中$\gamma>1$，与恒温可逆过程的$pV=C$有区别。在图像上表现为$p$增大时绝热可逆线下降得比恒温可逆线要快，比如我们在\autoref{2.4.1}中提到的\textbf{卡诺循环}由两个恒温可逆过程和两个绝热可逆过程组成，如\autoref{figure2.5}所示。
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{2.9.1卡诺循环.png}
+    \caption{卡诺循环}
+    \label{figure2.5}
+\end{figure}\par
+我们在\autoref{formula2.21}中给出了卡诺循环的效率为$\dfrac{T_1-T_2}{T_1}$，我们可以尝试推导。
+\begin{derivation}
+    \qquad 1-2为恒温可逆膨胀：
+    \[W_1=-nRT\ln\dfrac{V_2}{V_1}\]
+    \[Q_1=\Delta U-W=-W=nRT_1\ln\dfrac{V_2}{V_1}\]
+    \qquad 2-3为绝热可逆膨胀：
+    \[Q_2=0\]
+    \[W_2=\Delta U-Q=\Delta U=C_\mathrm{V}(T_2-T_1)\]
+    \qquad 3-4为恒温可逆压缩：
+    \[W_3=-nRT\ln\dfrac{V_4}{V_3}\]
+    \[Q_3=\Delta U-W=-W=nRT_2\ln\dfrac{V_4}{V_3}\]
+    \qquad 4-1为绝热可逆压缩
+    \[Q_4=0\]
+    \[W_4=\Delta U-Q=\Delta U=C_\mathrm{V}(T_1-T_2)\]
+    \qquad 整个循环过程：
+    \[W=W_1+W_2+W_3+W_4=-nRT_1\ln\dfrac{V_2}{V_1}-nRT_2\ln\dfrac{V_4}{V_3}\]
+    根据绝热可逆过程的$TV$关系：
+    \[TV^{\gamma-1}=C\]
+    有：
+    \[\left(\dfrac{V_2}{V_3}\right)^{\gamma-1}=\dfrac{T_2}{T_1}\]
+    \[\left(\dfrac{V_1}{V_4}\right)^{\gamma-1}=\dfrac{T_2}{T_1}\]
+    所以：
+    \[\dfrac{V_2}{V_3}=\dfrac{V_1}{V_4}\Longrightarrow\dfrac{V_2}{V_1}=\dfrac{V_3}{V_4}\Longrightarrow\ln\dfrac{V_4}{V_3}=-\ln\dfrac{V_2}{V_1}\]
+    代回$W$的表达式得：
+    \[W=-nRT_1\ln\dfrac{V_2}{V_1}-nRT_2\ln\dfrac{V_4}{V_3}=-nR(T_1-T_2)\ln\dfrac{V_2}{V_1}\]
+    代入$\eta$的定义式有：
+    \[\eta=\dfrac{-W}{Q_1}=\dfrac{nR(T_1-T_2)\ln\dfrac{V_2}{V_1}}{nRT_1\ln\dfrac{V_2}{V_1}}=\dfrac{T_1-T_2}{T_1}\]
+\end{derivation}
+\subsection{多组分$pVT$变化过程}\label{2.9.3}
+本小节中内容在\autoref{2.5}中有涉及，这里再次强调。
+\subsubsection{恒温恒容容器内气压相等的各部分气体混合}
+在恒温恒容容器内有$n$种气体用隔板隔开，每种气体叫作$i$，气压相等。抽开隔板，各种气体自发混合均匀。
+\begin{derivation}
+    \qquad 相当于每种气体$i$都进行自由膨胀\footnote{因为自由膨胀虽然是在绝热容器中，但实际上是恒温过程}\par
+    恒温过程$T$不变，直接得到：
+    \[\Delta U=\sum_iC_\mathrm{V,i}\Delta T=0\]
+    \[\Delta H=\sum_iC_\mathrm{p,i}\Delta T=0\]
+    自由膨胀：
+    \[W=0\]
+    根据热力学第一定律计算热：
+    \[\Delta U=Q+W=0\]
+    \[Q=-W=0\]
+    构造始态和终态相同的恒温可逆过程计算每种气体的熵变：
+    \[\Delta S_i=\int_{1}^{2}\dfrac{\delta Q_\mathrm{rev,i}}{T}=\dfrac{Q_\mathrm{rev,i}}{T}=\dfrac{-W_\mathrm{rev,i}}{T}=\dfrac{n_iRT\ln\dfrac{V}{V_i}}{T}=n_iR\ln\dfrac{V}{V_i}\]
+    \[\Delta S=\sum_{i}\Delta S_i\]
+    根据定义计算吉布斯自由能变：
+    \[\Delta G_i=\Delta(H_i-TS_i)=\Delta H_i-T\Delta S_i=-T\Delta S_i\]
+    \[\Delta G=\Delta(H-TS)=\Delta H-T\Delta S=-T\Delta S\]
+\end{derivation}
+\subsubsection{理想气体恒温混合后气压不变}
+如果多种理想气体恒温混合后每种气体的气压都不变，那么每种气体的始态和终态相同，$Q=0$、$W=0$、$\Delta U=0$、$\Delta H=0$、$\Delta S=0$、$\Delta G=0$。
+比较特殊的是\autoref{exercise2.3}中的情形：在体积为$2V$的容器中有两部分体积均为$V$、气压相同的气体用隔板隔开，抽开隔板让气体混合，再压缩至总体积为$V$，对于每种气体来说整个过程始态和终态相同，因此什么都没变。
+\subsubsection{不同温度物质恒压混合过程}
+不同温度的物质$\alpha$和$\beta$在绝热容器中恒压混合，最后达到相同的温度。
+\begin{derivation}
+    \qquad 设$\alpha$和$\beta$的初始温度分别为$T_1$和$T_2$，最终温度为$T_0$。由于体系绝热，因此两物质的热相加为零：
+    \[Q_\alpha+Q_\beta=0\]
+    恒压条件下：
+    \[C_{\mathrm{p,}\alpha}(T_0-T_\alpha)+C_{\mathrm{p,}\beta}(T_0-T_\beta)=0\]
+    解得：
+    \[T_0=\dfrac{C_{\mathrm{p,}\alpha}T_\alpha+C_{\mathrm{p,}\beta}T_\beta}{C_{\mathrm{p,}\alpha}+C_{\mathrm{p,}\beta}}\]
+    目前我们无法考虑混合时的体积变化和混合焓，可以认为：
+    \[W_i=0\]
+    \[\Delta H_\text{mix}=0\]
+    \[\Delta H_i=C_{\mathrm{p,}i}(T_0-T_i)\]
+    根据热力学第一定律计算内能的变化：
+    \[\Delta U_i=Q_i+W_i=Q_i\]
+    根据定义计算熵变：
+    \[\Delta S_i=\int_{1}^{2}\dfrac{\delta Q_i}{T}=\int_{T_i}^{T_0}\dfrac{C_{\mathrm{p,}i}\diff T}{T}=C_{\mathrm{p,}i}\ln\dfrac{T_0}{T_i}\]
+    根据定义计算吉布斯自由能变：
+    \[\Delta G_i=\Delta(H-TS)=\Delta H_i-\Delta(TS)_i=C_{\mathrm{p,}i}(T_0-T_i)-\Delta(TS)_i\]
+\end{derivation}
+\subsection{相变化过程}\label{2.9.4}
+\subsubsection{可逆相变化过程}
+可逆相变化过程是指在相边界发生的相变过程，过程中温度和压强都不变。可逆相变化过程也是可逆过程，因此$p=p_\mathrm{ex}$。
+\begin{derivation}
+    \qquad 根据定义计算功：
+    \[W_\mathrm{m,rev}=\int_{V_\mathrm{m,1}}^{V_\mathrm{m,2}}-p\diff V_\mathrm{m}=-p\Delta V_\mathrm{m}\]
+    相变过程有热的转换：
+    \[Q_\mathrm{m,rev}=\Delta_\mathrm{trs}H_\mathrm{m,rev}\]
+    根据热力学第一定律计算内能的变化：
+    \[\Delta_\mathrm{trs}U_\mathrm{m}=Q_\mathrm{m,rev}+W_\mathrm{m,rev}=\Delta_\mathrm{trs}H_\mathrm{m,rev}-p\Delta V_\mathrm{m}\]
+    根据定义计算熵变：
+    \[\Delta_\mathrm{trs}S_\mathrm{m}=\int_{1}^{2}\dfrac{\delta Q_\mathrm{m,rev}}{T}=\dfrac{Q_\mathrm{m,rev}}{T}=\dfrac{\Delta_\mathrm{trs}H_\mathrm{m,rev}}{T}\]
+    根据定义计算吉布斯自由能变：
+    \[\Delta_\mathrm{trs}G_\mathrm{m}=\Delta(H_\mathrm{m}-TS_\mathrm{m})=\Delta_\mathrm{trs}H_\mathrm{m,rev}-T\Delta_\mathrm{trs}S_\mathrm{m}=\Delta_\mathrm{trs}H_\mathrm{m,rev}-\dfrac{\Delta_\mathrm{trs}H_\mathrm{m,rev}}{T}\times T=0\]
+\end{derivation}
+\subsubsection{不可逆相变化过程}
+不可逆相变化过程是指不在相边界发生的相变过程，比如过冷水凝固、过热水沸腾。这些过程是不可逆过程，因此热、熵变、吉布斯自由能变等物理量会受到影响。
+\begin{derivation}
+    \qquad 设相变过程从状态$\alpha$到状态$\beta$：\par
+    根据定义计算功：
+    \[W_\mathrm{m,irr}=\int_{V_\mathrm{m,1}}^{V_\mathrm{m,2}}-p_\mathrm{ex}\diff V_\mathrm{m}=-p_\mathrm{ex}\Delta V_\mathrm{m}\]
+    构造始态和终态相同的相变过程计算内能的变化、焓变、熵变、吉布斯自由能变：\par
+    先改变温度至同一压强$p_\mathrm{ex}$下的相变温度$T_0$：
+    \[\Delta U_\mathrm{m,1}=C_{\mathrm{V,}\alpha}(T_\mathrm{trs}-T_0)\]
+    \[\Delta H_\mathrm{m,1}=C_{\mathrm{p,}\alpha}(T_\mathrm{trs}-T_0)\]
+    \[\Delta S_\mathrm{m,1}=\int_{1}^{2}\dfrac{\delta Q_\mathrm{rev}}{T}=\int_{T_0}^{T_\mathrm{trs}}\dfrac{C_{\mathrm{p,}\alpha}\diff T}{T}=C_{\mathrm{p,}\alpha}\ln\dfrac{T_\mathrm{trs}}{T_0}\]
+    在相变温度$T_0$下发生可逆相变：
+    \[\Delta U_\mathrm{m,2}=\Delta_\mathrm{trs}U_\mathrm{m,rev}=\Delta_\mathrm{trs}H_\mathrm{m,rev}-p_\mathrm{ex}\Delta V_\mathrm{m}\]
+    \[\Delta H_\mathrm{m,2}=\Delta_\mathrm{trs}H_\mathrm{m,rev}\]
+    \[\Delta S_\mathrm{m,2}=\Delta_\mathrm{trs}S_\mathrm{m}=\int_{1}^{2}\dfrac{\delta Q_\mathrm{m,rev}}{T_\mathrm{trs}}=\dfrac{Q_\mathrm{m,rev}}{T_\mathrm{trs}}=\dfrac{\Delta_\mathrm{trs}H_\mathrm{m,rev}}{T_\mathrm{trs}}\]
+    改变温度至$T$：
+    \[\Delta U_\mathrm{m,3}=C_{\mathrm{V,}\beta}(T_0-T_\mathrm{trs})\]
+    \[\Delta H_\mathrm{m,3}=C_{\mathrm{p,}\beta}(T_0-T_\mathrm{trs})\]
+    \[\Delta S_\mathrm{m,3}=\int_{1}^{2}\dfrac{\delta Q_\mathrm{rev}}{T}=\int_{T_\mathrm{trs}}^{T_0}\dfrac{C_{\mathrm{p,}\beta}\diff T}{T}=C_{\mathrm{p,}\beta}\ln\dfrac{T_0}{T_\mathrm{trs}}\]
+    全过程：
+    \begin{align*}
+        \Delta_\mathrm{trs}U_\mathrm{m,irr}&=\Delta U_\mathrm{m,1}+\Delta U_\mathrm{m,2}+\Delta U_\mathrm{m,3}\\
+        &=C_{\mathrm{V,}\alpha}(T_\mathrm{trs}-T_0)+\Delta_\mathrm{trs}H_\mathrm{m,rev}-p_\mathrm{ex}\Delta V_\mathrm{m}+C_{\mathrm{V,}\beta}(T_0-T_\mathrm{trs})\\
+        &=\Delta_\mathrm{trs}H_\mathrm{m,rev}-p_\mathrm{ex}\Delta V_\mathrm{m}+(C_{\mathrm{V,}\alpha}-C_{\mathrm{V,}\beta})(T_\mathrm{trs}-T_0)\\
+        \Delta_\mathrm{trs}H_\mathrm{m,irr}&=\Delta H_\mathrm{m,1}+\Delta H_\mathrm{m,2}+\Delta H_\mathrm{m,3}\\
+        &=C_{\mathrm{p,}\alpha}(T_\mathrm{trs}-T_0)+\Delta_\mathrm{trs}H_\mathrm{m,rev}+C_{\mathrm{p,}\beta}(T_0-T_\mathrm{trs})\\
+        &=\Delta_\mathrm{trs}H_\mathrm{m,rev}+(C_{\mathrm{p,}\alpha}-C_{\mathrm{p,}\beta})(T_\mathrm{trs}-T_0)\\
+        \Delta_\mathrm{trs}S_\mathrm{m,irr}&=\Delta S_\mathrm{m,1}+\Delta S_\mathrm{m,2}+\Delta S_\mathrm{m,3}\\
+        &=C_{\mathrm{p,}\alpha}\ln\dfrac{T_\mathrm{trs}}{T_0}+\dfrac{\Delta_\mathrm{trs}H_\mathrm{m,rev}}{T_\mathrm{trs}}+C_{\mathrm{p,}\beta}\ln\dfrac{T_0}{T_\mathrm{trs}}\\
+        &=\dfrac{\Delta_\mathrm{trs}H_\mathrm{m,rev}}{T_\mathrm{trs}}+(C_{\mathrm{p,}\alpha}-C_{\mathrm{p,}\beta})\ln\dfrac{T_\mathrm{trs}}{T_0}
+    \end{align*}
+    根据热力学第一定律计算热：
+    \[\Delta_\mathrm{trs}U_\mathrm{m,irr}=Q_\mathrm{m,irr}+W_\mathrm{m,irr}\]
+    \begin{align*}
+        Q_\mathrm{m,irr}&=\Delta_\mathrm{trs}U_\mathrm{m,irr}-W_\mathrm{m,irr}\\
+        &=\Delta_\mathrm{trs}H_\mathrm{m,rev}-p_\mathrm{ex}\Delta V_\mathrm{m}+(C_{\mathrm{V,}\alpha}-C_{\mathrm{V,}\beta})(T_\mathrm{trs}-T_0)-(-p_\mathrm{ex}\Delta V_\mathrm{m})\\
+        &=\Delta_\mathrm{trs}H_\mathrm{m,rev}+(C_{\mathrm{V,}\alpha}-C_{\mathrm{V,}\beta})(T_\mathrm{trs}-T_0)
+    \end{align*}
+    根据定义计算吉布斯自由能变：
+    \begin{align*}
+        \Delta_\mathrm{trs}G_\mathrm{m,irr}&=\Delta(H-TS)=\Delta_\mathrm{trs}H_\mathrm{m,irr}-T_\mathrm{trs}\Delta_\mathrm{trs}S_\mathrm{m,irr}\\
+        &=\Delta_\mathrm{trs}H_\mathrm{m,rev}+(C_{\mathrm{p,}\alpha}-C_{\mathrm{p,}\beta})(T_\mathrm{trs}-T_0)-\Delta_\mathrm{trs}H_\mathrm{m,rev}-T_\mathrm{trs}(C_{\mathrm{p,}\alpha}-C_{\mathrm{p,}\beta})\ln\dfrac{T_\mathrm{trs}}{T_0}\\
+        &=(C_{\mathrm{p,}\alpha}-C_{\mathrm{p,}\beta})(T_\mathrm{trs}-T_0)-T_\mathrm{trs}(C_{\mathrm{p,}\alpha}-C_{\mathrm{p,}\beta})\ln\dfrac{T_\mathrm{trs}}{T_0}
+    \end{align*}
+\end{derivation}
+\subsection{克拉贝龙方程推导}\label{2.9.5}
+接下来我们用可逆相变的知识推导\autoref{formula1.9}克拉贝龙方程。
+\begin{derivation}
+    \qquad 在\autoref{2.9.4}的推导过程中我们发现可逆相变化过程的$\Delta_\mathrm{trs}G_\mathrm{m}=0$，即$\alpha$和$\beta$两相的$G_{\mathrm{m},\alpha}=G_{\mathrm{m},\beta}$，这对于所有的可逆相变化都成立。\par
+    \qquad 已知在温度$T$、压强$p$下可以发生可逆相变化过程，假设温度增加$\diff T$，压强增加$\diff p$仍然可以发生可逆相变化过程，则在新的温度下$\alpha$和$\beta$两相的$G'_{\mathrm{m,}\alpha}=G'_{\mathrm{m,}\beta}$仍然成立，因此$G_\mathrm{m}$的增量$\diff G_\mathrm{m}$也要相等，即：
+    \[\diff G_{\mathrm{m},\alpha}=\diff G_{\mathrm{m},\beta}\]
+    根据\autoref{formula2.30}$G$的热力学基本方程$\diff G=V\diff p-S\diff T$：
+    \[V_{\mathrm{m,}\alpha}\diff p-S_{\mathrm{m,}\alpha}\diff T=V_{\mathrm{m,}\beta}\diff p-S_{\mathrm{m,}\beta}\diff T\]
+    移项得：
+    \[\left[S_{\mathrm{m,}\beta}-S_{\mathrm{m,}\alpha}\right]\diff T=\left[V_{\mathrm{m,}\beta}-V_{\mathrm{m,}\alpha}\right]\diff p\]
+    即：
+    \[\Delta_\mathrm{trs}S_\mathrm{m}\diff T=\Delta_\mathrm{trs}V_\mathrm{m}\diff p\]
+    移项得：
+    \[\dfrac{\diff p}{\diff T}=\dfrac{\Delta_\mathrm{trs}S_\mathrm{m}}{\Delta_\mathrm{trs}V_\mathrm{m}}\]
+    又因为可逆相变过程中$\Delta_\mathrm{trs}S_\mathrm{m}=\dfrac{\Delta_\mathrm{trs}H_\mathrm{m}}{T}$，代入得到\autoref{formula1.9}克拉贝龙方程：
+    \[\dfrac{\diff p}{\diff T}=\dfrac{\Delta_\mathrm{trs}H_\mathrm{m}}{T\Delta_\mathrm{trs}V_\mathrm{m}}\]
+\end{derivation}
+\subsection{推导压力影响蒸汽压的公式}\label{2.9.6}
+我们还可以用可逆相变的知识推导\autoref{formula1.10}体系压力对饱和蒸气压的影响。
+\begin{derivation}
+    \qquad 仍然运用\autoref{2.9.5}中用过的$G_\mathrm{m}$的增量相等：
+    \[\diff G_\mathrm{m,l}=\diff G_\mathrm{m,g}\]
+    根据\autoref{formula2.30}$G$的热力学基本方程：
+    \[\diff G=V\diff p-S\diff T\]
+    这里$\diff p\neq0$，$\diff T=0$，所以：
+    \[\diff G=V\diff p\]
+    代入到气-液平衡式中：
+    \[V_\mathrm{m}^\mathrm{l}\diff p_\mathrm{l}=V_\mathrm{m}^\mathrm{g}\diff p_\mathrm{g}\]
+    移项得：
+    \[\dfrac{\diff p_\mathrm{g}}{\diff p_\mathrm{l}}=\dfrac{V_\mathrm{m}^\mathrm{l}}{V_\mathrm{m}^\mathrm{g}}\]
+    在\autoref{formula1.10}中$p_\mathrm{l}=p$，$p_\mathrm{g}=p_\mathrm{s}$，代入即可得到：
+    \[\dfrac{\diff p_\mathrm{s}}{\diff p}=\dfrac{V_\mathrm{m}^\mathrm{l}}{V_\mathrm{m}^\mathrm{g}}\]
+\end{derivation}
+
+\end{document}

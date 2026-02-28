@@ -16,7 +16,7 @@
 饱和蒸气压与分子间作用力有关。分子间作用力越小，液体就越容易挥发，饱和蒸气压越大；分子间作用力越大，液体就越不容易挥发，饱和蒸气压越小。而分子间作用力与温度有关，所以饱和蒸气压随温度的变化非常明显。
 
 \subsection{饱和蒸气压与温度的关系***}\label{1.3.2}
-根据热力学推导，饱和蒸气压与温度的关系可以用\textbf{克劳修斯-克拉贝龙方程}（克-克方程）描述。
+根据\autoref{2.7.4}中的热力学推导（本章暂时不需要掌握），饱和蒸气压与温度的关系可以用\textbf{克劳修斯-克拉贝龙方程}（克-克方程）描述。
 \begin{formula}
     \textbf{克劳修斯-克拉贝龙方程}（克-克方程）：\par
     \begin{enumerate}
@@ -27,7 +27,7 @@
         \item 定积分形式：
         \[\ln \dfrac{p_\mathrm{s}(T_2)}{p_\mathrm{s}(T_1)}=-\dfrac{\Delta H_\mathrm{vap}}{R}\left(\dfrac{1}{T_2}-\dfrac{1}{T_1}\right)\]
     \end{enumerate}
-    \qquad 其中$\Delta H_\mathrm{vap}$为蒸发焓，即恒压条件下每摩尔液体蒸发吸收的热量，有关焓与焓变的定义见\textcolor{blue}{（章节）}。\par
+    \qquad 其中$\Delta H_\mathrm{vap}$为蒸发焓，即恒压条件下每摩尔液体蒸发吸收的热量。有关焓与焓变的知识见\autoref{2.2}，有关蒸发焓的定义见\autoref{2.3.2}。\par
     \qquad 对于固体，我们只需要将蒸发焓$\Delta H_\mathrm{vap}$改为升华焓$\Delta H_\mathrm{sub}$即可得到适用于固体的克劳修斯-克拉贝龙方程。\par
     \qquad 注意，克劳修斯-克拉贝龙方程的不定积分形式和定积分形式能如上表示的前提是认为相变的$\Delta H_\mathrm{m}$随温度变化极小，可看作常数。
 \end{formula}\par
@@ -67,7 +67,7 @@
 \begin{answer}
     根据克劳修斯-克拉贝龙方程：
     \[\ln \dfrac{p_\mathrm{s}(T_2)}{p_\mathrm{s}(T_1)}=-\dfrac{\Delta H_\mathrm{vap}}{R}\left(\dfrac{1}{T_2}-\dfrac{1}{T_1}\right)\]
-    代入$R=8.314\ \mathrm{J/(mol\cdot K)}$，$\Delta H_\mathrm{vap}=40.670\ \mathrm{J/mol}$，$p_\mathrm{s}(T_1)=101.325\ \mathrm{kPa}$，$T_1=373.15\ \mathrm{K}$，$p_\mathrm{s}(T_2)=61.660\ \mathrm{kPa}$得：
+    代入$R=8.314\ \mathrm{J/(mol\cdot K)}$，$\Delta H_\mathrm{vap}=40.670\ \mathrm{kJ/mol}$，$p_\mathrm{s}(T_1)=101.325\ \mathrm{kPa}$，$T_1=373.15\ \mathrm{K}$，$p_\mathrm{s}(T_2)=61.660\ \mathrm{kPa}$得：
     \[\ln \dfrac{61.660\ \mathrm{kPa}}{101.325\ \mathrm{kPa}}=-\dfrac{40.670\ \mathrm{kJ/mol}}{8.314\ \mathrm{J/(mol\cdot K)}}\left(\dfrac{1}{T_2}-\dfrac{1}{373.15\ \mathrm{K}}\right)\]
     解得$T_2=359.53\ \mathrm{K}$，即$86.38\ \mathrm{℃}$。
 \end{answer}\par
@@ -80,7 +80,7 @@
 推导的结果并不是$p_\mathrm{s}=\mathrm{e}^{kT+b}$，所以这条线实际上不是指数函数的一部分，只是对于函数$y=\mathrm{e}^{-\frac{1}{x}}$，在$x<0.5$时候$y''>0$，函数图像是凹的，因此长得像指数函数的一部分。气-固平衡线与气-液平衡线类似。\par
 
 \subsection{固-液平衡线——克拉贝龙方程}\label{1.3.3}
-我们还剩下固-液平衡线没有用方程表示，这需要用到克劳修斯-克拉贝龙方程的一般情况——\textbf{克拉贝龙方程}。
+我们还剩下固-液平衡线没有用方程表示，这需要用到克劳修斯-克拉贝龙方程的一般情况——\textbf{克拉贝龙方程}（推导过程见\autoref{2.9.5}）。
 \begin{formula}
     \textbf{克拉贝龙方程}：
     \begin{enumerate}
@@ -136,11 +136,12 @@
     令$p=p_\mathrm{s}$，$\Delta H_\mathrm{m}=\Delta H_\mathrm{vap}$即可得到\autoref{formula1.8}克劳修斯-克拉贝龙方程的微分形式：
     \[\dfrac{\diff \ln p_\mathrm{s}}{\diff T}=\dfrac{\Delta H_\mathrm{vap}}{RT^2}\]
 \end{derivation}\par
-克拉贝龙方程及其特殊形式克劳修斯-克拉贝龙方程不可以帮助我们计算纯物质的饱和蒸气压，还顺便帮助我们描述了纯物质的三条两相平衡线。对于固-液相变，我们可以直接使用克拉贝龙方程描述；对于有气相参与的相变，我们使用克劳修斯-克拉贝龙方程描述。
+克拉贝龙方程及其特殊形式克劳修斯-克拉贝龙方程不仅可以帮助我们计算纯物质的饱和蒸气压，还顺便帮助我们描述了纯物质的三条两相平衡线。对于固-液相变，我们可以直接使用克拉贝龙方程描述；对于有气相参与的相变，我们使用克劳修斯-克拉贝龙方程描述。
 
 \subsection{饱和蒸气压与体系压力的关系*}\label{1.3.4}
-液体的饱和蒸气压$p_\mathrm{s}$还与体系压力\footnote{其实是指液体受到的压强，可能来自液柱或表面张力}$p$有关，根据热力学推导，我们有以下公式。
+液体的饱和蒸气压$p_\mathrm{s}$还与体系压力\footnote{其实是指液体受到的压强，可能来自液柱或表面张力}$p$有关，根据\autoref{2.9.6}中的热力学推导，我们有以下公式。
 \begin{formula}
+    体系压力对饱和蒸气压的影响：
     \[\dfrac{\diff p_\mathrm{s}}{\diff p}=\dfrac{V_\mathrm{m}^\mathrm{l}}{V_\mathrm{m}^\mathrm{g}}\]
     \qquad 其中$V_\mathrm{m}^\mathrm{l}$和$V_\mathrm{m}^\mathrm{g}$分别是液体的摩尔体积和气体的摩尔体积。
 \end{formula}\par

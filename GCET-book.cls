@@ -1,6 +1,7 @@
 \ProvidesClass{GCET-book} % 类名为GCET-book
 \LoadClass{ctexbook} % 调用ctexbook类，满足书籍需求
 
+\RequirePackage{pdfpages} % 插入pdf
 \RequirePackage{amsmath,amssymb} % 数学
 \RequirePackage[version=4]{mhchem} % 化学
 \RequirePackage{graphicx, xcolor, tikz,extarrows} % 图形工具箱：插入图片、使用颜色、画矢量图、更多的箭头
